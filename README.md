@@ -16,14 +16,14 @@
 
 I'm **SH1W4**, founder of [**Symbeon Labs**](https://github.com/symbeon-labs) — building **technological infrastructure** for the Brazilian innovation ecosystem.
 
-My work focuses on **Applied AI Engineering**: creating robust, scalable systems that solve complex real-world problems through intelligent automation and human collaboration.
+My work lies at the intersection of **Advanced AI** and **Process Automation**: I build systems where AI agents don't just "chat", but **execute complex workflows** autonomously, bridging the gap between intelligence and action.
 
 ### 🎯 Current Focus
 
 - 🏢 **Symbeon Labs** - Innovation Infrastructure for Brazilian Ecosystem
-- 🛡️ **EditalShield** - AI-powered IP protection for innovation grants (Open-Core)
-- 🌐 **VIREON MCP Ecosystem** - Model Context Protocol integrations
-- 🧠 **Adaptive AI Systems** - Designing flexible, context-aware AI agents
+- 🛡️ **EditalShield** - AI-powered IP protection aiming for B2B2G processes
+- 🤖 **Agentic Automation** - Orchestrating multi-agent systems for end-to-end task execution
+- 🌐 **VIREON MCP Ecosystem** - Enabling tools for AI working within workflows
 
 ---
 
@@ -140,7 +140,7 @@ We build technology to solve real problems. Our systems are designed for **impac
 I believe the true value of AI lies in its practical application to empower human potential:
 
 1. **Symbiotic Systems** - AI tools that integrate seamlessly into human workflows
-2. **Distributed Intelligence** - Ecosystems of specialized agents (MCP)
+2. **Agentic Workflows** - AI as a reliable engine for complex process automation
 3. **Transparent Architecture** - Open-source foundations enabling trust and auditability
 4. **Pragmatic Implementation** - Solving real pains with cutting-edge technology
 
