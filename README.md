@@ -5,7 +5,7 @@
 -->
 
 <div align="center">
-    <img src="https://images.unsplash.com/photo-1620641788421-7f1c33747d55?q=80&w=2070&auto=format&fit=crop" width="100%" height="200px" style="object-fit: cover; border-radius: 10px;" alt="Abstract Neural Network"/>
+    <img src="./header.png" width="100%" height="auto" style="object-fit: cover; border-radius: 10px;" alt="Abstract Neural Network"/>
     <br/><br/>
     <img src="./profile_animation.svg" width="80%" alt="System Terminal"/>
     <br/>
