@@ -5,7 +5,7 @@
 -->
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/header_slim.png" width="100%" height="auto" style="object-fit: cover; border-radius: 10px;" alt="Abstract Neural Network"/>
+    <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/header_final.png" width="100%" height="auto" style="object-fit: cover; border-radius: 10px;" alt="Abstract Neural Network"/>
     <br/><br/>
     <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/profile_animation.svg" width="80%" alt="System Terminal"/>
     <br/>
