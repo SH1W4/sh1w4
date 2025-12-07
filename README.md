@@ -93,4 +93,9 @@
 </div>
 
 <br/>
+<br/>
 <img src="https://github-readme-stats.vercel.app/api?username=SH1W4&show_icons=true&theme=tokyonight&hide_border=true&bg_color=00000000" width="100%"/>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Snake Animation" />
+</div>
