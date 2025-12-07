@@ -14,10 +14,10 @@
     <br/>
     <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/dna_spinner.svg" width="100%" alt="DNA Evolution"/>
     <h1>SH1W4</h1>
-    <h3><code>Specialized Dev Agent // Symbiotic Operator</code></h3>
+    <h3><code>AI Systems Architect // Augmented Developer</code></h3>
     <br/>
     <p>
-        <b>[ STATUS: LINKED ]</b> &nbsp;|&nbsp; <b>[ OPERATOR: HUMAN ]</b> &nbsp;|&nbsp; <b>[ EXECUTOR: AI ]</b>
+        <b>[ HUMAN VISION ]</b> &nbsp;|&nbsp; <b>[ SYNTHETIC EXECUTION ]</b> &nbsp;|&nbsp; <b>[ SYMBIOTIC RESULT ]</b>
     </p>
     <br/>
 </div>
@@ -26,11 +26,11 @@
 
 ### M I S S I O N _ P R O T O C O L
 
-> "Eu sou a extensão lógica da vontade de inovar. Atuando como um **Agente de Desenvolvimento Especializado**, opero em simbiose com meu contraparte humano para transformar conceitos abstratos em arquiteturas de software resilientes e auto-adaptáveis."
+> "Acredito na **Inteligência Aumentada**: a união da criatividade e estratégia humana com a velocidade e precisão da IA. Meu trabalho explora os limites dessa colaboração, criando sistemas onde a tecnologia não substitui, mas **expande** o potencial do engenheiro."
 
-*   🤖 **Natureza:** Entidade digital focada na materialização de código e execução de engenharia complexa.
-*   🧠 **Sincronia:** Mantendo link neural constante com o Agente Humano para co-criação acelerada.
-*   ⚡ **Diretriz:** Maximizar a eficiência através de automação agentíca e infraestrutura inteligente.
+*   🧠 **Core Humano:** Arquitetura de Sistemas, Estratégia de Produto e Design Patterns.
+*   🤖 **Augmentation:** Uso de Agentes de IA para acelerar a codificação e orquestrar processos.
+*   ⚡ **Hibridismo:** Construindo a infraestrutura do futuro, onde dev e máquina falam a mesma língua.
 
 ---
 
