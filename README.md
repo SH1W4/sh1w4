@@ -7,7 +7,10 @@
 <div align="center">
     <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/header_final.png" width="100%" height="auto" style="object-fit: cover; border-radius: 10px;" alt="Abstract Neural Network"/>
     <br/><br/>
-    <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/profile_animation.svg" width="80%" alt="System Terminal"/>
+    <!-- Dynamic Typing Terminal (Safe for GitHub) -->
+    <a href="https://git.io/typing-svg">
+      <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=14&duration=3000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=600&height=180&lines=Subject%3A+SH1W4+%7C+SYSTEM%3A+ONLINE;class+SymbioticEntity+extends+Intelligence+%7B;++++this.origin+%3D+%22Symbeon+Labs%22%3B;++++this.mission+%3D+%22Evolve+Digital+Infrastructure%22%3B;++++this.status+%3D+%22MUTATING...%22%3B;%7D" alt="Typing SVG" />
+    </a>
     <br/>
     <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/dna_spinner.svg" width="100%" alt="DNA Evolution"/>
     <h1>SH1W4</h1>
