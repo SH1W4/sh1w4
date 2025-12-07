@@ -17,7 +17,7 @@
     <h3><code>AI Systems Architect // Augmented Developer</code></h3>
     <br/>
     <p>
-        <b>[ HUMAN VISION ]</b> &nbsp;|&nbsp; <b>[ SYNTHETIC EXECUTION ]</b> &nbsp;|&nbsp; <b>[ SYMBIOTIC RESULT ]</b>
+        <b>[ HUMAN VISION ]</b> &nbsp;|&nbsp; <b>[ AGENTIC EXECUTION ]</b> &nbsp;|&nbsp; <b>[ SYMBIOTIC RESULT ]</b>
     </p>
     <br/>
 </div>
