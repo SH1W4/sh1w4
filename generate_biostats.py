@@ -44,8 +44,8 @@ def generate_svg():
     svg_content = f"""
     <svg width="400" height="200" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
         <style>
-            @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap');
-            .text {{ font-family: 'JetBrains Mono', monospace; fill: #e6e6e6; }}
+            /* @import removed for GitHub compatibility */
+            .text {{ font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; fill: #e6e6e6; }}
             .label {{ font-size: 10px; opacity: 0.7; }}
             .value {{ font-size: 14px; font-weight: bold; }}
             
