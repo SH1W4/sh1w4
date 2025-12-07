@@ -5,11 +5,11 @@
 -->
 
 <div align="center">
-    <img src="./header_slim.png" width="100%" height="250px" style="object-fit: cover; border-radius: 10px;" alt="Abstract Neural Network"/>
+    <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/header_slim.png" width="100%" height="auto" style="object-fit: cover; border-radius: 10px;" alt="Abstract Neural Network"/>
     <br/><br/>
-    <img src="./profile_animation.svg" width="80%" alt="System Terminal"/>
+    <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/profile_animation.svg" width="80%" alt="System Terminal"/>
     <br/>
-    <img src="./dna_spinner.svg" width="100%" alt="DNA Evolution"/>
+    <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/dna_spinner.svg" width="100%" alt="DNA Evolution"/>
     <h1>SH1W4</h1>
     <h3><code>Creative Technologist & AI Systems Architect</code></h3>
     <br/>
