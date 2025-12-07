@@ -26,11 +26,11 @@
 
 ### M I S S I O N _ P R O T O C O L
 
-> "Acredito na **Inteligência Aumentada**: a união da criatividade e estratégia humana com a velocidade e precisão da IA. Meu trabalho explora os limites dessa colaboração, criando sistemas onde a tecnologia não substitui, mas **expande** o potencial do engenheiro."
+> "I believe in **Augmented Intelligence**: the union of human creativity and strategy with the speed and precision of AI. My work explores the limits of this collaboration, building systems where technology doesn't replace, but **expands** the engineer's potential."
 
-*   🧠 **Core Humano:** Arquitetura de Sistemas, Estratégia de Produto e Design Patterns.
-*   🤖 **Augmentation:** Uso de Agentes de IA para acelerar a codificação e orquestrar processos.
-*   ⚡ **Hibridismo:** Construindo a infraestrutura do futuro, onde dev e máquina falam a mesma língua.
+*   🧠 **Human Core:** Systems Architecture, Product Strategy, and Design Patterns.
+*   🤖 **Augmentation:** Leveraging AI Agents to accelerate coding and orchestrate processes.
+*   ⚡ **Hybridism:** Building the future infrastructure where dev and machine speak the same language.
 
 ---
 
@@ -65,9 +65,10 @@
 
 | PROJECT | TYPE | DESCRIPTION | STATUS |
 | :--- | :--- | :--- | :--- |
-| **[🛡️ EditalShield](https://github.com/symbeon-labs/editalshield)** | `Security` | Framework de proteção de PI para editais de inovação utilizando IA. | 🟢 **Active** |
-| **[🌐 VIREON Ecosystem](https://github.com/SH1W4/mcp-ecosystem)** | `Integration` | Coleção de servidores MCP para conectar ferramentas a Agentes de IA. | 🟣 **Evolving** |
-| **[📚 DocSync](https://github.com/SH1W4/docsync)** | `Productivity` | Automação inteligente para gestão e sincronização de documentação. | 🔵 **Stable** |
+| **[🌐 VIREON Core](https://github.com/vireon-core/VIREON)** | `Infrastructure` | Universal Agentic Orchestration Layer. The "OS" for the Agent Swarm era. | 🟣 **Evolving** |
+| **[📚 DocSync](https://github.com/SH1W4/docsync)** | `Agentic Tool` | Enterprise documentation infrastructure. Turn static docs into live, MCP-ready knowledge. | 🔵 **Stable** |
+| **[🛡️ EditalShield](https://github.com/symbeon-labs/editalshield)** | `Legal AI` | IP Protection Framework for Innovation Grants. High-precision Legal LLM Analysis. | 🟢 **Active** |
+| **[⚖️ Patent Engine](https://github.com/symbeon-labs/patent-intelligence-engine)** | `Deep Tech` | Automated Patent Intelligence & Prior Art Search using Semantic Vector Search. | 🟡 **Alpha** |
 
 ---
 
@@ -80,7 +81,7 @@
 
 <div align="center">
   <br/>
-  <a href="https://linkedin.com/in/YOUR_LINKEDIN">
+  <a href="https://linkedin.com/in/joaomartins-ai">
     <img src="https://img.shields.io/badge/LINKEDIN-CONNECT-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white"/>
   </a>
   <a href="https://github.com/SH1W4">
