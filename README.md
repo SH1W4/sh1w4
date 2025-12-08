@@ -68,7 +68,7 @@
 
 | PROJECT | TYPE | DESCRIPTION | STATUS |
 | :--- | :--- | :--- | :--- |
-| **[🌐 VIREON Core](https://github.com/vireon-core/VIREON)** | `Infrastructure` | Universal Agentic Orchestration Layer. The "OS" for the Agent Swarm era. | 🟣 Evolving |
+| **[🌐 VIREON Core](https://github.com/SH1W4/vireon)** | `Infrastructure` | Universal Agentic Orchestration Layer. The "OS" for the Agent Swarm era. | 🟣 Evolving |
 | **[📚 DocSync](https://github.com/SH1W4/docsync)** | `Agentic Tool` | Enterprise documentation infrastructure. Turn static docs into live, MCP-ready knowledge. | 🔵 Stable |
 | **[🛡️ EditalShield](https://github.com/symbeon-labs/editalshield)** | `Legal AI` | IP Protection Framework for Innovation Grants. High-precision Legal LLM Analysis. | 🟢 Active |
 | **[⚖️ Patent Engine](https://github.com/symbeon-labs/patent_intelligence_engine)** | `Deep Tech` | Automated Patent Intelligence & Prior Art Search using Semantic Vector Search. | 🟡 Alpha |
