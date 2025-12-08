@@ -1,0 +1,39 @@
+# SH1W4 Profile - Cursor AI Rules
+
+## Project Identity
+This is a **GitHub Profile README** repository for SH1W4 (Symbiotic Human-AI Workflow Architect).
+Focus: Professional branding, visual aesthetics, modular project management.
+
+## Code Style
+- Python: PEP 8, type hints preferred
+- Markdown: Clean formatting, emoji for visual hierarchy
+- JSON: 2-space indentation, no trailing commas
+
+## Workflow Commands
+# Update projects list
+python generate_readme.py
+
+# Regenerate biostats
+python generate_biostats.py
+
+## Design Constraints
+- Colors: Only use #00FF41 (green) and #BD93F9 (purple)
+- Keep aesthetic: Biocybernetic, minimal, professional
+- All images: Optimized (PNG < 500KB, GIF < 200KB)
+
+## Important Rules
+1. NEVER edit README.md manually - always regenerate from projects.json
+2. Keep commit messages conventional (feat:, fix:, docs:)
+3. Test GitHub Actions locally before pushing workflow changes
+4. Preserve the modular structure
+
+## When Editing Projects
+1. Edit projects.json
+2. Run generate_readme.py
+3. Verify output
+4. Commit all changes together
+
+## Context
+User is João Martins (SH1W4), AI Systems Architect.
+Goal: Impress recruiters from US/EU tech companies.
+Target: Remote positions $80k-140k USD.
