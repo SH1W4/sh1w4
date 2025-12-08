@@ -1,0 +1,62 @@
+{
+    "featured": [
+        {
+            "name": "VIREON Core",
+            "icon": "🌐",
+            "type": "Infrastructure",
+            "description": "Universal Agentic Orchestration Layer. The \"OS\" for the Agent Swarm era.",
+            "url": "https://github.com/vireon-core/VIREON",
+            "status": "🟣 Evolving"
+        },
+        {
+            "name": "DocSync",
+            "icon": "📚",
+            "type": "Agentic Tool",
+            "description": "Enterprise documentation infrastructure. Turn static docs into live, MCP-ready knowledge.",
+            "url": "https://github.com/SH1W4/docsync",
+            "status": "🔵 Stable"
+        },
+        {
+            "name": "EditalShield",
+            "icon": "🛡️",
+            "type": "Legal AI",
+            "description": "IP Protection Framework for Innovation Grants. High-precision Legal LLM Analysis.",
+            "url": "https://github.com/symbeon-labs/editalshield",
+            "status": "🟢 Active"
+        },
+        {
+            "name": "Patent Engine",
+            "icon": "⚖️",
+            "type": "Deep Tech",
+            "description": "Automated Patent Intelligence & Prior Art Search using Semantic Vector Search.",
+            "url": "https://github.com/symbeon-labs/patent_intelligence_engine",
+            "status": "🟡 Alpha"
+        }
+    ],
+    "additional": [
+        {
+            "name": "Academic Paper Generator",
+            "icon": "📄",
+            "type": "Research AI",
+            "description": "Automated academic paper generation and research assistance.",
+            "url": "https://github.com/symbeon-labs/academic-paper-generator",
+            "status": "🟢 Active"
+        },
+        {
+            "name": "Juridical Innovation Agent",
+            "icon": "⚖️",
+            "type": "Legal AI",
+            "description": "AI-powered legal innovation and analysis tool.",
+            "url": "https://github.com/symbeon-labs/juridical-innovation-agent",
+            "status": "🟡 Beta"
+        },
+        {
+            "name": "Arkitect",
+            "icon": "🏗️",
+            "type": "MCP Server",
+            "description": "Architecture analysis and project structure management via MCP.",
+            "url": "https://github.com/SH1W4/arkitect",
+            "status": "🔵 Stable"
+        }
+    ]
+}
