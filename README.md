@@ -70,6 +70,14 @@
 | **[🛡️ EditalShield](https://github.com/symbeon-labs/editalshield)** | `Legal AI` | IP Protection Framework for Innovation Grants. High-precision Legal LLM Analysis. | 🟢 **Active** |
 | **[⚖️ Patent Engine](https://github.com/symbeon-labs/patent-intelligence-engine)** | `Deep Tech` | Automated Patent Intelligence & Prior Art Search using Semantic Vector Search. | 🟡 **Alpha** |
 
+<br/>
+
+<div align="center">
+  <h3><code>⚡ SYSTEM_DEMO: AGENTIC_ORCHESTRATION</code></h3>
+  <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/vireon_demo.gif" width="100%" alt="VIREON Demo" style="border-radius: 6px; border: 1px solid #30363d;"/>
+  <p><i>Live execution of VIREON coordinating Claude, Copilot, and GPT-4 for code refactoring.</i></p>
+</div>
+
 ---
 
 ### N E T W O R K _ U P L I N K
