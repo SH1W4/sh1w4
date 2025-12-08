@@ -108,4 +108,4 @@ This profile aims to achieve:
 ---
 
 **Last Updated:** 2025-12-07
-**Maintained By:** SH1W4 (neo.sh1w4@gmail.com)
+**Maintained By:** JX // SH1W4 (neo.sh1w4@gmail.com)
