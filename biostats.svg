@@ -68,7 +68,7 @@
 
         <!-- TIMESTAMP FOOTER -->
         <path d="M0 160 L400 160" stroke="#21262d" stroke-width="1"/>
-        <text x="20" y="185" class="text label">LAST_SCAN: 2025-12-10 15:58:55 UTC</text>
+        <text x="20" y="185" class="text label">LAST_SCAN: 2025-12-10 16:17:16 UTC</text>
         <text x="350" y="185" class="text label" text-anchor="end">SYS_VER: 2.1.1</text>
     </svg>
     
