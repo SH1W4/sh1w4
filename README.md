@@ -5,50 +5,49 @@
 -->
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/header_final.png" width="100%" height="auto" style="object-fit: cover; border-radius: 12px; border: 1px solid #30363d; box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);" alt="Neural Interface"/>
+<img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/header_final.png" width="100%" height="auto" style="object-fit: cover; border-radius: 12px; border: 1px solid #30363d; box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);" alt="Neural Interface"/>
 </div>
 
 <br/>
 
 <!-- DASHBOARD CONTROLS (2-Column Layout) -->
 <table width="100%" style="border: 0; background-color: transparent;">
-  <tr>
-    <!-- LEFT MODULE: VITAL SIGNS -->
-    <td width="50%" align="center" valign="middle" style="border: 0;">
-        <div align="center">
-            <h3><code>🧬 ORGANISM_STATUS</code></h3>
-            <a href="https://github.com/SH1W4">
-                <img src="./biostats.svg" width="90%" alt="Live BioStats"/>
-            </a>
-            <br/><br/>
-            <!-- Network Links as "Buttons" -->
-            <a href="https://linkedin.com/in/joaomartins-ai"><img src="https://img.shields.io/badge/LINKEDIN-NETWORK-0a66c2?style=for-the-badge&logo=linkedin"/></a>
-            <a href="mailto:contact@symbeon.com"><img src="https://img.shields.io/badge/PROTON-SECURE_MAIL-6d4aff?style=for-the-badge&logo=protonmail"/></a>
-        </div>
-    </td>
-    
-    <!-- RIGHT MODULE: OPERATOR IDENTITY -->
-    <td width="50%" align="left" valign="top" style="border: 0;">
-        <div align="left">
-            <h1>&nbsp;&nbsp;SH1W4</h1>
-            <blockquote>
-                <b><code>// AI SYSTEMS ARCHITECT</code></b><br/>
-                <b><code>// AUGMENTED DEVELOPER</code></b>
-            </blockquote>
-            <br/>
-            <p>
-                 &nbsp; <b>[ HUMAN_VISION ]</b><br/>
-                 &nbsp; <b>[ AGENTIC_EXECUTION ]</b><br/>
-                 &nbsp; <b>[ SYMBIOTIC_RESULT ]</b>
-            </p>
-            <br/>
-            <b>&nbsp; TECHNOLOGICAL GENOME:</b><br/>
-            &nbsp; <img src="https://skillicons.dev/icons?i=python,rust,go,cpp" valign="middle" height="25"/> <code>CORE_LANGS</code><br/>
-            &nbsp; <img src="https://skillicons.dev/icons?i=docker,kubernetes,linux,aws" valign="middle" height="25"/> <code>INFRA_SHELL</code><br/>
-            &nbsp; <img src="https://skillicons.dev/icons?i=postgres,redis,graphql,tensorflow" valign="middle" height="25"/> <code>SYNAPSES</code><br/>
-        </div>
-    </td>
-  </tr>
+<tr>
+<!-- LEFT MODULE: VITAL SIGNS -->
+<td width="50%" align="center" valign="middle" style="border: 0;">
+<div align="center">
+<h3><code>🧬 ORGANISM_STATUS</code></h3>
+<a href="https://github.com/SH1W4">
+<img src="./biostats.svg" width="90%" alt="Live BioStats"/>
+</a>
+<br/><br/>
+<!-- Network Links as "Buttons" -->
+<a href="https://linkedin.com/in/joaomartins-ai"><img src="https://img.shields.io/badge/LINKEDIN-NETWORK-0a66c2?style=for-the-badge&logo=linkedin"/></a>
+<a href="mailto:contact@symbeon.com"><img src="https://img.shields.io/badge/PROTON-SECURE_MAIL-6d4aff?style=for-the-badge&logo=protonmail"/></a>
+</div>
+</td>
+<!-- RIGHT MODULE: OPERATOR IDENTITY -->
+<td width="50%" align="left" valign="top" style="border: 0;">
+<div align="left">
+<h1>&nbsp;&nbsp;SH1W4</h1>
+<blockquote>
+<b><code>// AI SYSTEMS ARCHITECT</code></b><br/>
+<b><code>// AUGMENTED DEVELOPER</code></b>
+</blockquote>
+<br/>
+<p>
+&nbsp; <b>[ HUMAN_VISION ]</b><br/>
+&nbsp; <b>[ AGENTIC_EXECUTION ]</b><br/>
+&nbsp; <b>[ SYMBIOTIC_RESULT ]</b>
+</p>
+<br/>
+<b>&nbsp; TECHNOLOGICAL GENOME:</b><br/>
+&nbsp; <img src="https://skillicons.dev/icons?i=python,rust,go,cpp" valign="middle" height="25"/> <code>CORE_LANGS</code><br/>
+&nbsp; <img src="https://skillicons.dev/icons?i=docker,kubernetes,linux,aws" valign="middle" height="25"/> <code>INFRA_SHELL</code><br/>
+&nbsp; <img src="https://skillicons.dev/icons?i=postgres,redis,graphql,tensorflow" valign="middle" height="25"/> <code>SYNAPSES</code><br/>
+</div>
+</td>
+</tr>
 </table>
 
 ---
