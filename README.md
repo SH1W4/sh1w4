@@ -125,7 +125,14 @@ stateDiagram-v2
 
 > "We do not guess. We **observe** patterns, **synthesize** solutions, and **align** them with human values before writing a single line of production code."
 
----
+<br/>
+<div align="center">
+    <svg width="100%" height="2" viewBox="0 0 800 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 1H350M450 1H800" stroke="#30363d" stroke-width="1"/>
+        <rect x="380" y="0" width="40" height="2" fill="#30363d" fill-opacity="0.5"/>
+    </svg>
+</div>
+<br/>
 
 ### 🎨 D I G I T A L _ S O U L
 
@@ -135,7 +142,14 @@ stateDiagram-v2
     <sub><i>"The ghost in the machine."</i></sub>
 </div>
 
----
+<br/>
+<div align="center">
+    <svg width="100%" height="2" viewBox="0 0 800 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 1H350M450 1H800" stroke="#30363d" stroke-width="1"/>
+        <rect x="380" y="0" width="40" height="2" fill="#30363d" fill-opacity="0.5"/>
+    </svg>
+</div>
+<br/>
 
 <div align="center">
     <h3>🤝 STRATEGIC ALLIANCE</h3>
