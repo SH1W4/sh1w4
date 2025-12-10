@@ -74,17 +74,26 @@ graph LR
         TRINITY --> GOV[🛡️ GOV_ANALYZER_SYS]:::tool
     end
 
+    subgraph ETHICS_GOVERNANCE
+        SEVE[⚖️ SEVE_ALIGNMENT_FWK]:::ethics
+    end
+
     subgraph RESEARCH_LABS
         direction TB
         Core --> BIO[🔬 BIO_COMPUTATION_R&D]:::research
         Core --> PROTO[📐 SEMANTIC_PROTOCOL_SPECS]:::research
     end
     
+    %% Ethics Governs Intelligence
+    SEVE -.->|Guards| TRINITY
+    SEVE -.->|Aligns| VIREON
+
     %% Research feeds Intelligence
     BIO -.->|Data| TRINITY
     PROTO -.->|Standards| VIREON
 
     classDef research fill:#1a1a1a,stroke:#00d9ff,stroke-width:1px,color:#ddd;
+    classDef ethics fill:#1a1a1a,stroke:#f1c40f,stroke-width:1px,color:#ddd;
 ```
 
 > **MISSION PROTOCOL:** "I build the bridge where **Scientific Rigor** meets **AI Velocity**. Creating systems grounded in deep research, where the machine doesn't just execute, but **understands**."
