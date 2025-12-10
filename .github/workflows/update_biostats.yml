@@ -32,7 +32,7 @@ jobs:
         run: |
           python generate_biostats.py
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
 
       - name: Commit and push changes
         run: |
