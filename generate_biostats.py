@@ -32,7 +32,7 @@ def fetch_github_data():
         # Fetch up to 3 pages (300 events) to capture more history
         for page in range(1, 4):
             events_url = f"https://api.github.com/users/{USERNAME}/events/public?per_page=100&page={page}"
-            response = requests.get(events_url, headers=headers)
+            response = requests.get(events_url) # Removed headers to avoid GITHUB_TOKEN scope issues
             if response.status_code == 200:
                 page_data = response.json()
                 if not page_data:
