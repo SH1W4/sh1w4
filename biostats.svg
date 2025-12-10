@@ -1,15 +1,14 @@
 
     <svg width="400" height="200" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
         <style>
-            /* @import removed for GitHub compatibility */
             .text { font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; fill: #e6e6e6; }
             .label { font-size: 10px; opacity: 0.7; }
             .value { font-size: 14px; font-weight: bold; }
             
             @keyframes pulse {
-                0% { opacity: 0.6; filter: drop-shadow(0 0 2px #00ff41); }
-                50% { opacity: 1; filter: drop-shadow(0 0 8px #00ff41); }
-                100% { opacity: 0.6; filter: drop-shadow(0 0 2px #00ff41); }
+                0% { opacity: 0.6; filter: drop-shadow(0 0 2px #ff5555); }
+                50% { opacity: 1; filter: drop-shadow(0 0 8px #ff5555); }
+                100% { opacity: 0.6; filter: drop-shadow(0 0 2px #ff5555); }
             }
             
             @keyframes rotate {
@@ -18,8 +17,8 @@
             }
 
             .core {
-                animation: pulse 0.5s infinite ease-in-out;
-                fill: #00ff41;
+                animation: pulse 4s infinite ease-in-out;
+                fill: #ff5555;
             }
             
             .orbit {
@@ -33,8 +32,8 @@
         
         <!-- HEADER -->
         <text x="20" y="30" class="text label">ORGANISM_ID: SH1W4</text>
-        <rect x="300" y="20" width="80" height="12" rx="2" fill="#00ff41" fill-opacity="0.2"/>
-        <text x="340" y="29" class="text" font-size="8" text-anchor="middle" fill="#00ff41">HYPER-EVOLUTION</text>
+        <rect x="300" y="20" width="80" height="12" rx="2" fill="#ff5555" fill-opacity="0.2"/>
+        <text x="340" y="29" class="text" font-size="8" text-anchor="middle" fill="#ff5555">HIBERNATION</text>
 
         <!-- CENTRAL BIO-CORE (The "Heart") -->
         <g transform="translate(50, 70)">
@@ -57,19 +56,19 @@
             <!-- Statistic 1: Recent Commits -->
             <g transform="translate(15, 0)">
                 <text y="10" class="text label">RECENT_MUTATIONS (Commits)</text>
-                <text y="28" class="text value" fill="#00ff41">5 sequences</text>
+                <text y="28" class="text value" fill="#ff5555">0 sequences</text>
             </g>
             
             <!-- Statistic 2: Top Language -->
             <g transform="translate(15, 50)">
                 <text y="10" class="text label">DOMINANT_STRAIN (Lang)</text>
-                <text y="28" class="text value" fill="#ffffff">> TypeScript</text>
+                <text y="28" class="text value" fill="#ffffff">> Python</text>
             </g>
         </g>
 
         <!-- TIMESTAMP FOOTER -->
         <path d="M0 160 L400 160" stroke="#21262d" stroke-width="1"/>
-        <text x="20" y="185" class="text label">LAST_SCAN: 2025-12-07 18:49:29 UTC</text>
-        <text x="350" y="185" class="text label" text-anchor="end">SYS_VER: 2.0.4</text>
+        <text x="20" y="185" class="text label">LAST_SCAN: 2025-12-10 14:21:02 UTC</text>
+        <text x="350" y="185" class="text label" text-anchor="end">SYS_VER: 2.1.0</text>
     </svg>
     
