@@ -42,10 +42,9 @@ def fetch_github_data():
             else:
                 break
         
-        # Count PushEvents
-        push_events = [e for e in events if e["type"] == "PushEvent"]
-        # Fix: Use .get() to avoid KeyError if 'commits' is missing payload
-        commit_count = sum(len(e["payload"].get("commits", [])) for e in push_events)
+        # BROADCAST: Count ALL event types as "Mutations" (Pushes, PRs, Issues, etc.)
+        # This ensures we capture the full spectrum of the organism's activity
+        commit_count = len(events)
             
         # Determine Activity Level
         if commit_count > 50: activity_level = "HIGH" # Increased threshold
@@ -153,7 +152,7 @@ def generate_svg():
             
             <!-- Statistic 1: Recent Commits -->
             <g transform="translate(15, 0)">
-                <text y="10" class="text label">RECENT_MUTATIONS (Commits)</text>
+                <text y="10" class="text label">RECENT_MUTATIONS (Events)</text>
                 <text y="28" class="text value" fill="{core_color}">{commit_count} sequences</text>
             </g>
             
