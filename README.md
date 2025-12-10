@@ -69,14 +69,13 @@ graph LR
     end
     
     subgraph TOOL_LAYER
-        VIREON --> DocSync[👁️ DocSync]:::tool
-        VIREON --> Patent[⚖️ Patent Engine]:::tool
-        TRINITY --> Edital[🛡️ EditalShield]:::tool
+        VIREON --> DX_KIT[👁️ DEV_EXP_MODULE]:::tool
+        VIREON --> LEGAL[⚖️ LEGAL_INTEL_CORE]:::tool
+        TRINITY --> GOV[🛡️ GOV_ANALYZER_SYS]:::tool
     end
     
-    click VIREON "https://github.com/SH1W4/vireon"
-    click DocSync "https://github.com/SH1W4/docsync"
-    click TRINITY "https://github.com/SH1W4/trinity-ai"
+    %% Links Removed for Confidentiality
+
 ```
 
 > **MISSION PROTOCOL:** "I build the bridge where **Human Strategy** meets **AI Velocity**. Creating systems where the machine doesn't replace the engineer, but **augments** their reality."
