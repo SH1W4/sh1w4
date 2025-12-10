@@ -14,24 +14,24 @@
 -->
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/header_final.png" width="100%" height="auto" style="object-fit: cover; border-radius: 10px;" alt="Abstract Neural Network"/>
-    <br/>
-    
-    <!-- ORGANISM STATUS (Moved to Top) -->
-    <div align="center">
-      <h3><code>ORGANISM_STATUS</code></h3>
-      <img src="./biostats.svg" alt="Bio Stats" width="60%"/>
-    </div>
+<img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/header_final.png" width="100%" height="auto" style="object-fit: cover; border-radius: 10px;" alt="Abstract Neural Network"/>
+<br/>
 
-    <br/>
-    <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/dna_spinner.svg" width="100%" alt="DNA Evolution"/>
-    <h1>SH1W4</h1>
-    <h3><code>AI Systems Architect // Augmented Developer</code></h3>
-    <br/>
-    <p>
-        <b>[ HUMAN VISION ]</b> &nbsp;|&nbsp; <b>[ AGENTIC EXECUTION ]</b> &nbsp;|&nbsp; <b>[ SYMBIOTIC RESULT ]</b>
-    </p>
-    <br/>
+<!-- ORGANISM STATUS (Moved to Top) -->
+<div align="center">
+<h3><code>ORGANISM_STATUS</code></h3>
+<img src="./biostats.svg" alt="Bio Stats" width="60%"/>
+</div>
+
+<br/>
+<img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/dna_spinner.svg" width="100%" alt="DNA Evolution"/>
+<h1>SH1W4</h1>
+<h3><code>AI Systems Architect // Augmented Developer</code></h3>
+<br/>
+<p>
+<b>[ HUMAN VISION ]</b> &nbsp;|&nbsp; <b>[ AGENTIC EXECUTION ]</b> &nbsp;|&nbsp; <b>[ SYMBIOTIC RESULT ]</b>
+</p>
+<br/>
 </div>
 
 ---
