@@ -1,5 +1,6 @@
 name: Update Bio-Stats
 
+on:
   schedule:
     # Run every 6 hours
     - cron: '0 */6 * * *'
@@ -20,7 +21,6 @@ jobs:
 
       - name: Set up Python
         uses: actions/setup-python@v4
-        with:
         with:
           python-version: '3.x'
 
