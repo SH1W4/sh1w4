@@ -19,11 +19,18 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
+        with:
           python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
 
       - name: Generate SVG
         run: |
           python generate_biostats.py
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit and push changes
         run: |

@@ -7,6 +7,7 @@ from datetime import datetime
 # 🧬 CONFIGURATION: THE GENETIC CODE
 # ==============================================================================
 USERNAME = "SH1W4" 
+TOKEN = os.getenv("GH_TOKEN")
 THEME_COLORS = {
     "HEALTHY": "#00ff41",  # High activity
     "MUTATING": "#bd93f9", # Moderate activity
@@ -15,20 +16,64 @@ THEME_COLORS = {
 }
 
 # ==============================================================================
-# 🧪 MOCK DATA (In production, this would fetch from GitHub GraphQL API)
+# 🧪 LIVE DATA FETCHING
 # ==============================================================================
-# Simulate recent activity for demonstration
-# In a real scenario, you'd use os.environ["GITHUB_TOKEN"] to query the API.
-activity_level = random.choice(["HIGH", "MEDIUM", "LOW"])
-commit_count = random.randint(5, 50)
-top_language = random.choice(["Python", "Rust", "TypeScript"])
+def fetch_github_data():
+    if not TOKEN:
+        print("⚠️ No GH_TOKEN found. Using MOCK data.")
+        return "MOCK_HIGH", 42, "TypeScript (Sim)"
+
+    headers = {"Authorization": f"token {TOKEN}"}
+    
+    # 1. Fetch Recent Activity (Events)
+    try:
+        events_url = f"https://api.github.com/users/{USERNAME}/events/public"
+        response = requests.get(events_url, headers=headers)
+        if response.status_code == 200:
+            events = response.json()
+            # Count PushEvents in last 24h (or just take latest 30 events)
+            push_events = [e for e in events if e["type"] == "PushEvent"]
+            commit_count = sum(len(e["payload"]["commits"]) for e in push_events)
+        else:
+            commit_count = 0
+            
+        # Determine Activity Level
+        if commit_count > 10: activity_level = "HIGH"
+        elif commit_count > 0: activity_level = "MEDIUM"
+        else: activity_level = "LOW"
+    except Exception as e:
+        print(f"Error fetching events: {e}")
+        activity_level = "LOW"
+        commit_count = 0
+
+    # 2. Fetch Top Language (from recent repos)
+    try:
+        repos_url = f"https://api.github.com/users/{USERNAME}/repos?sort=updated&per_page=5"
+        response = requests.get(repos_url, headers=headers)
+        langs = {}
+        if response.status_code == 200:
+            repos = response.json()
+            for repo in repos:
+                lang = repo["language"]
+                if lang:
+                    langs[lang] = langs.get(lang, 0) + 1
+            top_language = max(langs, key=langs.get) if langs else "Unknown"
+        else:
+            top_language = "System"
+    except:
+        top_language = "Polyglot"
+
+    return activity_level, commit_count, top_language
+
+# FETCH REAL DATA
+activity_level, commit_count, top_language = fetch_github_data()
 
 # Logic to determine organism state
 if activity_level == "HIGH":
     status_text = "HYPER-EVOLUTION"
     core_color = THEME_COLORS["HEALTHY"]
     pulse_rate = "0.5s"
-elif activity_level == "MEDIUM":
+elif activity_level == "MEDIUM" or activity_level == "MOCK_HIGH":
     status_text = "STEADY_GROWTH"
     core_color = THEME_COLORS["MUTATING"]
     pulse_rate = "1.5s"
@@ -44,7 +89,6 @@ def generate_svg():
     svg_content = f"""
     <svg width="400" height="200" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
         <style>
-            /* @import removed for GitHub compatibility */
             .text {{ font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; fill: #e6e6e6; }}
             .label {{ font-size: 10px; opacity: 0.7; }}
             .value {{ font-size: 14px; font-weight: bold; }}
@@ -112,8 +156,8 @@ def generate_svg():
 
         <!-- TIMESTAMP FOOTER -->
         <path d="M0 160 L400 160" stroke="#21262d" stroke-width="1"/>
-        <text x="20" y="185" class="text label">LAST_SCAN: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} UTC</text>
-        <text x="350" y="185" class="text label" text-anchor="end">SYS_VER: 2.0.4</text>
+        <text x="20" y="185" class="text label">LAST_SCAN: {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC</text>
+        <text x="350" y="185" class="text label" text-anchor="end">SYS_VER: 2.1.0</text>
     </svg>
     """
     return svg_content
