@@ -27,19 +27,27 @@ def fetch_github_data():
     
     # 1. Fetch Recent Activity (Events)
     try:
-        events_url = f"https://api.github.com/users/{USERNAME}/events/public"
-        response = requests.get(events_url, headers=headers)
-        if response.status_code == 200:
-            events = response.json()
-            # Count PushEvents in last 24h (or just take latest 30 events)
-            push_events = [e for e in events if e["type"] == "PushEvent"]
-            commit_count = sum(len(e["payload"]["commits"]) for e in push_events)
-        else:
-            commit_count = 0
+        commit_count = 0
+        events = []
+        # Fetch up to 3 pages (300 events) to capture more history
+        for page in range(1, 4):
+            events_url = f"https://api.github.com/users/{USERNAME}/events/public?per_page=100&page={page}"
+            response = requests.get(events_url, headers=headers)
+            if response.status_code == 200:
+                page_data = response.json()
+                if not page_data:
+                    break
+                events.extend(page_data)
+            else:
+                break
+        
+        # Count PushEvents
+        push_events = [e for e in events if e["type"] == "PushEvent"]
+        commit_count = sum(len(e["payload"]["commits"]) for e in push_events)
             
         # Determine Activity Level
-        if commit_count > 10: activity_level = "HIGH"
-        elif commit_count > 0: activity_level = "MEDIUM"
+        if commit_count > 50: activity_level = "HIGH" # Increased threshold
+        elif commit_count > 10: activity_level = "MEDIUM"
         else: activity_level = "LOW"
     except Exception as e:
         print(f"Error fetching events: {e}")
