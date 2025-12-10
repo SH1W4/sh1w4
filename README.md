@@ -100,6 +100,49 @@ graph LR
 
 ---
 
+### ⚙️ THE SYMBEON ENGINE (Methodology)
+
+```mermaid
+stateDiagram-v2
+    %% Theme: Dark & Strategic
+    classDef space fill:#0d1117,stroke:#30363d,stroke-width:1px,color:#8b949e;
+    classDef active fill:#0d1117,stroke:#00ff41,stroke-width:2px,color:#fff;
+    classDef check fill:#0d1117,stroke:#f1c40f,stroke-width:2px,color:#fff;
+    
+    [*] --> 🔭_OBSERVATION:::space : Pattern_Recognition
+    🔭_OBSERVATION --> 💡_HYPOTHESIS:::space : Signal_Synthesis
+    💡_HYPOTHESIS --> 🧬_PROTOTYPING:::active : Rapid_Cycle
+    
+    state "SEVE ALIGNMENT" as GOV {
+        direction LR
+        ⚠️_RISK_ANALYSIS --> ⚖️_ETHICAL_CHECK
+    }
+    
+    🧬_PROTOTYPING --> GOV:::check : Validation
+    GOV --> 🚀_MATERIALIZATION:::active : Deployment
+    🚀_MATERIALIZATION --> [*] : Impact_Loop
+```
+
+> "We do not guess. We **observe** patterns, **synthesize** solutions, and **align** them with human values before writing a single line of production code."
+
+---
+
+<div align="center">
+    <h3>🤝 STRATEGIC ALLIANCE</h3>
+    <p>Open for high-impact joint ventures in <b>Agencia Artificial</b> and <b>Cognitive Systems</b>.</p>
+    <a href="https://linkedin.com/in/joaomartins-ai">
+        <img src="https://img.shields.io/badge/INITIATE_UPLINK-LINKEDIN-0a66c2?style=for-the-badge&logo=linkedin&labelColor=1a1a1a" height="35">
+    </a>
+    &nbsp;&nbsp;
+    <a href="mailto:contact@symbeon.com">
+        <img src="https://img.shields.io/badge/ENCRYPTED_CHANNEL-PROTONMAIL-6d4aff?style=for-the-badge&logo=protonmail&labelColor=1a1a1a" height="35">
+    </a>
+    <br/><br/>
+    <code>// PGP_KEY_ID: SH1W4_PUB_KEY [ACTIVE]</code>
+</div>
+
+<br/>
+
 ### 📡 N E T W O R K _ A C T I V I T Y
 
 <div align="center">
