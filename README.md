@@ -73,12 +73,21 @@ graph LR
         VIREON --> LEGAL[⚖️ LEGAL_INTEL_CORE]:::tool
         TRINITY --> GOV[🛡️ GOV_ANALYZER_SYS]:::tool
     end
-    
-    %% Links Removed for Confidentiality
 
+    subgraph RESEARCH_LABS
+        direction TB
+        Core --> BIO[🔬 BIO_COMPUTATION_R&D]:::research
+        Core --> PROTO[📐 SEMANTIC_PROTOCOL_SPECS]:::research
+    end
+    
+    %% Research feeds Intelligence
+    BIO -.->|Data| TRINITY
+    PROTO -.->|Standards| VIREON
+
+    classDef research fill:#1a1a1a,stroke:#00d9ff,stroke-width:1px,color:#ddd;
 ```
 
-> **MISSION PROTOCOL:** "I build the bridge where **Human Strategy** meets **AI Velocity**. Creating systems where the machine doesn't replace the engineer, but **augments** their reality."
+> **MISSION PROTOCOL:** "I build the bridge where **Scientific Rigor** meets **AI Velocity**. Creating systems grounded in deep research, where the machine doesn't just execute, but **understands**."
 
 ---
 
