@@ -44,20 +44,17 @@ def fetch_github_data():
         
         # Count PushEvents
         push_events = [e for e in events if e["type"] == "PushEvent"]
-        commit_count = sum(len(e["payload"]["commits"]) for e in push_events)
+        # Fix: Use .get() to avoid KeyError if 'commits' is missing payload
+        commit_count = sum(len(e["payload"].get("commits", [])) for e in push_events)
             
         # Determine Activity Level
         if commit_count > 50: activity_level = "HIGH" # Increased threshold
         elif commit_count > 10: activity_level = "MEDIUM"
         else: activity_level = "LOW"
-        
-        debug_info = f"Status: 200 | Evts: {len(events)}"
-
     except Exception as e:
         print(f"Error fetching events: {e}")
         activity_level = "LOW"
         commit_count = 0
-        debug_info = f"Err: {str(e)[:20]}"
 
     # 2. Fetch Top Language (from recent repos)
     try:
@@ -75,15 +72,11 @@ def fetch_github_data():
             top_language = "System"
     except:
         top_language = "Polyglot"
-        
-    # Capture status code if exception didn't happen but status wasn't 200
-    if locals().get('response') and response.status_code != 200:
-         debug_info = f"HTTP {response.status_code}"
 
-    return activity_level, commit_count, top_language, debug_info
+    return activity_level, commit_count, top_language
 
 # FETCH REAL DATA
-activity_level, commit_count, top_language, debug_info = fetch_github_data()
+activity_level, commit_count, top_language = fetch_github_data()
 
 # Logic to determine organism state
 if activity_level == "HIGH":
@@ -174,7 +167,8 @@ def generate_svg():
         <!-- TIMESTAMP FOOTER -->
         <path d="M0 160 L400 160" stroke="#21262d" stroke-width="1"/>
         <text x="20" y="185" class="text label">LAST_SCAN: {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC</text>
-        <text x="350" y="185" class="text label" text-anchor="end">DEBUG: {debug_info}</text>
+        <text x="350" y="185" class="text label" text-anchor="end">SYS_VER: 2.1.2</text>
+
     </svg>
     """
     return svg_content
