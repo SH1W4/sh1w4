@@ -5,6 +5,12 @@
     
     SH1W4 = Symbiotic Human-AI Workflow Architect
     Philosophy: [ HUMAN VISION ] | [ AGENTIC EXECUTION ] | [ SYMBIOTIC RESULT ]
+    
+    SYSTEM_BOOT_SEQUENCE:
+    > LOADER: v2.1.0 ... OK
+    > NEURAL_LINK: ESTABLISHED
+    > TARGET: RECRUITER_RETINA ... LOCKED
+    > MESSAGE: "Não procure empregados. Procure co-pilotos."
 -->
 
 <div align="center">
@@ -23,6 +29,35 @@
         <b>[ HUMAN VISION ]</b> &nbsp;|&nbsp; <b>[ AGENTIC EXECUTION ]</b> &nbsp;|&nbsp; <b>[ SYMBIOTIC RESULT ]</b>
     </p>
     <br/>
+</div>
+
+---
+
+### N E T W O R K _ U P L I N K
+
+<div align="center">
+  <h3><code>ORGANISM_STATUS</code></h3>
+  <img src="./biostats.svg" alt="Bio Stats" width="60%"/>
+</div>
+
+<div align="center">
+  <br/>
+  <a href="https://linkedin.com/in/joaomartins-ai">
+    <img src="https://img.shields.io/badge/LINKEDIN-CONNECT-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  </a>
+  <a href="https://github.com/SH1W4">
+    <img src="https://img.shields.io/badge/GITHUB-EXPLORE-181717?style=for-the-badge&logo=github&logoColor=white"/>
+  </a>
+  <a href="mailto:contact@symbeon.com">
+    <img src="https://img.shields.io/badge/PROTON-ENCRYPTED_MAIL-6d4aff?style=for-the-badge&logo=protonmail&logoColor=white"/>
+  </a>
+</div>
+
+<br/>
+<br/>
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Snake Animation" />
 </div>
 
 ---
@@ -64,14 +99,42 @@
 
 ---
 
-### S E L E C T E D _ W O R K S
+### S E L E C T E D _ W O R K S (Ecossistema Symbeon)
 
-| PROJECT | TYPE | DESCRIPTION | STATUS |
-| :--- | :--- | :--- | :--- |
-| **[🌐 VIREON Core](https://github.com/SH1W4/vireon)** | `Infrastructure` | Universal Agentic Orchestration Layer. The "OS" for the Agent Swarm era. | 🟣 Evolving |
-| **[📚 DocSync](https://github.com/SH1W4/docsync)** | `Agentic Tool` | Enterprise documentation infrastructure. Turn static docs into live, MCP-ready knowledge. | 🔵 Stable |
-| **[🛡️ EditalShield](https://github.com/symbeon-labs/editalshield)** | `Legal AI` | IP Protection Framework for Innovation Grants. High-precision Legal LLM Analysis. | 🟢 Active |
-| **[⚖️ Patent Engine](https://github.com/symbeon-labs/patent_intelligence_engine)** | `Deep Tech` | Automated Patent Intelligence & Prior Art Search using Semantic Vector Search. | 🟡 Alpha |
+```mermaid
+graph TD
+    %% Estilo Cyberpunk Minimalista
+    classDef brain fill:#0d1117,stroke:#00ff41,stroke-width:2px,color:#fff;
+    classDef muscle fill:#0d1117,stroke:#bd93f9,stroke-width:2px,color:#fff;
+    classDef tool fill:#0d1117,stroke:#ff5555,stroke-width:2px,color:#fff;
+
+    Hub((SH1W4 CORE)):::brain
+
+    subgraph "Agentes & Músculo"
+        VIREON[🧬 VIREON Core]:::muscle
+        TRINITY[🧠 TRINITY AI]:::muscle
+    end
+
+    subgraph "Ferramentas & Sentidos"
+        DOCSYNC[👁️ DocSync]:::tool
+        PATENT[⚖️ Patent Engine]:::tool
+        EDITAL[🛡️ EditalShield]:::tool
+    end
+
+    Hub -->|Orquestra| VIREON
+    Hub -->|Concebe| TRINITY
+    VIREON -->|Usa| DOCSYNC
+    VIREON -->|Protege| PATENT
+    TRINITY -.->|Analisa| EDITAL
+    
+    linkStyle default stroke:#30363d,stroke-width:2px;
+    
+    click VIREON "https://github.com/SH1W4/vireon"
+    click DOCSYNC "https://github.com/SH1W4/docsync"
+    click TRINITY "https://github.com/SH1W4/trinity-ai"
+    click EDITAL "https://github.com/symbeon-labs/editalshield"
+    click PATENT "https://github.com/symbeon-labs/patent_intelligence_engine"
+```
 
 <br/>
 
@@ -79,33 +142,4 @@
   <h3><code>⚡ SYSTEM_DEMO: AGENTIC_ORCHESTRATION</code></h3>
   <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/vireon_demo.gif" width="100%" alt="VIREON Demo" style="border-radius: 6px; border: 1px solid #30363d;"/>
   <p><i>Live execution of VIREON coordinating Claude, Copilot, and GPT-4 for code refactoring.</i></p>
-</div>
-
----
-
-### N E T W O R K _ U P L I N K
-
-<div align="center">
-  <h3><code>ORGANISM_STATUS</code></h3>
-  <img src="./biostats.svg" alt="Bio Stats" width="60%"/>
-</div>
-
-<div align="center">
-  <br/>
-  <a href="https://linkedin.com/in/joaomartins-ai">
-    <img src="https://img.shields.io/badge/LINKEDIN-CONNECT-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white"/>
-  </a>
-  <a href="https://github.com/SH1W4">
-    <img src="https://img.shields.io/badge/GITHUB-EXPLORE-181717?style=for-the-badge&logo=github&logoColor=white"/>
-  </a>
-  <a href="mailto:contact@symbeon.com">
-    <img src="https://img.shields.io/badge/PROTON-ENCRYPTED_MAIL-6d4aff?style=for-the-badge&logo=protonmail&logoColor=white"/>
-  </a>
-</div>
-
-<br/>
-<br/>
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Snake Animation" />
 </div>
