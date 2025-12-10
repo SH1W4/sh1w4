@@ -127,6 +127,16 @@ stateDiagram-v2
 
 ---
 
+### 🎨 D I G I T A L _ S O U L
+
+<div align="center">
+    <img src="./art_core.png" width="100%" style="border-radius: 8px; border: 1px solid #30363d;" alt="Bio-Digital Renaissance"/>
+    <br/>
+    <sub><i>"The ghost in the machine."</i></sub>
+</div>
+
+---
+
 <div align="center">
     <h3>🤝 STRATEGIC ALLIANCE</h3>
     <p>Open for high-impact joint ventures in <b>Agencia Artificial</b> and <b>Cognitive Systems</b>.</p>
