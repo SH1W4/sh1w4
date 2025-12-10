@@ -166,7 +166,7 @@ def generate_svg():
         <!-- TIMESTAMP FOOTER -->
         <path d="M0 160 L400 160" stroke="#21262d" stroke-width="1"/>
         <text x="20" y="185" class="text label">LAST_SCAN: {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC</text>
-        <text x="350" y="185" class="text label" text-anchor="end">SYS_VER: 2.1.2</text>
+        <text x="350" y="185" class="text label" text-anchor="end">SYS_VER: 2.1.3</text>
 
     </svg>
     """
