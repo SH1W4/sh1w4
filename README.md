@@ -170,7 +170,7 @@ stateDiagram-v2
 <div align="center">
     <pre>
 // SYSTEM_EVOLUTION_LOG:
-// [2024] KERNEL_INIT: AIDEN_PROJECT ..... [INTEGRATED]
+// [2024] KERNEL_INIT: <a href="https://github.com/SH1W4/aiden-agent">AIDEN_PROJECT</a> ..... [INTEGRATED]
 // [2025] CORE_UPDATE: VIREON_AGENTS ..... [DEPLOYED]
 // [2025] GOV_PATCH: SEVE_FRAMEWORK ...... [ACTIVE]
 // [2025] STATUS: SYMBEON_ECOSYSTEM ...... [ONLINE]
