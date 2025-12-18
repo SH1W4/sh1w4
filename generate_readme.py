@@ -59,6 +59,10 @@ def generate_mermaid_graph(data):
         "    SEVE -.->|Aligns| VIREON",
         "    BIO -.->|Data| TRINITY",
         "    PROTO -.->|Specs| VIREON",
+        "    ",
+        "    %% Vertical Anchors (Forcing Research/Ethics to the bottom)",
+        "    Core -.->|Governance| SEVE",
+        "    Core -.->|R&D_Init| BIO",
         "    DX_KIT -.->|Telemetry| Core",
         "",
         "```"
