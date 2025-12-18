@@ -54,6 +54,10 @@
 
 ### 📂 S Y S T E M _ M A N I F E S T (Symbeon Ecosystem)
 
+<div align="center">
+    <img src="./neural_network.svg" width="80%" alt="Symbeon Neural Fabric"/>
+</div>
+
 ```mermaid
 graph LR
     %% Theme: Dark Cyberpunk

@@ -21,17 +21,19 @@ THEME_COLORS = {
 def fetch_github_data():
     if not TOKEN:
         print("⚠️ No GH_TOKEN found. Using MOCK data.")
-        return "MOCK_HIGH", 42, "TypeScript (Sim)"
+        # Mock data: activity_level, commit_count, top_language, repos_count, languages_count, daily_activity
+        return "MOCK_HIGH", 42, "Python", 12, 5, [8, 12, 6, 15, 10, 9, 14]
 
     headers = {"Authorization": f"token {TOKEN}"}
     
-    # 1. Fetch Recent Activity (Events)
+    # 1. Fetch Recent Activity (Events) + Daily breakdown
     try:
         commit_count = 0
         events = []
+        daily_activity = [0] * 7  # Last 7 days
+        
         # Fetch up to 3 pages (300 events) to capture more history
         for page in range(1, 4):
-            # Fetch AUTHENTICATED events (includes private repos if Token has scope)
             events_url = f"https://api.github.com/users/{USERNAME}/events?per_page=100&page={page}"
             response = requests.get(events_url, headers=headers)
             if response.status_code == 200:
@@ -42,40 +44,57 @@ def fetch_github_data():
             else:
                 break
         
-        # BROADCAST: Count ALL event types as "Mutations" (Pushes, PRs, Issues, etc.)
-        # This ensures we capture the full spectrum of the organism's activity
+        # Count events and build daily activity sparkline
+        from datetime import datetime, timedelta
+        now = datetime.utcnow()
+        
+        for event in events:
+            event_date = datetime.strptime(event['created_at'], '%Y-%m-%dT%H:%M:%SZ')
+            days_ago = (now - event_date).days
+            if days_ago < 7:
+                daily_activity[6 - days_ago] += 1
+        
         commit_count = len(events)
             
         # Determine Activity Level
-        if commit_count > 50: activity_level = "HIGH" # Increased threshold
+        if commit_count > 50: activity_level = "HIGH"
         elif commit_count > 10: activity_level = "MEDIUM"
         else: activity_level = "LOW"
     except Exception as e:
         print(f"Error fetching events: {e}")
         activity_level = "LOW"
         commit_count = 0
+        daily_activity = [0] * 7
 
-    # 2. Fetch Top Language (from recent repos)
+    # 2. Fetch Top Language + Language diversity
     try:
-        repos_url = f"https://api.github.com/users/{USERNAME}/repos?sort=updated&per_page=5"
+        repos_url = f"https://api.github.com/users/{USERNAME}/repos?sort=updated&per_page=30"
         response = requests.get(repos_url, headers=headers)
         langs = {}
+        repos_count = 0
+        
         if response.status_code == 200:
             repos = response.json()
+            repos_count = len(repos)
             for repo in repos:
                 lang = repo["language"]
                 if lang:
                     langs[lang] = langs.get(lang, 0) + 1
             top_language = max(langs, key=langs.get) if langs else "Unknown"
+            languages_count = len(langs)
         else:
             top_language = "System"
-    except:
+            languages_count = 0
+    except Exception as e:
+        print(f"Error fetching repos: {e}")
         top_language = "Polyglot"
+        repos_count = 0
+        languages_count = 0
 
-    return activity_level, commit_count, top_language
+    return activity_level, commit_count, top_language, repos_count, languages_count, daily_activity
 
 # FETCH REAL DATA
-activity_level, commit_count, top_language = fetch_github_data()
+activity_level, commit_count, top_language, repos_count, languages_count, daily_activity = fetch_github_data()
 
 # Logic to determine organism state
 if activity_level == "HIGH":
@@ -95,22 +114,37 @@ else:
 # 🎨 SVG GENERATION ENGINE
 # ==============================================================================
 def generate_svg():
+    # Calculate sparkline points (normalized to height 30, width 100)
+    max_act = max(daily_activity) if max(daily_activity) > 0 else 1
+    points = []
+    for i, val in enumerate(daily_activity):
+        x = 280 + (i * 15)
+        y = 100 - (val / max_act * 30)
+        points.append(f"{x},{y}")
+    sparkline_path = "M " + " L ".join(points)
+
     svg_content = f"""
     <svg width="400" height="200" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
         <style>
-            .text {{ font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; fill: #e6e6e6; }}
-            .label {{ font-size: 10px; opacity: 0.7; }}
+            .text {{ font-family: 'Segoe UI', Consolas, monospace; fill: #e6e6e6; }}
+            .label {{ font-size: 9px; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px; }}
             .value {{ font-size: 14px; font-weight: bold; }}
             
             @keyframes pulse {{
-                0% {{ opacity: 0.6; filter: drop-shadow(0 0 2px {core_color}); }}
-                50% {{ opacity: 1; filter: drop-shadow(0 0 8px {core_color}); }}
-                100% {{ opacity: 0.6; filter: drop-shadow(0 0 2px {core_color}); }}
+                0%, 100% {{ opacity: 0.5; filter: drop-shadow(0 0 2px {core_color}); }}
+                50% {{ opacity: 1; filter: drop-shadow(0 0 10px {core_color}); }}
             }}
             
-            @keyframes rotate {{
-                from {{ transform: rotate(0deg); transform-origin: center; }}
-                to {{ transform: rotate(360deg); transform-origin: center; }}
+            @keyframes scan {{
+                0% {{ transform: translateY(0); opacity: 0; }}
+                10% {{ opacity: 0.5; }}
+                90% {{ opacity: 0.5; }}
+                100% {{ transform: translateY(200px); opacity: 0; }}
+            }}
+
+            @keyframes slide {{
+                from {{ stroke-dashoffset: 200; }}
+                to {{ stroke-dashoffset: 0; }}
             }}
 
             .core {{
@@ -118,55 +152,80 @@ def generate_svg():
                 fill: {core_color};
             }}
             
-            .orbit {{
-                animation: rotate 10s linear infinite;
-                transform-box: fill-box;
+            .scanner {{
+                animation: scan 4s linear infinite;
+                stroke: {core_color};
+                stroke-width: 1;
+                opacity: 0.2;
+            }}
+
+            .sparkline {{
+                stroke: {core_color};
+                stroke-width: 2;
+                fill: none;
+                stroke-dasharray: 200;
+                animation: slide 2s ease-out forwards;
             }}
         </style>
 
         <!-- BACKGROUND MODULE -->
-        <rect width="400" height="200" rx="10" fill="{THEME_COLORS['VOID']}" stroke="#21262d" />
+        <rect width="400" height="200" rx="12" fill="{THEME_COLORS['VOID']}" stroke="#21262d" stroke-width="2"/>
         
-        <!-- HEADER -->
-        <text x="20" y="30" class="text label">ORGANISM_ID: {USERNAME}</text>
-        <rect x="300" y="20" width="80" height="12" rx="2" fill="{core_color}" fill-opacity="0.2"/>
-        <text x="340" y="29" class="text" font-size="8" text-anchor="middle" fill="{core_color}">{status_text}</text>
+        <!-- SCANNER LINE -->
+        <line x1="0" y1="0" x2="400" y2="0" class="scanner" />
 
-        <!-- CENTRAL BIO-CORE (The "Heart") -->
-        <g transform="translate(50, 70)">
-            <!-- Outer Ring -->
-            <circle cx="40" cy="40" r="35" stroke="#30363d" stroke-width="2" class="orbit" stroke-dasharray="10 5" />
+        <!-- HEADER STATUS -->
+        <g transform="translate(20, 25)">
+            <text class="text label">COGNITIVE_ID</text>
+            <text y="18" class="text" font-size="16" font-weight="900" fill="#ffffff">{USERNAME}</text>
             
-            <!-- Inner Glowing Core (Changes color based on activity) -->
-            <circle cx="40" cy="40" r="15" class="core" />
-            
-            <!-- Connecting Data Lines -->
-            <path d="M75 40 L120 40" stroke="#30363d" stroke-width="2"/>
-            <path d="M120 40 L140 20" stroke="#30363d" stroke-width="2"/>
-            <path d="M120 40 L140 60" stroke="#30363d" stroke-width="2"/>
+            <rect x="280" y="-10" width="80" height="14" rx="3" fill="{core_color}" fill-opacity="0.1"/>
+            <text x="320" y="0" class="text" font-size="8" text-anchor="middle" font-weight="bold" fill="{core_color}">{status_text}</text>
         </g>
 
-        <!-- DATA READOUTS -->
-        <g transform="translate(150, 60)">
-            <rect x="0" y="0" width="2" height="60" fill="#30363d"/>
-            
-            <!-- Statistic 1: Recent Commits -->
-            <g transform="translate(15, 0)">
-                <text y="10" class="text label">RECENT_MUTATIONS (Events)</text>
-                <text y="28" class="text value" fill="{core_color}">{commit_count} sequences</text>
+        <!-- CENTRAL BIO-CORE -->
+        <g transform="translate(60, 100)">
+            <circle r="40" stroke="#30363d" stroke-width="1" stroke-dasharray="4 4" />
+            <circle r="18" class="core" />
+            <circle r="25" stroke="{core_color}" stroke-width="0.5" opacity="0.3" />
+        </g>
+
+        <!-- DATA READOUTS (Left Grid) -->
+        <g transform="translate(140, 65)">
+            <g>
+                <text class="text label">RECURRENT_MUTATIONS</text>
+                <text y="18" class="text value" fill="{core_color}">{commit_count} <tspan font-size="10" opacity="0.5">EVTS</tspan></text>
             </g>
             
-            <!-- Statistic 2: Top Language -->
-            <g transform="translate(15, 50)">
-                <text y="10" class="text label">DOMINANT_STRAIN (Lang)</text>
-                <text y="28" class="text value" fill="#ffffff">> {top_language}</text>
+            <g transform="translate(0, 45)">
+                <text class="text label">NEURAL_CONNECTIONS</text>
+                <text y="18" class="text value">{repos_count} <tspan font-size="10" opacity="0.5">NODES</tspan></text>
             </g>
         </g>
 
-        <!-- TIMESTAMP FOOTER -->
-        <path d="M0 160 L400 160" stroke="#21262d" stroke-width="1"/>
-        <text x="20" y="185" class="text label">LAST_SCAN: {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC</text>
-        <text x="350" y="185" class="text label" text-anchor="end">SYS_VER: 2.1.3</text>
+        <!-- DATA READOUTS (Right Grid) -->
+        <g transform="translate(270, 65)">
+            <g>
+                <text class="text label">DOMINANT_STRAIN</text>
+                <text y="18" class="text value" fill="#ffffff">> {top_language}</text>
+            </g>
+            
+            <g transform="translate(0, 45)">
+                <text class="text label">ACTIVE_NODES</text>
+                <text y="18" class="text value">{languages_count} <tspan font-size="10" opacity="0.5">STRAND</tspan></text>
+            </g>
+        </g>
+
+        <!-- ACTIVITY SPARKLINE -->
+        <g transform="translate(0, 40)">
+             <text x="280" y="45" class="text label" opacity="0.4">ACTIVITY_TREND (7D)</text>
+             <path d="{sparkline_path}" class="sparkline" />
+        </g>
+
+        <!-- FOOTER -->
+        <rect y="170" width="400" height="30" fill="#161b22" opacity="0.5" />
+        <text x="20" y="188" class="text label" font-size="8">LAST_SCAN: {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC</text>
+        <text x="380" y="188" class="text label" font-size="8" text-anchor="end">KERNEL_VER: 2.2.0-STABLE</text>
 
     </svg>
     """
