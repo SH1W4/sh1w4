@@ -26,13 +26,14 @@ def generate_mermaid_graph(data):
         "    subgraph INTELLIGENCE_LAYER",
         "        Core --> VIREON[\"🧬 AGENTIC_ORCHESTRATOR <br/> [ACCESS: L1]\"]:::agent",
         "        Core --> TRINITY[\"🧠 COGNITIVE_PROCESSOR <br/> [ACCESS: L1]\"]:::agent",
+        "        Core --> AIDEN[\"📡 TACTICAL_INTERFACER <br/> [ACCESS: L1]\"]:::agent",
         "    end",
         "",
         "    subgraph TOOL_LAYER",
         "        direction TB",
         "        VIREON --> DX_KIT[\"👁️ DEV_EXP_MODULE <br/> [ACCESS: L1]\"]:::tool",
         "        VIREON --> ARKITECH[\"🏗️ STRAT_INFRA_TOOL <br/> [ACCESS: L1]\"]:::tool",
-        "        VIREON -.-> RD_TOOLS[\"📡 R&D_EXTENSIONS <br/> [ACCESS: RESTRICTED]\"]:::restricted",
+        "        AIDEN -.-> RD_TOOLS[\"📡 R&D_EXTENSIONS <br/> [ACCESS: RESTRICTED]\"]:::restricted",
         "    end",
         "",
         "    subgraph DOMAIN_LAYER",
@@ -110,6 +111,7 @@ def generate_readme():
 | :--- | :--- | :--- | :--- |
 | **🧬 VIREON** | Orchestrator | Aggressive / Precise | Universal Scaling |
 | **🧠 TRINITY** | Analytics | Reflective / Recursive | Pattern Synthesis |
+| **📡 AIDEN** | Interface | Tactical / Adaptive | User Synchronization |
 
 ---
 """
