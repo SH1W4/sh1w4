@@ -2,6 +2,12 @@
     THEME: ORGANIC_INTELLIGENCE (PREMIUM_DASHBOARD)
     COLOR_PALETTE: #00ff41 (Bio-Green), #bd93f9 (Synth-Purple), #ffffff (Clean White)
     STYLE: Advanced Biocybernetic Interface
+
+    SYSTEM_BOOT_SEQUENCE:
+    > LOADER: v2.2.0 ... OK
+    > NEURAL_LINK: ESTABLISHED
+    > TARGET: RECRUITER_RETINA ... LOCKED
+    > MESSAGE: "Não procure empregados. Procure co-pilotos."
 -->
 
 <div align="center">
@@ -59,45 +65,44 @@
 </div>
 
 ```mermaid
-graph LR
-    %% Theme: Dark Cyberpunk
-    classDef core fill:#000,stroke:#00ff41,stroke-width:2px,color:#fff;
-    classDef agent fill:#1a1a1a,stroke:#bd93f9,stroke-width:1px,color:#ddd;
-    classDef tool fill:#1a1a1a,stroke:#ff5555,stroke-width:1px,color:#ddd;
+graph TD
+    %% Styles
+    classDef core fill:#0d1117,stroke:#00ff41,stroke-width:2px,color:#fff,font-weight:bold;
+    classDef infra fill:#161b22,stroke:#bd93f9,stroke-width:1.5px,color:#fff;
+    classDef tool fill:#161b22,stroke:#00d9ff,stroke-width:1px,color:#ddd;
+    classDef legal fill:#161b22,stroke:#f1c40f,stroke-width:1.5px,color:#fff;
+    classDef stable stroke-dasharray: 0;
+    classDef alpha stroke-dasharray: 5 5;
+    classDef active stroke:#00ff41;
 
-    User((USER)):::core -->|Commands| Core[SH1W4 / CORE]:::core
-    
-    subgraph INTELLIGENCE_LAYER
-        Core --> VIREON[🧬 VIREON]:::agent
-        Core --> TRINITY[🧠 TRINITY]:::agent
+    HUB((SH1W4 CORE)):::core
+
+    subgraph INFRA_LAYER
+        VIREON_CORE["🌐 VIREON Core"]:::infra
+        class VIREON_CORE stable
+        ARKITECT["🏗️ Arkitect"]:::infra
+        class ARKITECT stable
     end
-    
-    subgraph TOOL_LAYER
-        VIREON --> DX_KIT[👁️ DEV_EXP_MODULE]:::tool
-        VIREON --> LEGAL[⚖️ LEGAL_INTEL_CORE]:::tool
-        TRINITY --> GOV[🛡️ GOV_ANALYZER_SYS]:::tool
+    HUB --> INFRA_LAYER
+
+    subgraph UTILITY_LAYER
+        DOCSYNC["📚 DocSync"]:::tool
+        class DOCSYNC stable
+        ACADEMIC_PAPER_GENERATOR["📄 Academic Paper Generator"]:::tool
+        class ACADEMIC_PAPER_GENERATOR stable
     end
+    HUB --> UTILITY_LAYER
 
-    subgraph ETHICS_GOVERNANCE
-        SEVE[⚖️ SEVE_ALIGNMENT_FWK]:::ethics
+    subgraph DOMAIN_LAYER
+        EDITALSHIELD["🛡️ EditalShield"]:::legal
+        class EDITALSHIELD stable
+        JURIDICAL_INNOVATION_AGENT["⚖️ Juridical Innovation Agent"]:::legal
+        class JURIDICAL_INNOVATION_AGENT alpha
+        PATENT_ENGINE["⚖️ Patent Engine"]:::legal
+        class PATENT_ENGINE alpha
     end
+    HUB --> DOMAIN_LAYER
 
-    subgraph RESEARCH_LABS
-        direction TB
-        Core --> BIO[🔬 BIO_COMPUTATION_R&D]:::research
-        Core --> PROTO[📐 SEMANTIC_PROTOCOL_SPECS]:::research
-    end
-    
-    %% Ethics Governs Intelligence
-    SEVE -.->|Guards| TRINITY
-    SEVE -.->|Aligns| VIREON
-
-    %% Research feeds Intelligence
-    BIO -.->|Data| TRINITY
-    PROTO -.->|Standards| VIREON
-
-    classDef research fill:#1a1a1a,stroke:#00d9ff,stroke-width:1px,color:#ddd;
-    classDef ethics fill:#1a1a1a,stroke:#f1c40f,stroke-width:1px,color:#ddd;
 ```
 
 > **MISSION PROTOCOL:** "I build the bridge where **Scientific Rigor** meets **AI Velocity**. Creating systems grounded in deep research, where the machine doesn't just execute, but **understands**."
@@ -173,11 +178,11 @@ stateDiagram-v2
 
 <div align="center">
     <pre>
-// SYSTEM_EVOLUTION_LOG:
-// [2024] KERNEL_INIT: <a href="https://github.com/SH1W4/aiden-agent">AIDEN_PROJECT</a> ..... [INTEGRATED]
-// [2025] CORE_UPDATE: VIREON_AGENTS ..... [DEPLOYED]
-// [2025] GOV_PATCH: SEVE_FRAMEWORK ...... [ACTIVE]
-// [2025] STATUS: SYMBEON_ECOSYSTEM ...... [ONLINE]
+root@symbeon:~# ./status_check.sh
+> UPTIME: 99.9%
+> NEURAL_SYNC: OPTIMAL
+> NEXT_GOAL: AGI_INFRASTRUCTURE
+[█▒▒▒▒▒▒▒▒▒] 12% EVOLUTION_COMPLETE
     </pre>
 </div>
 
