@@ -70,31 +70,32 @@ def generate_mermaid_graph(data):
     return "\n".join(lines)
 
 def generate_readme():
-    """Generate the full README.md with non-destructive section updates"""
+    """Refined non-destructive section generator (Split & Merge approach)"""
     data = load_projects()
-    
     try:
         with open('README.md', 'r', encoding='utf-8') as f:
             content = f.read()
-    except:
-        return
+    except: return
 
-    import re
+    # Define the 100% stable sections
+    sections = {
+        "CONCEPT": "### 🧩 C O N C E P T _ C O R E (The SH1W4 Entity)",
+        "MANIFEST": "### 📂 S Y S T E M _ M A N I F E S T (Symbeon Ecosystem)",
+        "DOSSIERS": "### 👥 A G E N T _ D O S S I E R S (Identity Core)",
+        "RESEARCH": "### 🔬 R E S E A R C H _ D N A (Knowledge Vectors)",
+        "ENGINE": "### ⚙️ THE SYMBEON ENGINE (Methodology)",
+        "JOURNEY": "### 🚀 E V O L U T I O N _ J O U R N E Y",
+        "SOUL": "### 🎨 D I G I T A L _ S O U L",
+        "ENVIRONMENT": "### 🖥️ E N V I R O N M E N T A L _ M A N I F E S T",
+        "ALLIANCE": "### 🤝 STRATEGIC ALLIANCE",
+        "ACTIVITY": "### 📡 N E T W O R K _ A C T I V I T Y"
+    }
+
+    # Core content segments
+    segments = {}
     
-    # helper to replace content between a marker and the next section/rule
-    def replace_section(full_text, section_title, new_content, end_marker="---"):
-        pattern = re.escape(section_title) + r".*?" + re.escape(end_marker)
-        if re.search(pattern, full_text, re.DOTALL):
-            return re.sub(pattern, f"{section_title}\n\n{new_content}\n\n{end_marker}", full_text, count=1, flags=re.DOTALL)
-        return full_text
-
-    # 1. STRATEGIC DIRECTIVE (Ensure it exists below header)
-    if '<img src="./directive.svg"' not in content:
-        directive_md = '\n<div align="center">\n    <img src="./directive.svg" width="100%" alt="Strategic Directive"/>\n</div>\n<br/>'
-        content = content.replace(' alt="Neural Interface"/>\n</div>', ' alt="Neural Interface"/>\n</div>' + directive_md)
-
-    # 2. CONCEPT CORE
-    concept_body = """| IDENTIFIER | ATTRIBUTE | DESCRIPTION |
+    # 1. Identity Core
+    segments["CONCEPT"] = """| IDENTIFIER | ATTRIBUTE | DESCRIPTION |
 | :--- | :--- | :--- |
 | **NAME** | **SH1W4** | Symbiotic Human-AI Workflow Architect |
 | **ROLE** | **OPERATIONAL HUB** | The bridge where Human Vision meets AI Velocity |
@@ -102,24 +103,25 @@ def generate_readme():
 
 > **"SH1W4 is not a developer; it is an Operational Hub."**
 > 
-> It represents the bridge where human strategic vision meets high-velocity agentic execution. In this ecosystem, the human provides the **Directives** and the **Ethics**, while the AI enshrine (Vireon/Trinity/Aiden) materializes the **Results**."""
-    content = replace_section(content, "### 🧩 C O N C E P T _ C O R E (The SH1W4 Entity)", concept_body)
+> It represents the bridge where human strategic vision meets high-velocity agentic execution. In this ecosystem, the human provides the **Directives** and the **Ethics**, while the AI enshrine (Vireon/Trinity/Aiden) materializes the **Results**.
 
-    # 3. SYSTEM MANIFEST
+---"""
+
+    # 2. Manifest
     projects_md = generate_mermaid_graph(data)
-    manifest_body = f'<div align="center">\n    <img src="./neural_network.svg" width="80%" alt="Symbeon Neural Fabric"/>\n</div>\n\n{projects_md}'
-    content = replace_section(content, "### 📂 S Y S T E M _ M A N I F E S T (Symbeon Ecosystem)", manifest_body)
+    segments["MANIFEST"] = f'<div align="center">\n    <img src="./neural_network.svg" width="80%" alt="Symbeon Neural Fabric"/>\n</div>\n\n{projects_md}\n\n---'
 
-    # 4. AGENT DOSSIERS
-    dossiers_body = """| IDENTITY | ROLE | COGNITIVE_PROFILE | PRIMARY_DIRECTIVE |
+    # 3. Dossiers
+    segments["DOSSIERS"] = """| IDENTITY | ROLE | COGNITIVE_PROFILE | PRIMARY_DIRECTIVE |
 | :--- | :--- | :--- | :--- |
 | **🧬 VIREON** | Orchestrator | Aggressive / Precise | Universal Scaling |
 | **🧠 TRINITY** | Analytics | Reflective / Recursive | Pattern Synthesis |
-| **📡 AIDEN** | Interface | Tactical / Adaptive | User Synchronization |"""
-    content = replace_section(content, "### 👥 A G E N T _ D O S S I E R S (Identity Core)", dossiers_body)
+| **📡 AIDEN** | Interface | Tactical / Adaptive | User Synchronization |
 
-    # 5. EVOLUTION JOURNEY
-    journey_body = """```mermaid
+---"""
+
+    # 4. Journey
+    segments["JOURNEY"] = """```mermaid
 graph TD
     V1[v1.0: THE KERNEL] -->|Agentic Infusion| V2[v2.0: THE ARCHITECT]
     V2 -->|Neural Scaling| V3[v3.0: THE SINGULARITY]
@@ -132,15 +134,20 @@ graph TD
     class V1,V2 past
     class V3 current
     class V4 future
-```"""
-    content = replace_section(content, "### 🚀 E V O L U T I O N _ J O U R N E Y", journey_body)
+```
 
-    # 6. ENVIRONMENTAL MANIFEST
-    if '### 🖥️ E N V I R O N M E N T A L _ M A N I F E S T' not in content:
-        env_md = """\n### 🖥️ E N V I R O N M E N T A L _ M A N I F E S T\n\n| SYSTEM | SPECIFICATION | ROLE |\n| :--- | :--- | :--- |\n| **OS** | **Arch Linux / WSL2** | Primary Cognitive Host |\n| **CORE** | **M3 Max / Ryzen 9** | Neural Processing Unit |\n| **SHELL** | **ZSH / Powerlevel10k** | Tactical Command Link |\n\n---"""
-        content = content.replace('### 📡 N E T W O R K _ A C T I V I T Y', env_md + '\n\n### 📡 N E T W O R K _ A C T I V I T Y')
+---"""
 
-    # 7. TERMINAL STATUS
+    # 5. Environment
+    segments["ENVIRONMENT"] = """| SYSTEM | SPECIFICATION | ROLE |
+| :--- | :--- | :--- |
+| **OS** | **Arch Linux / WSL2** | Primary Cognitive Host |
+| **CORE** | **M3 Max / Ryzen 9** | Neural Processing Unit |
+| **SHELL** | **ZSH / Powerlevel10k** | Tactical Command Link |
+
+---"""
+
+    # 6. Terminal status (Special injection)
     terminal_lines = [
         "root@symbeon:~$ ./status_check.sh",
         "> UPTIME: 99.9% [STABLE]",
@@ -149,32 +156,39 @@ graph TD
         "[█▒▒▒▒▒▒▒▒▒] 12% EVOLUTION_COMPLETE"
     ]
     terminal_url = f"https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=16&duration=4000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=500&height=180&lines={';'.join([line.replace(' ', '+') for line in terminal_lines])}"
+    terminal_md = f'<div align="center">\n    <img src="{terminal_url}" alt="Terminal Status" />\n</div>\n\n'
+
+    # Construction of New Content
+    # We keep everything before the first section
+    header_end = content.find("---") + 3
+    if "### 🧩 C O N C E P T" in content:
+        header_end = content.find("### 🧩 C O N C E P T")
     
-    terminal_md = f'<div align="center">\n    <img src="{terminal_url}" alt="Terminal Status" />\n</div>'
+    new_readme = content[:header_end].strip() + "\n\n---\n\n"
     
-    if './status_check.sh' in content:
-        content = re.sub(r'<div align="center">\s+<pre>.*?root@symbeon:.*?<\/pre>\s+<\/div>', terminal_md, content, flags=re.DOTALL)
-
-    # 9. VERIFICATION SIGIL (Trust Layer)
-    if '### 🛡️ V E R I F I C A T I O N _ S I G I L' not in content:
-        sigil_md = """
-### 🛡️ V E R I F I C A T I O N _ S I G I L
-
-<div align="center">
-    <img src="https://img.shields.io/badge/IDENTITY-VERIFIED-00ff41?style=for-the-badge&logo=opsgenie&labelColor=1a1a1a" height="30">
-    <img src="https://img.shields.io/badge/SECURITY-PGP_SIGNED-bd93f9?style=for-the-badge&logo=gnupg&labelColor=1a1a1a" height="30">
-    <br/>
-    <sub><i>"Authenticity guaranteed via Symbeon Core."</i></sub>
-</div>
-
----
-"""
-        content = content.replace('### 🤝 STRATEGIC ALLIANCE', sigil_md + '### 🤝 STRATEGIC ALLIANCE')
+    # Ordered Assembly
+    ordered_keys = ["CONCEPT", "MANIFEST", "DOSSIERS", "RESEARCH", "ENGINE", "JOURNEY", "SOUL", "ENVIRONMENT", "ALLIANCE", "ACTIVITY"]
+    
+    import re
+    for key in ordered_keys:
+        title = sections[key]
+        if key in segments:
+            new_readme += f"{title}\n\n{segments[key]}\n\n"
+        else:
+            # For sections we don't dynamically overwrite yet, try to find them in current content
+            pattern = re.escape(title) + r"(.*?)(?=\n\n###|---|$)"
+            match = re.search(pattern, content, re.DOTALL)
+            if match:
+                new_readme += f"{title}\n\n{match.group(1).strip()}\n\n---\n\n"
+    
+    # Final terminal injection before Network Activity
+    if terminal_md not in new_readme:
+        new_readme = new_readme.replace(sections["ACTIVITY"], terminal_md + sections["ACTIVITY"])
 
     with open('README.md', 'w', encoding='utf-8') as f:
-        f.write(content)
+        f.write(new_readme)
     
-    print("✅ README.md synchronized with Demiurge V4.3 final schema.")
+    print("✅ README.md restructured and synchronized (V4.3 Final).")
 
 if __name__ == "__main__":
     generate_readme()
