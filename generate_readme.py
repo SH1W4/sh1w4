@@ -93,17 +93,22 @@ def generate_readme():
         new_readme = readme_content
 
     # 2. CONCEPT CORE (Identity Definition)
-    if '### 🧩 C O N C E P T _ C O R E' not in new_readme:
-        concept_md = """
-### 🧩 C O N C E P T _ C O R E (What is SH1W4?)
+    concept_pattern = r'(### 🧩 C O N C E P T _ C O R E.*?\n---)'
+    concept_md = """### 🧩 C O N C E P T _ C O R E (The SH1W4 Entity)
 
-> **"SH1W4 is not a developer; it is an Operational Hub."**
+| IDENTIFIER | ATTRIBUTE | DESCRIPTION |
+| :--- | :--- | :--- |
+| **NAME** | **SH1W4** | Symbiotic Human-AI Workflow Architect |
+| **ROLE** | **OPERATIONAL HUB** | The bridge where Human Vision meets AI Velocity |
+| **NATURE** | **SYMBION ENTITY** | Human (Directives/Ethics) + AI (Materialization/Results) |
 
-It stands for **Symbiotic Human-AI Workflow Architect**. It represents the bridge where human strategic vision meets high-velocity agentic execution. In this ecosystem, the human provides the **Directives** and the **Ethics**, while the AI enshrine (Vireon/Trinity/Aiden) materializes the **Results**.
-
----
-"""
-        new_readme = new_readme.replace("---", f"---\n{concept_md}", 1)
+---"""
+    
+    if '### 🧩 C O N C E P T _ C O R E' in new_readme:
+        new_readme = re.sub(concept_pattern, concept_md, new_readme, flags=re.DOTALL)
+    else:
+        # Insert after the first horizontal rule
+        new_readme = new_readme.replace("---", f"---\n\n{concept_md}", 1)
 
     # 3. SYSTEM MANIFEST (Projects Graph)
     start_marker = "### 📂 S Y S T E M _ M A N I F E S T"
