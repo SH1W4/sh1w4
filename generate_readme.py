@@ -102,12 +102,15 @@ def generate_readme():
 | **ROLE** | **OPERATIONAL HUB** | The bridge where Human Vision meets AI Velocity |
 | **NATURE** | **SYMBION ENTITY** | Human (Directives/Ethics) + AI (Materialization/Results) |
 
+> **"SH1W4 is not a developer; it is an Operational Hub."**
+> 
+> It represents the bridge where human strategic vision meets high-velocity agentic execution. In this ecosystem, the human provides the **Directives** and the **Ethics**, while the AI enshrine (Vireon/Trinity/Aiden) materializes the **Results**.
+
 ---"""
     
     if '### 🧩 C O N C E P T _ C O R E' in new_readme:
         new_readme = re.sub(concept_pattern, concept_md, new_readme, flags=re.DOTALL)
     else:
-        # Insert after the first horizontal rule
         new_readme = new_readme.replace("---", f"---\n\n{concept_md}", 1)
 
     # 3. SYSTEM MANIFEST (Projects Graph)
@@ -120,13 +123,13 @@ def generate_readme():
     new_manifest += projects_md
     new_readme = re.sub(pattern, new_manifest, new_readme, flags=re.DOTALL)
 
-    # 3. DASHBOARD TELEMETRY
+    # 4. DASHBOARD TELEMETRY
     dashboard_pattern = r'(<img src="\./biostats\.svg".*?\/>)'
     if '<img src="./telemetry.svg"' not in new_readme:
         telemetry_md = '\n<br/>\n<h3><code>🧠 COGNITIVE_PULSE</code></h3>\n<img src="./telemetry.svg" width="90%" alt="Cognitive Telemetry"/>'
         new_readme = re.sub(dashboard_pattern, f'\\1{telemetry_md}', new_readme, flags=re.DOTALL)
 
-    # 4. AGENT DOSSIERS (New Section after Manifest)
+    # 5. AGENT DOSSIERS (New Section after Manifest)
     if '### 👥 A G E N T _ D O S S I E R S' not in new_readme:
         dossiers_md = """
 ### 👥 A G E N T _ D O S S I E R S (Identity Core)
@@ -141,7 +144,7 @@ def generate_readme():
 """
         new_readme = new_readme.replace("> **MISSION PROTOCOL:**", dossiers_md + "> **MISSION PROTOCOL:**")
 
-    # 5. EVOLUTION JOURNEY (New Section after Methodology)
+    # 6. EVOLUTION JOURNEY (New Section after Methodology)
     if '### 🚀 E V O L U T I O N _ J O U R N E Y' not in new_readme:
         journey_md = """
 ### 🚀 E V O L U T I O N _ J O U R N E Y
@@ -165,10 +168,43 @@ graph TD
 """
         new_readme = new_readme.replace('### 🎨 D I G I T A L _ S O U L', journey_md + '### 🎨 D I G I T A L _ S O U L')
 
+    # 7. ENVIRONMENTAL MANIFEST (Hardware/Compute)
+    if '### 🖥️ E N V I R O N M E N T A L _ M A N I F E S T' not in new_readme:
+        env_md = """
+### 🖥️ E N V I R O N M E N T A L _ M A N I F E S T
+
+| SYSTEM | SPECIFICATION | ROLE |
+| :--- | :--- | :--- |
+| **OS** | **Arch Linux / WSL2** | Primary Cognitive Host |
+| **CORE** | **M3 Max / Ryzen 9** | Neural Processing Unit |
+| **SHELL** | **ZSH / Powerlevel10k** | Tactical Command Link |
+
+---
+"""
+        new_readme = new_readme.replace('### 📡 N E T W O R K _ A C T I V I T Y', env_md + '### 📡 N E T W O R K _ A C T I V I T Y')
+
+    # 8. TERMINAL STATUS (Typing Effect)
+    terminal_pattern = r'(<div align="center">.*?<pre>.*?root@symbeon:.*?<\/pre>.*?<\/div>)'
+    terminal_lines = [
+        "root@symbeon:~$ ./status_check.sh",
+        "> UPTIME: 99.9% [STABLE]",
+        "> NEURAL_SYNC: OPTIMAL",
+        "> NEXT_GOAL: AGI_INFRASTRUCTURE",
+        "[█▒▒▒▒▒▒▒▒▒] 12% EVOLUTION_COMPLETE"
+    ]
+    terminal_url = f"https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=16&duration=4000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=500&height=180&lines={';'.join([line.replace(' ', '+') for line in terminal_lines])}"
+    
+    terminal_md = f"""<div align="center">
+    <img src="{terminal_url}" alt="Terminal Status" />
+</div>"""
+
+    if './status_check.sh' in new_readme:
+        new_readme = re.sub(terminal_pattern, terminal_md, new_readme, flags=re.DOTALL)
+
     with open('README.md', 'w', encoding='utf-8') as f:
         f.write(new_readme)
     
-    print("✅ README.md updated with Neural Project Map!")
+    print("✅ README.md synchronized with Demiurge V4.3 updates.")
 
 if __name__ == "__main__":
     generate_readme()
