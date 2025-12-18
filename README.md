@@ -15,6 +15,10 @@
 </div>
 
 <br/>
+<div align="center">
+    <img src="./directive.svg" width="100%" alt="Strategic Directive"/>
+</div>
+<br/>
 
 <!-- DASHBOARD CONTROLS (2-Column Layout) -->
 <table width="100%" style="border: 0; background-color: transparent;">
@@ -116,6 +120,15 @@ graph LR
 
 ```
 
+
+### 👥 A G E N T _ D O S S I E R S (Identity Core)
+
+| IDENTITY | ROLE | COGNITIVE_PROFILE | PRIMARY_DIRECTIVE |
+| :--- | :--- | :--- | :--- |
+| **🧬 VIREON** | Orchestrator | Aggressive / Precise | Universal Scaling |
+| **🧠 TRINITY** | Analytics | Reflective / Recursive | Pattern Synthesis |
+
+---
 > **MISSION PROTOCOL:** "I build the bridge where **Scientific Rigor** meets **AI Velocity**. Creating systems grounded in deep research, where the machine doesn't just execute, but **understands**."
 
 ---
@@ -166,6 +179,25 @@ stateDiagram-v2
 </div>
 <br/>
 
+
+### 🚀 E V O L U T I O N _ J O U R N E Y
+
+```mermaid
+graph TD
+    V1[v1.0: THE KERNEL] -->|Agentic Infusion| V2[v2.0: THE ARCHITECT]
+    V2 -->|Neural Scaling| V3[v3.0: THE SINGULARITY]
+    V3 -->|Global Orchestration| V4((v?.0: THE OVERMIND))
+    
+    classDef past fill:#111,stroke:#333,color:#666;
+    classDef current fill:#000,stroke:#00ff41,stroke-width:2px,color:#fff;
+    classDef future fill:#000,stroke:#bd93f9,stroke-width:2px,color:#fff,stroke-dasharray: 5 5;
+    
+    class V1,V2 past
+    class V3 current
+    class V4 future
+```
+
+---
 ### 🎨 D I G I T A L _ S O U L
 
 <div align="center">
