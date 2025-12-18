@@ -6,8 +6,8 @@
             .value { font-size: 14px; font-weight: bold; }
             
             @keyframes pulse {
-                0%, 100% { opacity: 0.5; filter: drop-shadow(0 0 2px #bd93f9); }
-                50% { opacity: 1; filter: drop-shadow(0 0 10px #bd93f9); }
+                0%, 100% { opacity: 0.5; filter: drop-shadow(0 0 2px #00ff41); }
+                50% { opacity: 1; filter: drop-shadow(0 0 10px #00ff41); }
             }
             
             @keyframes scan {
@@ -23,19 +23,19 @@
             }
 
             .core {
-                animation: pulse 1.5s infinite ease-in-out;
-                fill: #bd93f9;
+                animation: pulse 0.5s infinite ease-in-out;
+                fill: #00ff41;
             }
             
             .scanner {
                 animation: scan 4s linear infinite;
-                stroke: #bd93f9;
+                stroke: #00ff41;
                 stroke-width: 1;
                 opacity: 0.2;
             }
 
             .sparkline {
-                stroke: #bd93f9;
+                stroke: #00ff41;
                 stroke-width: 2;
                 fill: none;
                 stroke-dasharray: 200;
@@ -54,27 +54,27 @@
             <text class="text label">COGNITIVE_ID</text>
             <text y="18" class="text" font-size="16" font-weight="900" fill="#ffffff">SH1W4</text>
             
-            <rect x="280" y="-10" width="80" height="14" rx="3" fill="#bd93f9" fill-opacity="0.1"/>
-            <text x="320" y="0" class="text" font-size="8" text-anchor="middle" font-weight="bold" fill="#bd93f9">STEADY_GROWTH</text>
+            <rect x="280" y="-10" width="80" height="14" rx="3" fill="#00ff41" fill-opacity="0.1"/>
+            <text x="320" y="0" class="text" font-size="8" text-anchor="middle" font-weight="bold" fill="#00ff41">HYPER-EVOLUTION</text>
         </g>
 
         <!-- CENTRAL BIO-CORE -->
         <g transform="translate(60, 100)">
             <circle r="40" stroke="#30363d" stroke-width="1" stroke-dasharray="4 4" />
             <circle r="18" class="core" />
-            <circle r="25" stroke="#bd93f9" stroke-width="0.5" opacity="0.3" />
+            <circle r="25" stroke="#00ff41" stroke-width="0.5" opacity="0.3" />
         </g>
 
         <!-- DATA READOUTS (Left Grid) -->
         <g transform="translate(140, 65)">
             <g>
                 <text class="text label">RECURRENT_MUTATIONS</text>
-                <text y="18" class="text value" fill="#bd93f9">42 <tspan font-size="10" opacity="0.5">EVTS</tspan></text>
+                <text y="18" class="text value" fill="#00ff41">300 <tspan font-size="10" opacity="0.5">EVTS</tspan></text>
             </g>
             
             <g transform="translate(0, 45)">
                 <text class="text label">NEURAL_CONNECTIONS</text>
-                <text y="18" class="text value">12 <tspan font-size="10" opacity="0.5">NODES</tspan></text>
+                <text y="18" class="text value">8 <tspan font-size="10" opacity="0.5">NODES</tspan></text>
             </g>
         </g>
 
@@ -87,19 +87,19 @@
             
             <g transform="translate(0, 45)">
                 <text class="text label">ACTIVE_NODES</text>
-                <text y="18" class="text value">5 <tspan font-size="10" opacity="0.5">STRAND</tspan></text>
+                <text y="18" class="text value">6 <tspan font-size="10" opacity="0.5">STRAND</tspan></text>
             </g>
         </g>
 
         <!-- ACTIVITY SPARKLINE -->
         <g transform="translate(0, 40)">
              <text x="280" y="45" class="text label" opacity="0.4">ACTIVITY_TREND (7D)</text>
-             <path d="M 280,84.0 L 295,76.0 L 310,88.0 L 325,70.0 L 340,80.0 L 355,82.0 L 370,72.0" class="sparkline" />
+             <path d="M 280,100.0 L 295,96.57142857142857 L 310,80.28571428571428 L 325,89.71428571428571 L 340,86.28571428571429 L 355,70.0 L 370,84.57142857142857" class="sparkline" />
         </g>
 
         <!-- FOOTER -->
         <rect y="170" width="400" height="30" fill="#161b22" opacity="0.5" />
-        <text x="20" y="188" class="text label" font-size="8">LAST_SCAN: 2025-12-18 14:08:47 UTC</text>
+        <text x="20" y="188" class="text label" font-size="8">LAST_SCAN: 2025-12-18 14:18:01 UTC</text>
         <text x="380" y="188" class="text label" font-size="8" text-anchor="end">KERNEL_VER: 2.2.0-STABLE</text>
 
     </svg>
