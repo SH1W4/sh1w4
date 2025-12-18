@@ -92,7 +92,20 @@ def generate_readme():
     else:
         new_readme = readme_content
 
-    # 2. SYSTEM MANIFEST (Projects Graph)
+    # 2. CONCEPT CORE (Identity Definition)
+    if '### 🧩 C O N C E P T _ C O R E' not in new_readme:
+        concept_md = """
+### 🧩 C O N C E P T _ C O R E (What is SH1W4?)
+
+> **"SH1W4 is not a developer; it is an Operational Hub."**
+
+It stands for **Symbiotic Human-AI Workflow Architect**. It represents the bridge where human strategic vision meets high-velocity agentic execution. In this ecosystem, the human provides the **Directives** and the **Ethics**, while the AI enshrine (Vireon/Trinity/Aiden) materializes the **Results**.
+
+---
+"""
+        new_readme = new_readme.replace("---", f"---\n{concept_md}", 1)
+
+    # 3. SYSTEM MANIFEST (Projects Graph)
     start_marker = "### 📂 S Y S T E M _ M A N I F E S T"
     pattern = re.escape(start_marker) + r".*?```mermaid.*?```"
     new_manifest = f"{start_marker} (Symbeon Ecosystem)\n\n"
