@@ -99,7 +99,7 @@
 
         <!-- FOOTER -->
         <rect y="170" width="400" height="30" fill="#161b22" opacity="0.5" />
-        <text x="20" y="188" class="text label" font-size="8">LAST_SCAN: 2025-12-18 14:18:01 UTC</text>
+        <text x="20" y="188" class="text label" font-size="8">LAST_SCAN: 2025-12-18 14:24:28 UTC</text>
         <text x="380" y="188" class="text label" font-size="8" text-anchor="end">KERNEL_VER: 2.2.0-STABLE</text>
 
     </svg>
