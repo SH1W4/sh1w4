@@ -167,7 +167,7 @@ graph TD
     new_readme = content[:header_end].strip() + "\n\n---\n\n"
     
     # Ordered Assembly
-    ordered_keys = ["CONCEPT", "MANIFEST", "DOSSIERS", "RESEARCH", "ENGINE", "JOURNEY", "SOUL", "ENVIRONMENT", "ALLIANCE", "ACTIVITY"]
+    ordered_keys = ["CONCEPT", "MANIFEST", "DOSSIERS", "RESEARCH", "ENGINE", "JOURNEY", "ENVIRONMENT", "ALLIANCE", "ACTIVITY", "SOUL"]
     
     import re
     for key in ordered_keys:
