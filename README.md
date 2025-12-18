@@ -73,6 +73,8 @@
 
 ---
 
+---
+
 ### 🧩 C O N C E P T _ C O R E (The SH1W4 Entity)
 
 | IDENTIFIER | ATTRIBUTE | DESCRIPTION |
@@ -94,7 +96,7 @@
 </div>
 
 ```mermaid
-%% Cache-Bust: 2025-12-18T20:25:24.493769
+%% Cache-Bust: 2025-12-18T20:27:21.232310
 graph LR
     %% Themes & Styles (Pure Cyberpunk Architecture)
     classDef core fill:#000,stroke:#00ff41,stroke-width:2px,color:#fff,font-weight:bold;
@@ -157,7 +159,12 @@ graph LR
 ### 🔬 R E S E A R C H _ D N A (Knowledge Vectors)
 
 | VECTOR | SPECIALIZATION | STATUS |
-| :
+| :--- | :--- | :--- |
+| **[V_01]** | **Agentic Orchestration** (Swarm Logic & MCP) | `STABLE` |
+| **[V_02]** | **Deep Tech Compliance** (Semantic Prior Art) | `ACTIVE` |
+| **[V_03]** | **Bio-Computational Sim** (Organic Logic) | `R&D` |
+
+> "Information is not knowledge. The only source of knowledge is **experience** and **pattern synthesis**."
 
 ---
 
@@ -185,15 +192,6 @@ stateDiagram-v2
 ```
 
 > "We do not guess. We **observe** patterns, **synthesize** solutions, and **align** them with human values before writing a single line of production code."
-
-<br/>
-<div align="center">
-    <svg width="100%" height="2" viewBox="0 0 800 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 1H350M450 1H800" stroke="#30363d" stroke-width="1"/>
-        <rect x="380" y="0" width="40" height="2" fill="#30363d" fill-opacity="0.5"/>
-    </svg>
-</div>
-<br/>
 
 ---
 
@@ -226,6 +224,31 @@ graph TD
 
 ---
 
+### 🤝 STRATEGIC ALLIANCE
+
+<div align="center">
+    <p>Open for high-impact joint ventures in <b>Agencia Artificial</b> and <b>Cognitive Systems</b>.</p>
+    <a href="https://linkedin.com/in/joaomartins-ai">
+        <img src="https://img.shields.io/badge/INITIATE_UPLINK-LINKEDIN-0a66c2?style=for-the-badge&logo=linkedin&labelColor=1a1a1a" height="35">
+    </a>
+    &nbsp;&nbsp;
+    <a href="mailto:contact@symbeon.com">
+        <img src="https://img.shields.io/badge/ENCRYPTED_CHANNEL-PROTONMAIL-6d4aff?style=for-the-badge&logo=protonmail&labelColor=1a1a1a" height="35">
+    </a>
+    <br/><br/>
+    <a href="./MANIFESTO.md">
+        <img src="https://img.shields.io/badge/VIEW-MANIFESTO-00ff41?style=for-the-badge&logo=markdown&labelColor=1a1a1a" height="35">
+    </a>
+    <br/><br/>
+    <code>// PGP_FINGERPRINT: 4A7B 1C92 D3E4 F5G6... [ACTIVE]</code>
+</div>
+
+---
+
+<div align="center">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=16&duration=4000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=500&height=180&lines=root@symbeon:~$+./status_check.sh;>+UPTIME:+99.9%+[STABLE];>+NEURAL_SYNC:+OPTIMAL;>+NEXT_GOAL:+AGI_INFRASTRUCTURE;[█▒▒▒▒▒▒▒▒▒]+12%+EVOLUTION_COMPLETE" alt="Terminal Status" />
+</div>
+
 ### 📡 N E T W O R K _ A C T I V I T Y
 
 <div align="center">
@@ -244,41 +267,4 @@ graph TD
     <br/>
     <sub><i>"The ghost in the machine."</i></sub>
 </div>
-
-<br/>
-<div align="center">
-    <svg width="100%" height="2" viewBox="0 0 800 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 1H350M450 1H800" stroke="#30363d" stroke-width="1"/>
-        <rect x="380" y="0" width="40" height="2" fill="#30363d" fill-opacity="0.5"/>
-    </svg>
-</div>
-<br/>
-
-<div align="center">
-    <h3>🤝 STRATEGIC ALLIANCE</h3>
-    <p>Open for high-impact joint ventures in <b>Agencia Artificial</b> and <b>Cognitive Systems</b>.</p>
-    <a href="https://linkedin.com/in/joaomartins-ai">
-        <img src="https://img.shields.io/badge/INITIATE_UPLINK-LINKEDIN-0a66c2?style=for-the-badge&logo=linkedin&labelColor=1a1a1a" height="35">
-    </a>
-    &nbsp;&nbsp;
-    <a href="mailto:contact@symbeon.com">
-        <img src="https://img.shields.io/badge/ENCRYPTED_CHANNEL-PROTONMAIL-6d4aff?style=for-the-badge&logo=protonmail&labelColor=1a1a1a" height="35">
-    </a>
-    <br/><br/>
-    <a href="./MANIFESTO.md">
-        <img src="https://img.shields.io/badge/VIEW-MANIFESTO-00ff41?style=for-the-badge&logo=markdown&labelColor=1a1a1a" height="35">
-    </a>
-    <br/><br/>
-    <code>// PGP_FINGERPRINT: 4A7B 1C92 D3E4 F5G6... [ACTIVE]</code>
-</div>
-
-<br/><br/>
-
-<div align="center">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=16&duration=4000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=500&height=180&lines=root@symbeon:~$+./status_check.sh;>+UPTIME:+99.9%+[STABLE];>+NEURAL_SYNC:+OPTIMAL;>+NEXT_GOAL:+AGI_INFRASTRUCTURE;[█▒▒▒▒▒▒▒▒▒]+12%+EVOLUTION_COMPLETE" alt="Terminal Status" />
-</div>
-
-<br/>
-
----
 

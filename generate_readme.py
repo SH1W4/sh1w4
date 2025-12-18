@@ -120,7 +120,44 @@ def generate_readme():
 
 ---"""
 
-    # 4. Journey
+    # 4. Research DNA
+    segments["RESEARCH"] = """| VECTOR | SPECIALIZATION | STATUS |
+| :--- | :--- | :--- |
+| **[V_01]** | **Agentic Orchestration** (Swarm Logic & MCP) | `STABLE` |
+| **[V_02]** | **Deep Tech Compliance** (Semantic Prior Art) | `ACTIVE` |
+| **[V_03]** | **Bio-Computational Sim** (Organic Logic) | `R&D` |
+
+> "Information is not knowledge. The only source of knowledge is **experience** and **pattern synthesis**."
+
+---"""
+
+    # 5. Engine
+    segments["ENGINE"] = """```mermaid
+stateDiagram-v2
+    %% Theme: Dark & Strategic
+    classDef space fill:#0d1117,stroke:#30363d,stroke-width:1px,color:#8b949e;
+    classDef active fill:#0d1117,stroke:#00ff41,stroke-width:2px,color:#fff;
+    classDef check fill:#0d1117,stroke:#f1c40f,stroke-width:2px,color:#fff;
+    
+    [*] --> 🔭_OBSERVATION:::space : Pattern_Recognition
+    🔭_OBSERVATION --> 💡_HYPOTHESIS:::space : Signal_Synthesis
+    💡_HYPOTHESIS --> 🧬_PROTOTYPING:::active : Rapid_Cycle
+    
+    state "SEVE ALIGNMENT" as GOV {
+        direction LR
+        ⚠️_RISK_ANALYSIS --> ⚖️_ETHICAL_CHECK
+    }
+    
+    🧬_PROTOTYPING --> GOV:::check : Validation
+    GOV --> 🚀_MATERIALIZATION:::active : Deployment
+    🚀_MATERIALIZATION --> [*] : Impact_Loop
+```
+
+> "We do not guess. We **observe** patterns, **synthesize** solutions, and **align** them with human values before writing a single line of production code."
+
+---"""
+
+    # 6. Journey
     segments["JOURNEY"] = """```mermaid
 graph TD
     V1[v1.0: THE KERNEL] -->|Agentic Infusion| V2[v2.0: THE ARCHITECT]
@@ -138,7 +175,7 @@ graph TD
 
 ---"""
 
-    # 5. Environment
+    # 7. Environment
     segments["ENVIRONMENT"] = """| SYSTEM | SPECIFICATION | ROLE |
 | :--- | :--- | :--- |
 | **OS** | **Arch Linux / WSL2** | Primary Cognitive Host |
@@ -147,7 +184,44 @@ graph TD
 
 ---"""
 
-    # 6. Terminal status (Special injection)
+    # 8. Alliance
+    segments["ALLIANCE"] = """<div align="center">
+    <p>Open for high-impact joint ventures in <b>Agencia Artificial</b> and <b>Cognitive Systems</b>.</p>
+    <a href="https://linkedin.com/in/joaomartins-ai">
+        <img src="https://img.shields.io/badge/INITIATE_UPLINK-LINKEDIN-0a66c2?style=for-the-badge&logo=linkedin&labelColor=1a1a1a" height="35">
+    </a>
+    &nbsp;&nbsp;
+    <a href="mailto:contact@symbeon.com">
+        <img src="https://img.shields.io/badge/ENCRYPTED_CHANNEL-PROTONMAIL-6d4aff?style=for-the-badge&logo=protonmail&labelColor=1a1a1a" height="35">
+    </a>
+    <br/><br/>
+    <a href="./MANIFESTO.md">
+        <img src="https://img.shields.io/badge/VIEW-MANIFESTO-00ff41?style=for-the-badge&logo=markdown&labelColor=1a1a1a" height="35">
+    </a>
+    <br/><br/>
+    <code>// PGP_FINGERPRINT: 4A7B 1C92 D3E4 F5G6... [ACTIVE]</code>
+</div>
+
+---"""
+
+    # 9. Activity
+    segments["ACTIVITY"] = """<div align="center">
+    <a href="https://git.io/typing-svg">
+      <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=14&duration=3000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=600&height=100&lines=Subject%3A+SH1W4+%7C+STATUS%3A+HYPER-EVOLUTION;%3E+ANALYZING+GITHUB+EVENT_STREAM...;%3E+OPTIMIZING+DEVELOPER+EXPERIENCE...;%3E+SYSTEM_READY." alt="Typing SVG" />
+    </a>
+    <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Snake Animation" />
+</div>
+
+---"""
+
+    # 10. SOUL (THE FINAL SIGNATURE)
+    segments["SOUL"] = """<div align="center">
+    <img src="./art_core_anonymous.png" width="100%" style="border-radius: 8px; border: 1px solid #30363d;" alt="Bio-Digital Soul"/>
+    <br/>
+    <sub><i>"The ghost in the machine."</i></sub>
+</div>"""
+
+    # Terminal status (Special injection)
     terminal_lines = [
         "root@symbeon:~$ ./status_check.sh",
         "> UPTIME: 99.9% [STABLE]",
@@ -159,31 +233,22 @@ graph TD
     terminal_md = f'<div align="center">\n    <img src="{terminal_url}" alt="Terminal Status" />\n</div>\n\n'
 
     # Construction of New Content
-    # We keep everything before the first section
-    header_end = content.find("---") + 3
-    if "### 🧩 C O N C E P T" in content:
-        header_end = content.find("### 🧩 C O N C E P T")
+    # We keep everything before the first section (header, directive, dashboard)
+    header_end = content.find("### 🧩 C O N C E P T")
+    if header_end == -1: header_end = content.find("---") + 3
     
     new_readme = content[:header_end].strip() + "\n\n---\n\n"
     
     # Ordered Assembly
     ordered_keys = ["CONCEPT", "MANIFEST", "DOSSIERS", "RESEARCH", "ENGINE", "JOURNEY", "ENVIRONMENT", "ALLIANCE", "ACTIVITY", "SOUL"]
     
-    import re
     for key in ordered_keys:
         title = sections[key]
-        if key in segments:
-            new_readme += f"{title}\n\n{segments[key]}\n\n"
-        else:
-            # For sections we don't dynamically overwrite yet, try to find them in current content
-            pattern = re.escape(title) + r"(.*?)(?=\n\n###|---|$)"
-            match = re.search(pattern, content, re.DOTALL)
-            if match:
-                new_readme += f"{title}\n\n{match.group(1).strip()}\n\n---\n\n"
-    
-    # Final terminal injection before Network Activity
-    if terminal_md not in new_readme:
-        new_readme = new_readme.replace(sections["ACTIVITY"], terminal_md + sections["ACTIVITY"])
+        if key == "ACTIVITY":
+            # Inject Terminal Status before Network Activity
+            new_readme += terminal_md
+        
+        new_readme += f"{title}\n\n{segments[key].strip()}\n\n"
 
     with open('README.md', 'w', encoding='utf-8') as f:
         f.write(new_readme)
