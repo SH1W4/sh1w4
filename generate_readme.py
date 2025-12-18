@@ -9,80 +9,55 @@ def load_projects():
         return json.load(f)
 
 def generate_mermaid_graph(data):
-    """Generate the Synthesized Symbeon Ecosystem Map (Privacy-First)"""
-    featured = data.get('featured', [])
-    additional = data.get('additional', [])
-    
-    # Track categories for abstract nodes
-    add_categories = {}
-    for p in additional:
-        cat = p.get('type', 'Other')
-        add_categories[cat] = add_categories.get(cat, 0) + 1
-
+    """Generate the Pure Architectural Manifest (Maximum Privacy)"""
+    # This version ignores literal names and focuses on functional architecture
     lines = [
         "```mermaid",
         "graph LR",
-        "    %% Themes & Styles",
+        "    %% Themes & Styles (Pure Cyberpunk Architecture)",
         "    classDef core fill:#000,stroke:#00ff41,stroke-width:2px,color:#fff,font-weight:bold;",
         "    classDef agent fill:#111,stroke:#bd93f9,stroke-width:1.5px,color:#ddd;",
         "    classDef tool fill:#111,stroke:#00d9ff,stroke-width:1px,color:#ddd;",
         "    classDef ethics fill:#111,stroke:#f1c40f,stroke-width:1.5px,color:#fff;",
         "    classDef research fill:#111,stroke:#ff5555,stroke-width:1px,color:#ddd;",
-        "    classDef private fill:#0d1117,stroke:#333,stroke-width:1px,color:#666,stroke-dasharray: 5 5;",
         "",
-        "    User((USER)):::core -->|Commands| Core[SH1W4 / CORE]:::core",
+        "    User((USER)):::core -->|Directives| Core[SH1W4 / CORE]:::core",
         "",
         "    subgraph INTELLIGENCE_LAYER",
-        "        Core --> VIREON[\"🧬 VIREON Core\"]:::agent",
-        "        Core --> TRINITY[\"🧠 TRINITY AI\"]:::agent",
+        "        Core --> VIREON[🧬 AGENTIC_ORCHESTRATOR]:::agent",
+        "        Core --> TRINITY[🧠 COGNITIVE_PROCESSOR]:::agent",
         "    end",
         "",
         "    subgraph TOOL_LAYER",
-        "        direction TB"
+        "        direction TB",
+        "        VIREON --> DX_KIT[👁️ DEV_EXP_MODULE]:::tool",
+        "        VIREON --> ARKITECH[🏗️ STRAT_INFRA_TOOL]:::tool",
+        "    end",
+        "",
+        "    subgraph DOMAIN_LAYER",
+        "        VIREON --> LEGAL[⚖️ LEGAL_INTEL_CORE]:::agent",
+        "        LEGAL --> SHIELD[🛡️ IP_GUARD_PROTOCOL]:::tool",
+        "    end",
+        "",
+        "    subgraph ETHICS_GOVERNANCE",
+        "        SEVE[⚖️ SEVE_ALIGNMENT_FWK]:::ethics",
+        "    end",
+        "",
+        "    subgraph RESEARCH_LABS",
+        "        direction TB",
+        "        BIO[🔬 BIO_COMPUTATION_R&D]:::research",
+        "        PROTO[📐 SEMANTIC_STANDARDS]:::research",
+        "    end",
+        "",
+        "    %% Strategic Relationship Links",
+        "    SEVE -.->|Guards| TRINITY",
+        "    SEVE -.->|Aligns| VIREON",
+        "    BIO -.->|Data| TRINITY",
+        "    PROTO -.->|Specs| VIREON",
+        "    DX_KIT -.->|Telemetry| Core",
+        "",
+        "```"
     ]
-
-    # Map featured tools
-    for p in featured:
-        if p.get('type') in ['Agentic Tool', 'Research AI', 'MCP Server']:
-            p_id = p['name'].replace(" ", "_").upper()
-            lines.append(f"        VIREON --> {p_id}[\"{p.get('icon', '')} {p['name']}\"]:::tool")
-    
-    # Add localized R&D node for additional tools to maintain privacy
-    if add_categories.get('Agentic Tool') or add_categories.get('MCP Server'):
-        lines.append(f"        VIREON -.-> RD_TOOLS[\"📡 R&D_EXTENSIONS\"]:::private")
-
-    lines.append("    end\n")
-    lines.append("    subgraph DOMAIN_LAYER")
-    
-    # Map featured domain projects
-    for p in featured:
-        if p.get('type') in ['Legal AI', 'Deep Tech']:
-            p_id = p['name'].replace(" ", "_").upper()
-            lines.append(f"        VIREON --> {p_id}[\"{p.get('icon', '')} {p['name']}\"]:::agent")
-            
-    # Abstract node for additional domain R&D
-    if add_categories.get('Legal AI') or add_categories.get('Deep Tech'):
-        lines.append(f"        VIREON -.-> RD_DOMAIN[\"⚖️ LEGAL_TECH_R&D\"]:::private")
-
-    lines.append("    end\n")
-    lines.append("    subgraph ETHICS_GOVERNANCE")
-    lines.append("        SEVE[\"⚖️ SEVE ALIGNMENT\"]:::ethics")
-    lines.append("    end\n")
-    
-    lines.append("    subgraph RESEARCH_LABS")
-    lines.append("        direction TB")
-    lines.append("        BIO[\"🔬 BIO_COMP R&D\"]:::research")
-    lines.append("        PROTO[\"📐 SEMANTIC_SPECS\"]:::research")
-    lines.append("    end\n")
-
-    lines.append("    %% Strategic Relationship Links")
-    lines.append("    SEVE -.->|Guards| TRINITY")
-    lines.append("    SEVE -.->|Aligns| VIREON")
-    lines.append("    BIO -.->|Feeds| TRINITY")
-    lines.append("    PROTO -.->|Standards| VIREON")
-    lines.append("    ")
-    lines.append("```")
-    
     return "\n".join(lines)
 
 def generate_readme():

@@ -66,49 +66,48 @@
 
 ```mermaid
 graph LR
-    %% Themes & Styles
+    %% Themes & Styles (Pure Cyberpunk Architecture)
     classDef core fill:#000,stroke:#00ff41,stroke-width:2px,color:#fff,font-weight:bold;
     classDef agent fill:#111,stroke:#bd93f9,stroke-width:1.5px,color:#ddd;
     classDef tool fill:#111,stroke:#00d9ff,stroke-width:1px,color:#ddd;
     classDef ethics fill:#111,stroke:#f1c40f,stroke-width:1.5px,color:#fff;
     classDef research fill:#111,stroke:#ff5555,stroke-width:1px,color:#ddd;
-    classDef private fill:#0d1117,stroke:#333,stroke-width:1px,color:#666,stroke-dasharray: 5 5;
 
-    User((USER)):::core -->|Commands| Core[SH1W4 / CORE]:::core
+    User((USER)):::core -->|Directives| Core[SH1W4 / CORE]:::core
 
     subgraph INTELLIGENCE_LAYER
-        Core --> VIREON["🧬 VIREON Core"]:::agent
-        Core --> TRINITY["🧠 TRINITY AI"]:::agent
+        Core --> VIREON[🧬 AGENTIC_ORCHESTRATOR]:::agent
+        Core --> TRINITY[🧠 COGNITIVE_PROCESSOR]:::agent
     end
 
     subgraph TOOL_LAYER
         direction TB
-        VIREON --> DOCSYNC["📚 DocSync"]:::tool
-        VIREON -.-> RD_TOOLS["📡 R&D_EXTENSIONS"]:::private
+        VIREON --> DX_KIT[👁️ DEV_EXP_MODULE]:::tool
+        VIREON --> ARKITECH[🏗️ STRAT_INFRA_TOOL]:::tool
     end
 
     subgraph DOMAIN_LAYER
-        VIREON --> EDITALSHIELD["🛡️ EditalShield"]:::agent
-        VIREON --> PATENT_ENGINE["⚖️ Patent Engine"]:::agent
-        VIREON -.-> RD_DOMAIN["⚖️ LEGAL_TECH_R&D"]:::private
+        VIREON --> LEGAL[⚖️ LEGAL_INTEL_CORE]:::agent
+        LEGAL --> SHIELD[🛡️ IP_GUARD_PROTOCOL]:::tool
     end
 
     subgraph ETHICS_GOVERNANCE
-        SEVE["⚖️ SEVE ALIGNMENT"]:::ethics
+        SEVE[⚖️ SEVE_ALIGNMENT_FWK]:::ethics
     end
 
     subgraph RESEARCH_LABS
         direction TB
-        BIO["🔬 BIO_COMP R&D"]:::research
-        PROTO["📐 SEMANTIC_SPECS"]:::research
+        BIO[🔬 BIO_COMPUTATION_R&D]:::research
+        PROTO[📐 SEMANTIC_STANDARDS]:::research
     end
 
     %% Strategic Relationship Links
     SEVE -.->|Guards| TRINITY
     SEVE -.->|Aligns| VIREON
-    BIO -.->|Feeds| TRINITY
-    PROTO -.->|Standards| VIREON
-    
+    BIO -.->|Data| TRINITY
+    PROTO -.->|Specs| VIREON
+    DX_KIT -.->|Telemetry| Core
+
 ```
 
 > **MISSION PROTOCOL:** "I build the bridge where **Scientific Rigor** meets **AI Velocity**. Creating systems grounded in deep research, where the machine doesn't just execute, but **understands**."
