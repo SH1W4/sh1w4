@@ -67,11 +67,12 @@
 ```mermaid
 graph LR
     %% Themes & Styles
-    classDef core fill:#000,stroke:#00ff41,stroke-width:2px,color:#fff;
+    classDef core fill:#000,stroke:#00ff41,stroke-width:2px,color:#fff,font-weight:bold;
     classDef agent fill:#111,stroke:#bd93f9,stroke-width:1.5px,color:#ddd;
     classDef tool fill:#111,stroke:#00d9ff,stroke-width:1px,color:#ddd;
-    classDef ethics fill:#111,stroke:#f1c40f,stroke-width:1px,color:#ddd;
+    classDef ethics fill:#111,stroke:#f1c40f,stroke-width:1.5px,color:#fff;
     classDef research fill:#111,stroke:#ff5555,stroke-width:1px,color:#ddd;
+    classDef private fill:#0d1117,stroke:#333,stroke-width:1px,color:#666,stroke-dasharray: 5 5;
 
     User((USER)):::core -->|Commands| Core[SH1W4 / CORE]:::core
 
@@ -81,14 +82,15 @@ graph LR
     end
 
     subgraph TOOL_LAYER
+        direction TB
         VIREON --> DOCSYNC["📚 DocSync"]:::tool
-        VIREON --> ARKITECT["🏗️ Arkitect"]:::tool
-        TRINITY --> PAPER["📄 Paper Gen"]:::tool
+        VIREON -.-> RD_TOOLS["📡 R&D_EXTENSIONS"]:::private
     end
 
     subgraph DOMAIN_LAYER
-        VIREON --> LEGAL["⚖️ Patent Engine"]:::agent
-        LEGAL --> SHIELD["🛡️ EditalShield"]:::tool
+        VIREON --> EDITALSHIELD["🛡️ EditalShield"]:::agent
+        VIREON --> PATENT_ENGINE["⚖️ Patent Engine"]:::agent
+        VIREON -.-> RD_DOMAIN["⚖️ LEGAL_TECH_R&D"]:::private
     end
 
     subgraph ETHICS_GOVERNANCE
@@ -106,8 +108,7 @@ graph LR
     SEVE -.->|Aligns| VIREON
     BIO -.->|Feeds| TRINITY
     PROTO -.->|Standards| VIREON
-    DOCSYNC -.->|Knowledge| Core
-
+    
 ```
 
 > **MISSION PROTOCOL:** "I build the bridge where **Scientific Rigor** meets **AI Velocity**. Creating systems grounded in deep research, where the machine doesn't just execute, but **understands**."
