@@ -72,7 +72,7 @@
 </div>
 
 ```mermaid
-%% Cache-Bust: 2025-12-18T13:57:28.809501
+%% Cache-Bust: 2025-12-18T13:58:50.762610
 graph LR
     %% Themes & Styles (Pure Cyberpunk Architecture)
     classDef core fill:#000,stroke:#00ff41,stroke-width:2px,color:#fff,font-weight:bold;
@@ -83,46 +83,40 @@ graph LR
     classDef restricted fill:#0d1117,stroke:#333,color:#666,stroke-dasharray: 5 5;
 
     User((USER)):::core -->|Directives| Core[SH1W4 / CORE]:::core
-
+    subgraph ETHICS_GOVERNANCE
+        SEVE["⚖️ SEVE_ALIGNMENT_FWK <br/> [ACCESS: L1]"]:::ethics
+    end
+    subgraph RESEARCH_LABS
+        direction TB
+        BIO["🔬 BIO_COMPUTATION_R&D <br/> [ACCESS: L2]"]:::research
+        PROTO["📐 SEMANTIC_STANDARDS <br/> [ACCESS: L2]"]:::research
+    end
     subgraph INTELLIGENCE_LAYER
         Core --> VIREON["🧬 AGENTIC_ORCHESTRATOR <br/> [ACCESS: L1]"]:::agent
         Core --> TRINITY["🧠 COGNITIVE_PROCESSOR <br/> [ACCESS: L1]"]:::agent
         Core --> AIDEN["📡 TACTICAL_INTERFACER <br/> [ACCESS: L1]"]:::agent
     end
-
     subgraph DOMAIN_LAYER
         VIREON --> LEGAL["⚖️ LEGAL_INTEL_CORE <br/> [ACCESS: L1]"]:::agent
         LEGAL --> SHIELD["🛡️ IP_GUARD_PROTOCOL <br/> [ACCESS: L1]"]:::tool
         VIREON -.-> RD_DOMAIN["⚖️ LEGAL_TECH_R&D <br/> [ACCESS: RESTRICTED]"]:::restricted
     end
-
     subgraph TOOL_LAYER
         direction TB
         VIREON --> DX_KIT["👁️ DEV_EXP_MODULE <br/> [ACCESS: L1]"]:::tool
         VIREON --> ARKITECH["🏗️ STRAT_INFRA_TOOL <br/> [ACCESS: L1]"]:::tool
         AIDEN -.-> RD_TOOLS["📡 R&D_EXTENSIONS <br/> [ACCESS: RESTRICTED]"]:::restricted
     end
-
-    subgraph ETHICS_GOVERNANCE
-        SEVE["⚖️ SEVE_ALIGNMENT_FWK <br/> [ACCESS: L1]"]:::ethics
-    end
-
-    subgraph RESEARCH_LABS
-        direction TB
-        BIO["🔬 BIO_COMPUTATION_R&D <br/> [ACCESS: L2]"]:::research
-        PROTO["📐 SEMANTIC_STANDARDS <br/> [ACCESS: L2]"]:::research
-    end
-
     %% Strategic Relationship Links
     SEVE -.->|Guards| TRINITY
     SEVE -.->|Aligns| VIREON
     BIO -.->|Data| TRINITY
     PROTO -.->|Specs| VIREON
-    
-    %% Vertical Anchors (Forcing Research/Ethics to the bottom)
-    Core -.->|Governance| SEVE
-    Core -.->|R&D_Init| BIO
     DX_KIT -.->|Telemetry| Core
+    
+    %% Implicit Vertical Order (Invisibly pinning Labs to bottom)
+    User ~~~ SEVE
+    User ~~~ BIO
 
 ```
 
