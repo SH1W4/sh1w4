@@ -3,6 +3,7 @@ SH1W4 Profile README Generator
 Automatically generates the projects section from projects.json
 """
 import json
+import datetime
 
 def load_projects():
     with open('projects.json', 'r', encoding='utf-8') as f:
@@ -12,6 +13,7 @@ def generate_mermaid_graph(data):
     """Generate the Pure Architectural Manifest with Access Levels"""
     lines = [
         "```mermaid",
+        f"%% Cache-Bust: {datetime.datetime.now().isoformat()}",
         "graph LR",
         "    %% Themes & Styles (Pure Cyberpunk Architecture)",
         "    classDef core fill:#000,stroke:#00ff41,stroke-width:2px,color:#fff,font-weight:bold;",
