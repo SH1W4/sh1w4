@@ -9,71 +9,57 @@ def load_projects():
         return json.load(f)
 
 def generate_mermaid_graph(data):
-    """Generate Mermaid graph from projects data"""
-    featured = data.get('featured', [])
-    additional = data.get('additional', [])
-    all_projects = featured + additional
+    """Generate the rich Symbeon Ecosystem Map"""
+    # Define projects for easy access
+    p_map = {p['name'].replace(" ", "_").upper(): p for p in data.get('featured', []) + data.get('additional', [])}
     
     lines = [
         "```mermaid",
-        "graph TD",
-        "    %% Styles",
-        "    classDef core fill:#0d1117,stroke:#00ff41,stroke-width:2px,color:#fff,font-weight:bold;",
-        "    classDef infra fill:#161b22,stroke:#bd93f9,stroke-width:1.5px,color:#fff;",
-        "    classDef tool fill:#161b22,stroke:#00d9ff,stroke-width:1px,color:#ddd;",
-        "    classDef legal fill:#161b22,stroke:#f1c40f,stroke-width:1.5px,color:#fff;",
-        "    classDef stable stroke-dasharray: 0;",
-        "    classDef alpha stroke-dasharray: 5 5;",
-        "    classDef active stroke:#00ff41;",
+        "graph LR",
+        "    %% Themes & Styles",
+        "    classDef core fill:#000,stroke:#00ff41,stroke-width:2px,color:#fff;",
+        "    classDef agent fill:#111,stroke:#bd93f9,stroke-width:1.5px,color:#ddd;",
+        "    classDef tool fill:#111,stroke:#00d9ff,stroke-width:1px,color:#ddd;",
+        "    classDef ethics fill:#111,stroke:#f1c40f,stroke-width:1px,color:#ddd;",
+        "    classDef research fill:#111,stroke:#ff5555,stroke-width:1px,color:#ddd;",
         "",
-        "    HUB((SH1W4 CORE)):::core",
-        ""
+        "    User((USER)):::core -->|Commands| Core[SH1W4 / CORE]:::core",
+        "",
+        "    subgraph INTELLIGENCE_LAYER",
+        "        Core --> VIREON[\"🧬 VIREON Core\"]:::agent",
+        "        Core --> TRINITY[\"🧠 TRINITY AI\"]:::agent",
+        "    end",
+        "",
+        "    subgraph TOOL_LAYER",
+        "        VIREON --> DOCSYNC[\"📚 DocSync\"]:::tool",
+        "        VIREON --> ARKITECT[\"🏗️ Arkitect\"]:::tool",
+        "        TRINITY --> PAPER[\"📄 Paper Gen\"]:::tool",
+        "    end",
+        "",
+        "    subgraph DOMAIN_LAYER",
+        "        VIREON --> LEGAL[\"⚖️ Patent Engine\"]:::agent",
+        "        LEGAL --> SHIELD[\"🛡️ EditalShield\"]:::tool",
+        "    end",
+        "",
+        "    subgraph ETHICS_GOVERNANCE",
+        "        SEVE[\"⚖️ SEVE ALIGNMENT\"]:::ethics",
+        "    end",
+        "",
+        "    subgraph RESEARCH_LABS",
+        "        direction TB",
+        "        BIO[\"🔬 BIO_COMP R&D\"]:::research",
+        "        PROTO[\"📐 SEMANTIC_SPECS\"]:::research",
+        "    end",
+        "",
+        "    %% Strategic Relationship Links",
+        "    SEVE -.->|Guards| TRINITY",
+        "    SEVE -.->|Aligns| VIREON",
+        "    BIO -.->|Feeds| TRINITY",
+        "    PROTO -.->|Standards| VIREON",
+        "    DOCSYNC -.->|Knowledge| Core",
+        "",
+        "```"
     ]
-    
-    # Organize by type
-    categories = {
-        "Infrastructure": [],
-        "Agentic Tool": [],
-        "Legal AI": [],
-        "Deep Tech": [],
-        "Research AI": [],
-        "MCP Server": []
-    }
-    
-    for p in all_projects:
-        cat = p.get('type', 'Other')
-        if cat not in categories: categories[cat] = []
-        categories[cat].append(p)
-        
-    # Build Subgraphs
-    subgraph_map = {
-        "Infrastructure": ("INFRA_LAYER", "infra"),
-        "MCP Server": ("INFRA_LAYER", "infra"),
-        "Agentic Tool": ("UTILITY_LAYER", "tool"),
-        "Research AI": ("UTILITY_LAYER", "tool"),
-        "Legal AI": ("DOMAIN_LAYER", "legal"),
-        "Deep Tech": ("DOMAIN_LAYER", "legal")
-    }
-    
-    layers = {}
-    for cat, projs in categories.items():
-        if not projs: continue
-        layer_id, style_class = subgraph_map.get(cat, ("OTHER_LAYER", "tool"))
-        if layer_id not in layers: layers[layer_id] = []
-        layers[layer_id].extend([(p, style_class) for p in projs])
-
-    for layer_id, p_list in layers.items():
-        lines.append(f"    subgraph {layer_id}")
-        for p, style in p_list:
-            p_id = p['name'].replace(" ", "_").upper()
-            status_style = "alpha" if "Alpha" in p['status'] or "Beta" in p['status'] else "stable"
-            lines.append(f"        {p_id}[\"{p.get('icon', '')} {p['name']}\"]:::{style}")
-            lines.append(f"        class {p_id} {status_style}")
-        lines.append("    end")
-        lines.append(f"    HUB --> {layer_id}")
-        lines.append("")
-
-    lines.append("```")
     return "\n".join(lines)
 
 def generate_readme():

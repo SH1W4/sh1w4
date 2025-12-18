@@ -65,43 +65,48 @@
 </div>
 
 ```mermaid
-graph TD
-    %% Styles
-    classDef core fill:#0d1117,stroke:#00ff41,stroke-width:2px,color:#fff,font-weight:bold;
-    classDef infra fill:#161b22,stroke:#bd93f9,stroke-width:1.5px,color:#fff;
-    classDef tool fill:#161b22,stroke:#00d9ff,stroke-width:1px,color:#ddd;
-    classDef legal fill:#161b22,stroke:#f1c40f,stroke-width:1.5px,color:#fff;
-    classDef stable stroke-dasharray: 0;
-    classDef alpha stroke-dasharray: 5 5;
-    classDef active stroke:#00ff41;
+graph LR
+    %% Themes & Styles
+    classDef core fill:#000,stroke:#00ff41,stroke-width:2px,color:#fff;
+    classDef agent fill:#111,stroke:#bd93f9,stroke-width:1.5px,color:#ddd;
+    classDef tool fill:#111,stroke:#00d9ff,stroke-width:1px,color:#ddd;
+    classDef ethics fill:#111,stroke:#f1c40f,stroke-width:1px,color:#ddd;
+    classDef research fill:#111,stroke:#ff5555,stroke-width:1px,color:#ddd;
 
-    HUB((SH1W4 CORE)):::core
+    User((USER)):::core -->|Commands| Core[SH1W4 / CORE]:::core
 
-    subgraph INFRA_LAYER
-        VIREON_CORE["🌐 VIREON Core"]:::infra
-        class VIREON_CORE stable
-        ARKITECT["🏗️ Arkitect"]:::infra
-        class ARKITECT stable
+    subgraph INTELLIGENCE_LAYER
+        Core --> VIREON["🧬 VIREON Core"]:::agent
+        Core --> TRINITY["🧠 TRINITY AI"]:::agent
     end
-    HUB --> INFRA_LAYER
 
-    subgraph UTILITY_LAYER
-        DOCSYNC["📚 DocSync"]:::tool
-        class DOCSYNC stable
-        ACADEMIC_PAPER_GENERATOR["📄 Academic Paper Generator"]:::tool
-        class ACADEMIC_PAPER_GENERATOR stable
+    subgraph TOOL_LAYER
+        VIREON --> DOCSYNC["📚 DocSync"]:::tool
+        VIREON --> ARKITECT["🏗️ Arkitect"]:::tool
+        TRINITY --> PAPER["📄 Paper Gen"]:::tool
     end
-    HUB --> UTILITY_LAYER
 
     subgraph DOMAIN_LAYER
-        EDITALSHIELD["🛡️ EditalShield"]:::legal
-        class EDITALSHIELD stable
-        JURIDICAL_INNOVATION_AGENT["⚖️ Juridical Innovation Agent"]:::legal
-        class JURIDICAL_INNOVATION_AGENT alpha
-        PATENT_ENGINE["⚖️ Patent Engine"]:::legal
-        class PATENT_ENGINE alpha
+        VIREON --> LEGAL["⚖️ Patent Engine"]:::agent
+        LEGAL --> SHIELD["🛡️ EditalShield"]:::tool
     end
-    HUB --> DOMAIN_LAYER
+
+    subgraph ETHICS_GOVERNANCE
+        SEVE["⚖️ SEVE ALIGNMENT"]:::ethics
+    end
+
+    subgraph RESEARCH_LABS
+        direction TB
+        BIO["🔬 BIO_COMP R&D"]:::research
+        PROTO["📐 SEMANTIC_SPECS"]:::research
+    end
+
+    %% Strategic Relationship Links
+    SEVE -.->|Guards| TRINITY
+    SEVE -.->|Aligns| VIREON
+    BIO -.->|Feeds| TRINITY
+    PROTO -.->|Standards| VIREON
+    DOCSYNC -.->|Knowledge| Core
 
 ```
 

@@ -127,8 +127,8 @@ def generate_svg():
     <svg width="400" height="200" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
         <style>
             .text {{ font-family: 'Segoe UI', Consolas, monospace; fill: #e6e6e6; }}
-            .label {{ font-size: 9px; opacity: 0.6; text-transform: uppercase; letter-spacing: 1px; }}
-            .value {{ font-size: 14px; font-weight: bold; }}
+            .label {{ font-size: 8px; opacity: 0.5; text-transform: uppercase; letter-spacing: 1px; }}
+            .value {{ font-size: 13px; font-weight: bold; }}
             
             @keyframes pulse {{
                 0%, 100% {{ opacity: 0.5; filter: drop-shadow(0 0 2px {core_color}); }}
@@ -177,55 +177,54 @@ def generate_svg():
         <!-- HEADER STATUS -->
         <g transform="translate(20, 25)">
             <text class="text label">COGNITIVE_ID</text>
-            <text y="18" class="text" font-size="16" font-weight="900" fill="#ffffff">{USERNAME}</text>
+            <text y="18" class="text" font-size="14" font-weight="900" fill="#ffffff">{USERNAME}</text>
             
-            <rect x="280" y="-10" width="80" height="14" rx="3" fill="{core_color}" fill-opacity="0.1"/>
-            <text x="320" y="0" class="text" font-size="8" text-anchor="middle" font-weight="bold" fill="{core_color}">{status_text}</text>
+            <rect x="280" y="-10" width="85" height="14" rx="3" fill="{core_color}" fill-opacity="0.1"/>
+            <text x="322.5" y="0" class="text" font-size="8" text-anchor="middle" font-weight="bold" fill="{core_color}">{status_text}</text>
         </g>
 
         <!-- CENTRAL BIO-CORE -->
-        <g transform="translate(60, 100)">
-            <circle r="40" stroke="#30363d" stroke-width="1" stroke-dasharray="4 4" />
-            <circle r="18" class="core" />
-            <circle r="25" stroke="{core_color}" stroke-width="0.5" opacity="0.3" />
+        <g transform="translate(55, 100)">
+            <circle r="35" stroke="#30363d" stroke-width="1" stroke-dasharray="4 4" />
+            <circle r="15" class="core" />
+            <circle r="22" stroke="{core_color}" stroke-width="0.5" opacity="0.2" />
         </g>
 
-        <!-- DATA READOUTS (Left Grid) -->
-        <g transform="translate(140, 65)">
+        <!-- DATA READOUTS (Grid Layout) -->
+        <g transform="translate(120, 60)">
+            <!-- Column 1 -->
             <g>
-                <text class="text label">RECURRENT_MUTATIONS</text>
-                <text y="18" class="text value" fill="{core_color}">{commit_count} <tspan font-size="10" opacity="0.5">EVTS</tspan></text>
+                <text class="text label">MUTATIONS</text>
+                <text y="16" class="text value" fill="{core_color}">{commit_count}</text>
             </g>
             
-            <g transform="translate(0, 45)">
-                <text class="text label">NEURAL_CONNECTIONS</text>
-                <text y="18" class="text value">{repos_count} <tspan font-size="10" opacity="0.5">NODES</tspan></text>
+            <g transform="translate(0, 40)">
+                <text class="text label">CONNECTIONS</text>
+                <text y="16" class="text value">{repos_count}</text>
             </g>
-        </g>
 
-        <!-- DATA READOUTS (Right Grid) -->
-        <g transform="translate(270, 65)">
-            <g>
-                <text class="text label">DOMINANT_STRAIN</text>
-                <text y="18" class="text value" fill="#ffffff">> {top_language}</text>
+            <!-- Column 2 -->
+            <g transform="translate(100, 0)">
+                <text class="text label">STRAIN</text>
+                <text y="16" class="text value" fill="#ffffff">{top_language}</text>
             </g>
             
-            <g transform="translate(0, 45)">
-                <text class="text label">ACTIVE_NODES</text>
-                <text y="18" class="text value">{languages_count} <tspan font-size="10" opacity="0.5">STRAND</tspan></text>
+            <g transform="translate(100, 40)">
+                <text class="text label">STRANDS</text>
+                <text y="16" class="text value">{languages_count}</text>
             </g>
         </g>
 
-        <!-- ACTIVITY SPARKLINE -->
-        <g transform="translate(0, 40)">
-             <text x="280" y="45" class="text label" opacity="0.4">ACTIVITY_TREND (7D)</text>
-             <path d="{sparkline_path}" class="sparkline" />
+        <!-- ACTIVITY SPARKLINE (Dedicated Bottom Right) -->
+        <g transform="translate(260, 130)">
+             <text y="-5" class="text label" opacity="0.4">ACTIVITY_TREND</text>
+             <path d="{sparkline_path.replace('280','0')}" class="sparkline" transform="translate(0, -10) scale(0.9)"/>
         </g>
 
         <!-- FOOTER -->
-        <rect y="170" width="400" height="30" fill="#161b22" opacity="0.5" />
-        <text x="20" y="188" class="text label" font-size="8">LAST_SCAN: {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC</text>
-        <text x="380" y="188" class="text label" font-size="8" text-anchor="end">KERNEL_VER: 2.2.0-STABLE</text>
+        <rect y="175" width="400" height="25" fill="#161b22" opacity="0.6" />
+        <text x="20" y="191" class="text label" font-size="7">LAST_SCAN: {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')} UTC</text>
+        <text x="380" y="191" class="text label" font-size="7" text-anchor="end">KERNEL_VER: 2.2.1-FIX</text>
 
     </svg>
     """
