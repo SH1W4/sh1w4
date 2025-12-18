@@ -9,8 +9,7 @@ def load_projects():
         return json.load(f)
 
 def generate_mermaid_graph(data):
-    """Generate the Pure Architectural Manifest (Maximum Privacy)"""
-    # This version ignores literal names and focuses on functional architecture
+    """Generate the Pure Architectural Manifest with Access Levels"""
     lines = [
         "```mermaid",
         "graph LR",
@@ -20,33 +19,36 @@ def generate_mermaid_graph(data):
         "    classDef tool fill:#111,stroke:#00d9ff,stroke-width:1px,color:#ddd;",
         "    classDef ethics fill:#111,stroke:#f1c40f,stroke-width:1.5px,color:#fff;",
         "    classDef research fill:#111,stroke:#ff5555,stroke-width:1px,color:#ddd;",
+        "    classDef restricted fill:#0d1117,stroke:#333,color:#666,stroke-dasharray: 5 5;",
         "",
         "    User((USER)):::core -->|Directives| Core[SH1W4 / CORE]:::core",
         "",
         "    subgraph INTELLIGENCE_LAYER",
-        "        Core --> VIREON[🧬 AGENTIC_ORCHESTRATOR]:::agent",
-        "        Core --> TRINITY[🧠 COGNITIVE_PROCESSOR]:::agent",
+        "        Core --> VIREON[\"🧬 AGENTIC_ORCHESTRATOR <br/> [ACCESS: L1]\"]:::agent",
+        "        Core --> TRINITY[\"🧠 COGNITIVE_PROCESSOR <br/> [ACCESS: L1]\"]:::agent",
         "    end",
         "",
         "    subgraph TOOL_LAYER",
         "        direction TB",
-        "        VIREON --> DX_KIT[👁️ DEV_EXP_MODULE]:::tool",
-        "        VIREON --> ARKITECH[🏗️ STRAT_INFRA_TOOL]:::tool",
+        "        VIREON --> DX_KIT[\"👁️ DEV_EXP_MODULE <br/> [ACCESS: L1]\"]:::tool",
+        "        VIREON --> ARKITECH[\"🏗️ STRAT_INFRA_TOOL <br/> [ACCESS: L1]\"]:::tool",
+        "        VIREON -.-> RD_TOOLS[\"📡 R&D_EXTENSIONS <br/> [ACCESS: RESTRICTED]\"]:::restricted",
         "    end",
         "",
         "    subgraph DOMAIN_LAYER",
-        "        VIREON --> LEGAL[⚖️ LEGAL_INTEL_CORE]:::agent",
-        "        LEGAL --> SHIELD[🛡️ IP_GUARD_PROTOCOL]:::tool",
+        "        VIREON --> LEGAL[\"⚖️ LEGAL_INTEL_CORE <br/> [ACCESS: L1]\"]:::agent",
+        "        LEGAL --> SHIELD[\"🛡️ IP_GUARD_PROTOCOL <br/> [ACCESS: L1]\"]:::tool",
+        "        VIREON -.-> RD_DOMAIN[\"⚖️ LEGAL_TECH_R&D <br/> [ACCESS: RESTRICTED]\"]:::restricted",
         "    end",
         "",
         "    subgraph ETHICS_GOVERNANCE",
-        "        SEVE[⚖️ SEVE_ALIGNMENT_FWK]:::ethics",
+        "        SEVE[\"⚖️ SEVE_ALIGNMENT_FWK <br/> [ACCESS: L1]\"]:::ethics",
         "    end",
         "",
         "    subgraph RESEARCH_LABS",
         "        direction TB",
-        "        BIO[🔬 BIO_COMPUTATION_R&D]:::research",
-        "        PROTO[📐 SEMANTIC_STANDARDS]:::research",
+        "        BIO[\"🔬 BIO_COMPUTATION_R&D <br/> [ACCESS: L2]\"]:::research",
+        "        PROTO[\"📐 SEMANTIC_STANDARDS <br/> [ACCESS: L2]\"]:::research",
         "    end",
         "",
         "    %% Strategic Relationship Links",
@@ -95,6 +97,12 @@ def generate_readme():
     else:
         print("⚠️ Markers not found. Appending to end.")
         new_readme = readme_content + "\n\n" + projects_md
+    
+    # Target the Dashboard section to add telemetry
+    dashboard_pattern = r'(<img src="\./biostats\.svg".*?\/>)'
+    telemetry_md = '\n<br/>\n<h3><code>🧠 COGNITIVE_PULSE</code></h3>\n<img src="./telemetry.svg" width="90%" alt="Cognitive Telemetry"/>'
+    
+    new_readme = re.sub(dashboard_pattern, f'\\1{telemetry_md}', new_readme, flags=re.DOTALL)
     
     with open('README.md', 'w', encoding='utf-8') as f:
         f.write(new_readme)

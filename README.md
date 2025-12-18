@@ -25,6 +25,9 @@
 <h3><code>🧬 ORGANISM_STATUS</code></h3>
 <a href="https://github.com/SH1W4">
 <img src="./biostats.svg" width="90%" alt="Live BioStats"/>
+<br/>
+<h3><code>🧠 COGNITIVE_PULSE</code></h3>
+<img src="./telemetry.svg" width="90%" alt="Cognitive Telemetry"/>
 </a>
 <br/><br/>
 <!-- Network Links as "Buttons" -->
@@ -72,33 +75,36 @@ graph LR
     classDef tool fill:#111,stroke:#00d9ff,stroke-width:1px,color:#ddd;
     classDef ethics fill:#111,stroke:#f1c40f,stroke-width:1.5px,color:#fff;
     classDef research fill:#111,stroke:#ff5555,stroke-width:1px,color:#ddd;
+    classDef restricted fill:#0d1117,stroke:#333,color:#666,stroke-dasharray: 5 5;
 
     User((USER)):::core -->|Directives| Core[SH1W4 / CORE]:::core
 
     subgraph INTELLIGENCE_LAYER
-        Core --> VIREON[🧬 AGENTIC_ORCHESTRATOR]:::agent
-        Core --> TRINITY[🧠 COGNITIVE_PROCESSOR]:::agent
+        Core --> VIREON["🧬 AGENTIC_ORCHESTRATOR <br/> [ACCESS: L1]"]:::agent
+        Core --> TRINITY["🧠 COGNITIVE_PROCESSOR <br/> [ACCESS: L1]"]:::agent
     end
 
     subgraph TOOL_LAYER
         direction TB
-        VIREON --> DX_KIT[👁️ DEV_EXP_MODULE]:::tool
-        VIREON --> ARKITECH[🏗️ STRAT_INFRA_TOOL]:::tool
+        VIREON --> DX_KIT["👁️ DEV_EXP_MODULE <br/> [ACCESS: L1]"]:::tool
+        VIREON --> ARKITECH["🏗️ STRAT_INFRA_TOOL <br/> [ACCESS: L1]"]:::tool
+        VIREON -.-> RD_TOOLS["📡 R&D_EXTENSIONS <br/> [ACCESS: RESTRICTED]"]:::restricted
     end
 
     subgraph DOMAIN_LAYER
-        VIREON --> LEGAL[⚖️ LEGAL_INTEL_CORE]:::agent
-        LEGAL --> SHIELD[🛡️ IP_GUARD_PROTOCOL]:::tool
+        VIREON --> LEGAL["⚖️ LEGAL_INTEL_CORE <br/> [ACCESS: L1]"]:::agent
+        LEGAL --> SHIELD["🛡️ IP_GUARD_PROTOCOL <br/> [ACCESS: L1]"]:::tool
+        VIREON -.-> RD_DOMAIN["⚖️ LEGAL_TECH_R&D <br/> [ACCESS: RESTRICTED]"]:::restricted
     end
 
     subgraph ETHICS_GOVERNANCE
-        SEVE[⚖️ SEVE_ALIGNMENT_FWK]:::ethics
+        SEVE["⚖️ SEVE_ALIGNMENT_FWK <br/> [ACCESS: L1]"]:::ethics
     end
 
     subgraph RESEARCH_LABS
         direction TB
-        BIO[🔬 BIO_COMPUTATION_R&D]:::research
-        PROTO[📐 SEMANTIC_STANDARDS]:::research
+        BIO["🔬 BIO_COMPUTATION_R&D <br/> [ACCESS: L2]"]:::research
+        PROTO["📐 SEMANTIC_STANDARDS <br/> [ACCESS: L2]"]:::research
     end
 
     %% Strategic Relationship Links
@@ -111,6 +117,18 @@ graph LR
 ```
 
 > **MISSION PROTOCOL:** "I build the bridge where **Scientific Rigor** meets **AI Velocity**. Creating systems grounded in deep research, where the machine doesn't just execute, but **understands**."
+
+---
+
+### 🔬 R E S E A R C H _ D N A (Knowledge Vectors)
+
+| VECTOR | SPECIALIZATION | STATUS |
+| :--- | :--- | :--- |
+| **[V_01]** | **Agentic Orchestration** (Swarm Logic & MCP) | `STABLE` |
+| **[V_02]** | **Deep Tech Compliance** (Semantic Prior Art) | `ACTIVE` |
+| **[V_03]** | **Bio-Computational Sim** (Organic Logic) | `R&D` |
+
+> "Information is not knowledge. The only source of knowledge is **experience** and **pattern synthesis**."
 
 ---
 
@@ -176,7 +194,11 @@ stateDiagram-v2
         <img src="https://img.shields.io/badge/ENCRYPTED_CHANNEL-PROTONMAIL-6d4aff?style=for-the-badge&logo=protonmail&labelColor=1a1a1a" height="35">
     </a>
     <br/><br/>
-    <code>// PGP_KEY_ID: SH1W4_PUB_KEY [ACTIVE]</code>
+    <a href="./MANIFESTO.md">
+        <img src="https://img.shields.io/badge/VIEW-MANIFESTO-00ff41?style=for-the-badge&logo=markdown&labelColor=1a1a1a" height="35">
+    </a>
+    <br/><br/>
+    <code>// PGP_FINGERPRINT: 4A7B 1C92 D3E4 F5G6... [ACTIVE]</code>
 </div>
 
 <br/><br/>
