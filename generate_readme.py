@@ -234,10 +234,17 @@ graph TD
 
     # Construction of New Content
     # We keep everything before the first section (header, directive, dashboard)
-    header_end = content.find("### 🧩 C O N C E P T")
-    if header_end == -1: header_end = content.find("---") + 3
+    # Use a robust split that ignores any trailing horizontal rules
+    if "### 🧩 C O N C E P T" in content:
+        header_part = content.split("### 🧩 C O N C E P T")[0]
+    else:
+        header_part = content.split("---")[0] if "---" in content else content
+
+    # Clean the header: strip whitespace and any consecutive horizontal rules at the end
+    import re
+    header_part = re.sub(r'(\n\s*---\s*)+\Z', '', header_part.strip(), flags=re.MULTILINE)
     
-    new_readme = content[:header_end].strip() + "\n\n---\n\n"
+    new_readme = header_part + "\n\n---\n\n"
     
     # Ordered Assembly
     ordered_keys = ["CONCEPT", "MANIFEST", "DOSSIERS", "RESEARCH", "ENGINE", "JOURNEY", "ENVIRONMENT", "ALLIANCE", "ACTIVITY", "SOUL"]
