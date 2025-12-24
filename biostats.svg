@@ -6,8 +6,8 @@
             .value { font-size: 13px; font-weight: bold; }
             
             @keyframes pulse {
-                0%, 100% { opacity: 0.5; filter: drop-shadow(0 0 2px #00ff41); }
-                50% { opacity: 1; filter: drop-shadow(0 0 10px #00ff41); }
+                0%, 100% { opacity: 0.5; filter: drop-shadow(0 0 2px #bd93f9); }
+                50% { opacity: 1; filter: drop-shadow(0 0 10px #bd93f9); }
             }
             
             @keyframes scan {
@@ -23,19 +23,19 @@
             }
 
             .core {
-                animation: pulse 0.5s infinite ease-in-out;
-                fill: #00ff41;
+                animation: pulse 1.5s infinite ease-in-out;
+                fill: #bd93f9;
             }
             
             .scanner {
                 animation: scan 4s linear infinite;
-                stroke: #00ff41;
+                stroke: #bd93f9;
                 stroke-width: 1;
                 opacity: 0.2;
             }
 
             .sparkline {
-                stroke: #00ff41;
+                stroke: #bd93f9;
                 stroke-width: 2;
                 fill: none;
                 stroke-dasharray: 200;
@@ -54,15 +54,15 @@
             <text class="text label">COGNITIVE_ID</text>
             <text y="18" class="text" font-size="14" font-weight="900" fill="#ffffff">SH1W4</text>
             
-            <rect x="280" y="-10" width="85" height="14" rx="3" fill="#00ff41" fill-opacity="0.1"/>
-            <text x="322.5" y="0" class="text" font-size="8" text-anchor="middle" font-weight="bold" fill="#00ff41">HYPER-EVOLUTION</text>
+            <rect x="280" y="-10" width="85" height="14" rx="3" fill="#bd93f9" fill-opacity="0.1"/>
+            <text x="322.5" y="0" class="text" font-size="8" text-anchor="middle" font-weight="bold" fill="#bd93f9">STEADY_GROWTH</text>
         </g>
 
         <!-- CENTRAL BIO-CORE -->
         <g transform="translate(55, 100)">
             <circle r="35" stroke="#30363d" stroke-width="1" stroke-dasharray="4 4" />
             <circle r="15" class="core" />
-            <circle r="22" stroke="#00ff41" stroke-width="0.5" opacity="0.2" />
+            <circle r="22" stroke="#bd93f9" stroke-width="0.5" opacity="0.2" />
         </g>
 
         <!-- DATA READOUTS (Grid Layout) -->
@@ -70,7 +70,7 @@
             <!-- Column 1 -->
             <g>
                 <text class="text label">MUTATIONS</text>
-                <text y="16" class="text value" fill="#00ff41">300</text>
+                <text y="16" class="text value" fill="#bd93f9">972</text>
             </g>
             
             <g transform="translate(0, 40)">
@@ -93,12 +93,12 @@
         <!-- ACTIVITY SPARKLINE (Dedicated Bottom Right) -->
         <g transform="translate(260, 130)">
              <text y="-5" class="text label" opacity="0.4">ACTIVITY_TREND</text>
-             <path d="M 0,72.85714285714286 L 295,72.85714285714286 L 310,95.71428571428571 L 325,70.0 L 340,100.0 L 355,72.85714285714286 L 370,94.28571428571429" class="sparkline" transform="translate(0, -10) scale(0.9)"/>
+             <path d="M 0,70.0 L 295,70.0 L 310,92.10526315789474 L 325,70.0 L 340,100.0 L 355,70.0 L 370,92.10526315789474" class="sparkline" transform="translate(0, -10) scale(0.9)"/>
         </g>
 
         <!-- FOOTER -->
         <rect y="175" width="400" height="25" fill="#161b22" opacity="0.6" />
-        <text x="20" y="191" class="text label" font-size="7">LAST_SCAN: 2025-12-24 18:22:40 UTC</text>
+        <text x="20" y="191" class="text label" font-size="7">LAST_SCAN: 2025-12-24 20:03:10 UTC</text>
         <text x="380" y="191" class="text label" font-size="7" text-anchor="end">KERNEL_VER: 2.2.1-FIX</text>
 
     </svg>
