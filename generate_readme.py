@@ -234,15 +234,16 @@ graph TD
 
     # Construction of New Content
     # We keep everything before the first section (header, directive, dashboard)
-    # Use a robust split that ignores any trailing horizontal rules
     if "### 🧩 C O N C E P T" in content:
         header_part = content.split("### 🧩 C O N C E P T")[0]
     else:
         header_part = content.split("---")[0] if "---" in content else content
 
-    # Clean the header: strip whitespace and any consecutive horizontal rules at the end
-    import re
-    header_part = re.sub(r'(\n\s*---\s*)+\Z', '', header_part.strip(), flags=re.MULTILINE)
+    # Aggressive cleaning: Remove all trailing whitespace and dashes
+    header_part = header_part.rstrip()
+    while header_part.endswith('-'):
+        header_part = header_part.rstrip('-')
+        header_part = header_part.rstrip()
     
     new_readme = header_part + "\n\n---\n\n"
     

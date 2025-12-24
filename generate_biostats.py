@@ -29,17 +29,20 @@ def fetch_github_data():
     # 1. Fetch Total Commits (Mutations) using Search API - higher ceiling
     try:
         search_url = f"https://api.github.com/search/commits?q=author:{USERNAME}"
-        # Accept header is required for search commits
-        search_headers = {**headers, "Accept": "application/vnd.github.cloak-preview"}
+        # CORRECT HEADERS FOR COMMIT SEARCH (Cloak Preview)
+        search_headers = {
+            "Authorization": f"token {TOKEN}",
+            "Accept": "application/vnd.github.cloak-preview+json" 
+        }
+        print(f"DEBUG: Searching commits for {USERNAME}...")
         search_res = requests.get(search_url, headers=search_headers)
+        
         if search_res.status_code == 200:
             commit_count = search_res.json().get("total_count", 0)
+            print(f"DEBUG: Search successful. Count: {commit_count}")
         else:
+            print(f"DEBUG: Search failed. Status: {search_res.status_code}. Response: {search_res.text}")
             # Fallback to events if search fails
-            events_url = f"https://api.github.com/users/{USERNAME}/events?per_page=1"
-            events_res = requests.get(events_url, headers=headers)
-            commit_count = int(events_res.headers.get("X-Common-Level-Something", 300)) # Placeholder for events count logic
-            # Actually just use events length if fallback
             events_url = f"https://api.github.com/users/{USERNAME}/events?per_page=100"
             events_res = requests.get(events_url, headers=headers)
             commit_count = len(events_res.json()) if events_res.status_code == 200 else 300
