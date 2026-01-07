@@ -234,50 +234,74 @@ graph TD
     terminal_url = f"https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=16&duration=4000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=500&height=180&lines={';'.join([line.replace(' ', '+') for line in terminal_lines])}"
     terminal_md = f'<div align="center">\n    <img src="{terminal_url}" alt="Terminal Status" />\n</div>\n\n'
 
-    # Construction of New Content
-    # We keep everything before the first section (header, directive, dashboard)
-    if "### 🧩 C O N C E P T" in content:
-        header_part = content.split("### 🧩 C O N C E P T")[0]
-    else:
-        header_part = content.split("---")[0] if "---" in content else content
-
-    # Aggressive cleaning: Remove all trailing whitespace and dashes
-    header_part = header_part.rstrip()
-    while header_part.endswith('-'):
-        header_part = header_part.rstrip('-')
-        header_part = header_part.rstrip()
-    
-    # Move Snake to Top (below banner)
+    # --- CONSTRUCTION ---
     import re
-    # Remove any existing snake animation from header to prevent duplicates
-    header_part = re.sub(r'<div align="center">\s*<img src="[^"]*snake-dark\.svg"[^>]*>\s*</div>', '', header_part, flags=re.DOTALL)
-    
-    # Find the end of the banner (first </div>) and insert snake
-    banner_end = header_part.find("</div>") + 6
-    if banner_end > 5:
-        header_part = header_part[:banner_end] + "\n" + snake_html + header_part[banner_end:]
-    else:
-        header_part = snake_html + header_part
 
-    # Ensure sections that are now fixed in header/footer are NOT in the dynamic loop
-    # SOUL and ACTIVITY are now handled manually
+    # 1. Capture the Full Header (Everything before the first ### section)
+    # We use a pattern that finds the first section title
+    section_patterns = [r'### 🧩 C O N C E P T', r'### 🎨 D I G I T A L', r'### 📡 N E T W O R K']
+    split_point = len(content)
+    for p in section_patterns:
+        match = re.search(p, content)
+        if match and match.start() < split_point:
+            split_point = match.start()
+    
+    header_raw = content[:split_point]
+
+    # 2. Aggressive Cleaning of Header (Remove all dynamic tags to prevent duplication)
+    # Remove existing Snake
+    header_raw = re.sub(r'<div align="center">\s*<img src="[^"]*snake-dark\.svg"[^>]*>\s*</div>', '', header_raw, flags=re.DOTALL)
+    # Remove existing Biostats (if it was already outside the table)
+    header_raw = re.sub(r'<div align="center">\s*<a href="https://github.com/SH1W4">\s*<img src="\./biostats\.svg"[^>]*>\s*</a>\s*</div>', '', header_raw, flags=re.DOTALL)
+    # Remove existing Terminal
+    header_raw = re.sub(r'<div align="center">\s*<img src="https://readme-typing-svg\.herokuapp\.com[^"]*status_check\.sh[^"]*"[^>]*>\s*</div>', '', header_raw, flags=re.DOTALL)
+    # Remove existing Soul from header
+    header_raw = re.sub(r'<div align="center">\s*<img src="\./art_core_anonymous\.png"[^>]*>.*?</div>', '', header_raw, flags=re.DOTALL)
+    # Remove legacy section titles that might have leaked
+    header_raw = re.sub(r'### [^\n]+', '', header_raw)
+
+    # 3. Define metrics for top (Snake + BioStats)
+    metrics_html = f"""
+<div align="center">
+    <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Snake Animation" />
+</div>
+<div align="center">
+    <a href="https://github.com/SH1W4">
+        <img src="./biostats.svg" width="45%" alt="Official Contribution Bar"/>
+    </a>
+</div>
+"""
+
+    # 4. Inject metrics below Banner
+    # Banner ends at the first </div>
+    banner_end = header_raw.find("</div>") + 6
+    if banner_end > 5:
+        header_part = header_raw[:banner_end] + "\n" + metrics_html + header_raw[banner_end:]
+    else:
+        header_part = metrics_html + header_raw
+
+    # Final polish for header_part (remove excessive whitespace/dashes)
+    header_part = header_part.strip()
+    while header_part.endswith('-') or header_part.endswith('\n') or header_part.endswith(' '):
+        header_part = header_part.rstrip('-').rstrip()
+
     new_readme = header_part + "\n\n---\n\n"
     
-    # Ordered Assembly
+    # 5. Assemble Main Body (Ordered Sections)
     ordered_keys = ["CONCEPT", "MANIFEST", "DOSSIERS", "RESEARCH", "ENGINE", "JOURNEY", "ENVIRONMENT", "ALLIANCE"]
     
     for key in ordered_keys:
         title = sections[key]
         new_readme += f"{title}\n\n{segments[key].strip()}\n\n"
 
-    # Add Terminal and Soul at the bottom as the signature
+    # 6. Assemble Footer (Terminal + Digital Soul)
     new_readme += terminal_md
     new_readme += sections["SOUL"] + "\n\n" + segments["SOUL"].strip() + "\n\n"
 
     with open('README.md', 'w', encoding='utf-8') as f:
         f.write(new_readme)
     
-    print("✅ README.md cleaned, duplicates removed, and Snake at top.")
+    print("✅ README.md sanitized. Duplicates purged. Official Bar at top.")
 
 if __name__ == "__main__":
     generate_readme()

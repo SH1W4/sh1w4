@@ -13,9 +13,17 @@
 <div align="center">
 <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/header_final.png" width="100%" height="auto" style="object-fit: cover; border-radius: 12px; border: 1px solid #30363d; box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);" alt="Neural Interface"/>
 </div>
+
 <div align="center">
     <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Snake Animation" />
 </div>
+<div align="center">
+    <a href="https://github.com/SH1W4">
+        <img src="./biostats.svg" width="45%" alt="Official Contribution Bar"/>
+    </a>
+</div>
+
+
 
 
 
@@ -71,51 +79,6 @@
 
 ---
 
-### 🎨 D I G I T A L _ S O U L
-
-<div align="center">
-    <img src="./art_core_anonymous.png" width="100%" style="border-radius: 8px; border: 1px solid #30363d;" alt="Bio-Digital Soul"/>
-    <br/>
-    <sub><i>"The ghost in the machine."</i></sub>
-</div>
-
-<div align="center">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=16&duration=4000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=500&height=180&lines=root@symbeon:~$+./status_check.sh;>+UPTIME:+99.9%+[STABLE];>+NEURAL_SYNC:+OPTIMAL;>+NEXT_GOAL:+AGI_INFRASTRUCTURE;[█▒▒▒▒▒▒▒▒▒]+12%+EVOLUTION_COMPLETE" alt="Terminal Status" />
-</div>
-
-### 📡 N E T W O R K _ A C T I V I T Y
-
-<div align="center">
-    <a href="https://git.io/typing-svg">
-      <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=14&duration=3000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=600&height=100&lines=Subject%3A+SH1W4+%7C+STATUS%3A+HYPER-EVOLUTION;%3E+ANALYZING+GITHUB+EVENT_STREAM...;%3E+OPTIMIZING+DEVELOPER+EXPERIENCE...;%3E+SYSTEM_READY." alt="Typing SVG" />
-    </a>
-    <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Snake Animation" />
-</div>
-
----
-
-### 🎨 D I G I T A L _ S O U L
-
-<div align="center">
-    <img src="./art_core_anonymous.png" width="100%" style="border-radius: 8px; border: 1px solid #30363d;" alt="Bio-Digital Soul"/>
-    <br/>
-    <sub><i>"The ghost in the machine."</i></sub>
-</div>
-
-<div align="center">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=16&duration=4000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=500&height=180&lines=root@symbeon:~$+./status_check.sh;>+UPTIME:+99.9%+[STABLE];>+NEURAL_SYNC:+OPTIMAL;>+NEXT_GOAL:+AGI_INFRASTRUCTURE;[█▒▒▒▒▒▒▒▒▒]+12%+EVOLUTION_COMPLETE" alt="Terminal Status" />
-</div>
-
-### 📡 N E T W O R K _ A C T I V I T Y
-
-<div align="center">
-    <a href="https://git.io/typing-svg">
-      <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=14&duration=3000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=600&height=100&lines=Subject%3A+SH1W4+%7C+STATUS%3A+HYPER-EVOLUTION;%3E+ANALYZING+GITHUB+EVENT_STREAM...;%3E+OPTIMIZING+DEVELOPER+EXPERIENCE...;%3E+SYSTEM_READY." alt="Typing SVG" />
-    </a>
-</div>
-
----
-
 ### 🧩 C O N C E P T _ C O R E (The SH1W4 Entity)
 
 | IDENTIFIER | ATTRIBUTE | DESCRIPTION |
@@ -137,7 +100,7 @@
 </div>
 
 ```mermaid
-%% Cache-Bust: 2026-01-06T23:42:21.468415
+%% Cache-Bust: 2026-01-06T23:44:03.314325
 graph LR
     %% Themes & Styles (Pure Cyberpunk Architecture)
     classDef core fill:#000,stroke:#00ff41,stroke-width:2px,color:#fff,font-weight:bold;
