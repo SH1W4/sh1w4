@@ -70,14 +70,78 @@ def generate_mermaid_graph(data):
     return "\n".join(lines)
 
 def generate_readme():
-    """Refined non-destructive section generator (Split & Merge approach)"""
+    """Deterministic Template-based Generator (Eliminates Duplications)"""
     data = load_projects()
-    try:
-        with open('README.md', 'r', encoding='utf-8') as f:
-            content = f.read()
-    except: return
+    
+    # 1. TEMPLATE CONSTANTS
+    METADATA = """<!-- 
+    THEME: ORGANIC_INTELLIGENCE (PREMIUM_DASHBOARD)
+    COLOR_PALETTE: #00ff41 (Bio-Green), #bd93f9 (Synth-Purple), #ffffff (Clean White)
+    STYLE: Advanced Biocybernetic Interface
 
-    # Define the 100% stable sections
+    SYSTEM_BOOT_SEQUENCE:
+    > LOADER: v2.2.0 ... OK
+    > NEURAL_LINK: ESTABLISHED
+    > TARGET: RECRUITER_RETINA ... LOCKED
+    > MESSAGE: "Não procure empregados. Procure co-pilotos."
+-->"""
+
+    BANNER = """<div align="center">
+<img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/header_final.png" width="100%" height="auto" style="object-fit: cover; border-radius: 12px; border: 1px solid #30363d; box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);" alt="Neural Interface"/>
+</div>"""
+
+    SNAKE = """<div align="center">
+    <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Snake Animation" />
+</div>"""
+
+    DIRECTIVE = """<div align="center">
+    <img src="./directive.svg" width="100%" alt="Strategic Directive"/>
+</div>"""
+
+    DASHBOARD = """<!-- DASHBOARD CONTROLS (2-Column Layout) -->
+<table width="100%" style="border: 0; background-color: transparent;">
+<tr>
+<!-- LEFT MODULE: VITAL SIGNS -->
+<td width="50%" align="center" valign="middle" style="border: 0;">
+<div align="center">
+<h3><code>🧬 ORGANISM_STATUS</code></h3>
+<a href="https://github.com/SH1W4">
+<img src="./biostats.svg" width="90%" alt="Live BioStats"/>
+<br/>
+<h3><code>🧠 COGNITIVE_PULSE</code></h3>
+<img src="./telemetry.svg" width="90%" alt="Cognitive Telemetry"/>
+</a>
+<br/><br/>
+<!-- Network Links as "Buttons" -->
+<a href="https://linkedin.com/in/joaomartins-ai"><img src="https://img.shields.io/badge/LINKEDIN-NETWORK-0a66c2?style=for-the-badge&logo=linkedin"/></a>
+<a href="mailto:contact@symbeon.com"><img src="https://img.shields.io/badge/PROTON-SECURE_MAIL-6d4aff?style=for-the-badge&logo=protonmail"/></a>
+</div>
+</td>
+<!-- RIGHT MODULE: OPERATOR IDENTITY -->
+<td width="50%" align="left" valign="top" style="border: 0;">
+<div align="left">
+<h1>&nbsp;&nbsp;SH1W4</h1>
+<blockquote>
+<b><code>// AI SYSTEMS ARCHITECT</code></b><br/>
+<b><code>// AUGMENTED DEVELOPER</code></b>
+</blockquote>
+<br/>
+<p>
+&nbsp; <b>[ HUMAN_VISION ]</b><br/>
+&nbsp; <b>[ AGENTIC_EXECUTION ]</b><br/>
+&nbsp; <b>[ SYMBIOTIC_RESULT ]</b>
+</p>
+<br/>
+<b>&nbsp; TECHNOLOGICAL GENOME:</b><br/>
+&nbsp; <img src="https://skillicons.dev/icons?i=python,rust,go,cpp" valign="middle" height="25"/> <code>CORE_LANGS</code><br/>
+&nbsp; <img src="https://skillicons.dev/icons?i=docker,kubernetes,linux,aws" valign="middle" height="25"/> <code>INFRA_SHELL</code><br/>
+&nbsp; <img src="https://skillicons.dev/icons?i=postgres,redis,graphql,tensorflow" valign="middle" height="25"/> <code>SYNAPSES</code><br/>
+</div>
+</td>
+</tr>
+</table>"""
+
+    # --- DEFINITIONS ---
     sections = {
         "CONCEPT": "### 🧩 C O N C E P T _ C O R E (The SH1W4 Entity)",
         "MANIFEST": "### 📂 S Y S T E M _ M A N I F E S T (Symbeon Ecosystem)",
@@ -85,16 +149,13 @@ def generate_readme():
         "RESEARCH": "### 🔬 R E S E A R C H _ D N A (Knowledge Vectors)",
         "ENGINE": "### ⚙️ THE SYMBEON ENGINE (Methodology)",
         "JOURNEY": "### 🚀 E V O L U T I O N _ J O U R N E Y",
-        "SOUL": "### 🎨 D I G I T A L _ S O U L",
         "ENVIRONMENT": "### 🖥️ E N V I R O N M E N T A L _ M A N I F E S T",
         "ALLIANCE": "### 🤝 STRATEGIC ALLIANCE",
+        "SOUL": "### 🎨 D I G I T A L _ S O U L",
         "ACTIVITY": "### 📡 N E T W O R K _ A C T I V I T Y"
     }
 
-    # Core content segments
     segments = {}
-    
-    # 1. Identity Core
     segments["CONCEPT"] = """| IDENTIFIER | ATTRIBUTE | DESCRIPTION |
 | :--- | :--- | :--- |
 | **NAME** | **SH1W4** | Symbiotic Human-AI Workflow Architect |
@@ -106,12 +167,8 @@ def generate_readme():
 > It represents the bridge where human strategic vision meets high-velocity agentic execution. In this ecosystem, the human provides the **Directives** and the **Ethics**, while the AI enshrine (Vireon/Trinity/Aiden) materializes the **Results**.
 
 ---"""
-
-    # 2. Manifest
     projects_md = generate_mermaid_graph(data)
     segments["MANIFEST"] = f'<div align="center">\n    <img src="./neural_network.svg" width="80%" alt="Symbeon Neural Fabric"/>\n</div>\n\n{projects_md}\n\n---'
-
-    # 3. Dossiers
     segments["DOSSIERS"] = """| IDENTITY | ROLE | COGNITIVE_PROFILE | PRIMARY_DIRECTIVE |
 | :--- | :--- | :--- | :--- |
 | **🧬 VIREON** | Orchestrator | Aggressive / Precise | Universal Scaling |
@@ -119,8 +176,6 @@ def generate_readme():
 | **📡 AIDEN** | Interface | Tactical / Adaptive | User Synchronization |
 
 ---"""
-
-    # 4. Research DNA
     segments["RESEARCH"] = """| VECTOR | SPECIALIZATION | STATUS |
 | :--- | :--- | :--- |
 | **[V_01]** | **Agentic Orchestration** (Swarm Logic & MCP) | `STABLE` |
@@ -130,11 +185,8 @@ def generate_readme():
 > "Information is not knowledge. The only source of knowledge is **experience** and **pattern synthesis**."
 
 ---"""
-
-    # 5. Engine
     segments["ENGINE"] = """```mermaid
 stateDiagram-v2
-    %% Theme: Dark & Strategic
     classDef space fill:#0d1117,stroke:#30363d,stroke-width:1px,color:#8b949e;
     classDef active fill:#0d1117,stroke:#00ff41,stroke-width:2px,color:#fff;
     classDef check fill:#0d1117,stroke:#f1c40f,stroke-width:2px,color:#fff;
@@ -156,8 +208,6 @@ stateDiagram-v2
 > "We do not guess. We **observe** patterns, **synthesize** solutions, and **align** them with human values before writing a single line of production code."
 
 ---"""
-
-    # 6. Journey
     segments["JOURNEY"] = """```mermaid
 graph TD
     V1[v1.0: THE KERNEL] -->|Agentic Infusion| V2[v2.0: THE ARCHITECT]
@@ -174,8 +224,6 @@ graph TD
 ```
 
 ---"""
-
-    # 7. Environment
     segments["ENVIRONMENT"] = """| SYSTEM | SPECIFICATION | ROLE |
 | :--- | :--- | :--- |
 | **OS** | **Arch Linux / WSL2** | Primary Cognitive Host |
@@ -183,8 +231,6 @@ graph TD
 | **SHELL** | **ZSH / Powerlevel10k** | Tactical Command Link |
 
 ---"""
-
-    # 8. Alliance
     segments["ALLIANCE"] = """<div align="center">
     <p>Open for high-impact joint ventures in <b>Agencia Artificial</b> and <b>Cognitive Systems</b>.</p>
     <a href="https://linkedin.com/in/joaomartins-ai">
@@ -203,8 +249,6 @@ graph TD
 </div>
 
 ---"""
-
-    # 9. Activity
     segments["ACTIVITY"] = """<div align="center">
     <a href="https://git.io/typing-svg">
       <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=14&duration=3000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=600&height=100&lines=Subject%3A+SH1W4+%7C+STATUS%3A+HYPER-EVOLUTION;%3E+ANALYZING+GITHUB+EVENT_STREAM...;%3E+OPTIMIZING+DEVELOPER+EXPERIENCE...;%3E+SYSTEM_READY." alt="Typing SVG" />
@@ -212,96 +256,32 @@ graph TD
 </div>
 
 ---"""
-
-    # 10. SOUL (THE FINAL SIGNATURE)
     segments["SOUL"] = """<div align="center">
     <img src="./art_core_anonymous.png" width="100%" style="border-radius: 8px; border: 1px solid #30363d;" alt="Bio-Digital Soul"/>
     <br/>
     <sub><i>"The ghost in the machine."</i></sub>
 </div>"""
 
-    # Snake Animation (Special placement)
-    snake_html = '<div align="center">\n    <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Snake Animation" />\n</div>\n'
-
-    # Terminal status (Special injection)
-    terminal_lines = [
-        "root@symbeon:~$ ./status_check.sh",
-        "> UPTIME: 99.9% [STABLE]",
-        "> NEURAL_SYNC: OPTIMAL",
-        "> NEXT_GOAL: AGI_INFRASTRUCTURE",
-        "[█▒▒▒▒▒▒▒▒▒] 12% EVOLUTION_COMPLETE"
-    ]
+    terminal_lines = ["root@symbeon:~$ ./status_check.sh", "> UPTIME: 99.9% [STABLE]", "> NEURAL_SYNC: OPTIMAL", "> NEXT_GOAL: AGI_INFRASTRUCTURE", "[█▒▒▒▒▒▒▒▒▒] 12% EVOLUTION_COMPLETE"]
     terminal_url = f"https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=16&duration=4000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=500&height=180&lines={';'.join([line.replace(' ', '+') for line in terminal_lines])}"
     terminal_md = f'<div align="center">\n    <img src="{terminal_url}" alt="Terminal Status" />\n</div>\n\n'
 
-    # --- CONSTRUCTION ---
-    import re
-
-    # 1. Capture the Full Header (Everything before the first ### section)
-    # We use a pattern that finds the first section title
-    section_patterns = [r'### 🧩 C O N C E P T', r'### 🎨 D I G I T A L', r'### 📡 N E T W O R K']
-    split_point = len(content)
-    for p in section_patterns:
-        match = re.search(p, content)
-        if match and match.start() < split_point:
-            split_point = match.start()
+    # --- ASSEMBLY (CLEAN BOOT) ---
+    new_readme = METADATA + "\n\n" + BANNER + "\n" + SNAKE + "\n\n<br/>\n" + DIRECTIVE + "\n<br/>\n\n" + DASHBOARD + "\n\n---\n\n"
     
-    header_raw = content[:split_point]
-
-    # 2. Aggressive Cleaning of Header (Remove all dynamic tags to prevent duplication)
-    # Remove existing Snake
-    header_raw = re.sub(r'<div align="center">\s*<img src="[^"]*snake-dark\.svg"[^>]*>\s*</div>', '', header_raw, flags=re.DOTALL)
-    # Remove existing Biostats (if it was already outside the table)
-    header_raw = re.sub(r'<div align="center">\s*<a href="https://github.com/SH1W4">\s*<img src="\./biostats\.svg"[^>]*>\s*</a>\s*</div>', '', header_raw, flags=re.DOTALL)
-    # Remove existing Terminal
-    header_raw = re.sub(r'<div align="center">\s*<img src="https://readme-typing-svg\.herokuapp\.com[^"]*status_check\.sh[^"]*"[^>]*>\s*</div>', '', header_raw, flags=re.DOTALL)
-    # Remove existing Soul from header
-    header_raw = re.sub(r'<div align="center">\s*<img src="\./art_core_anonymous\.png"[^>]*>.*?</div>', '', header_raw, flags=re.DOTALL)
-    # Remove legacy section titles that might have leaked
-    header_raw = re.sub(r'### [^\n]+', '', header_raw)
-
-    # 3. Define metrics for top (Snake + BioStats)
-    metrics_html = f"""
-<div align="center">
-    <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Snake Animation" />
-</div>
-<div align="center">
-    <a href="https://github.com/SH1W4">
-        <img src="./biostats.svg" width="45%" alt="Official Contribution Bar"/>
-    </a>
-</div>
-"""
-
-    # 4. Inject metrics below Banner
-    # Banner ends at the first </div>
-    banner_end = header_raw.find("</div>") + 6
-    if banner_end > 5:
-        header_part = header_raw[:banner_end] + "\n" + metrics_html + header_raw[banner_end:]
-    else:
-        header_part = metrics_html + header_raw
-
-    # Final polish for header_part (remove excessive whitespace/dashes)
-    header_part = header_part.strip()
-    while header_part.endswith('-') or header_part.endswith('\n') or header_part.endswith(' '):
-        header_part = header_part.rstrip('-').rstrip()
-
-    new_readme = header_part + "\n\n---\n\n"
-    
-    # 5. Assemble Main Body (Ordered Sections)
-    ordered_keys = ["CONCEPT", "MANIFEST", "DOSSIERS", "RESEARCH", "ENGINE", "JOURNEY", "ENVIRONMENT", "ALLIANCE"]
-    
+    # Core Sections
+    ordered_keys = ["CONCEPT", "MANIFEST", "DOSSIERS", "RESEARCH", "ENGINE", "JOURNEY", "ACTIVITY", "ENVIRONMENT", "ALLIANCE"]
     for key in ordered_keys:
-        title = sections[key]
-        new_readme += f"{title}\n\n{segments[key].strip()}\n\n"
+        new_readme += sections[key] + "\n\n" + segments[key].strip() + "\n\n"
 
-    # 6. Assemble Footer (Terminal + Digital Soul)
+    # Signature Sections
     new_readme += terminal_md
     new_readme += sections["SOUL"] + "\n\n" + segments["SOUL"].strip() + "\n\n"
 
     with open('README.md', 'w', encoding='utf-8') as f:
         f.write(new_readme)
     
-    print("✅ README.md sanitized. Duplicates purged. Official Bar at top.")
+    print("✅ README.md RECONSTRUCTED from Template. Zero Duplications.")
 
 if __name__ == "__main__":
     generate_readme()

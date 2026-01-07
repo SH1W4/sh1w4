@@ -13,20 +13,9 @@
 <div align="center">
 <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/header_final.png" width="100%" height="auto" style="object-fit: cover; border-radius: 12px; border: 1px solid #30363d; box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);" alt="Neural Interface"/>
 </div>
-
 <div align="center">
     <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Snake Animation" />
 </div>
-<div align="center">
-    <a href="https://github.com/SH1W4">
-        <img src="./biostats.svg" width="45%" alt="Official Contribution Bar"/>
-    </a>
-</div>
-
-
-
-
-
 
 <br/>
 <div align="center">
@@ -100,7 +89,7 @@
 </div>
 
 ```mermaid
-%% Cache-Bust: 2026-01-06T23:44:03.314325
+%% Cache-Bust: 2026-01-06T23:49:20.744785
 graph LR
     %% Themes & Styles (Pure Cyberpunk Architecture)
     classDef core fill:#000,stroke:#00ff41,stroke-width:2px,color:#fff,font-weight:bold;
@@ -176,7 +165,6 @@ graph LR
 
 ```mermaid
 stateDiagram-v2
-    %% Theme: Dark & Strategic
     classDef space fill:#0d1117,stroke:#30363d,stroke-width:1px,color:#8b949e;
     classDef active fill:#0d1117,stroke:#00ff41,stroke-width:2px,color:#fff;
     classDef check fill:#0d1117,stroke:#f1c40f,stroke-width:2px,color:#fff;
@@ -215,6 +203,16 @@ graph TD
     class V3 current
     class V4 future
 ```
+
+---
+
+### 📡 N E T W O R K _ A C T I V I T Y
+
+<div align="center">
+    <a href="https://git.io/typing-svg">
+      <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=14&duration=3000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=600&height=100&lines=Subject%3A+SH1W4+%7C+STATUS%3A+HYPER-EVOLUTION;%3E+ANALYZING+GITHUB+EVENT_STREAM...;%3E+OPTIMIZING+DEVELOPER+EXPERIENCE...;%3E+SYSTEM_READY." alt="Typing SVG" />
+    </a>
+</div>
 
 ---
 
