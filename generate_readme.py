@@ -209,7 +209,6 @@ graph TD
     <a href="https://git.io/typing-svg">
       <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=14&duration=3000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=600&height=100&lines=Subject%3A+SH1W4+%7C+STATUS%3A+HYPER-EVOLUTION;%3E+ANALYZING+GITHUB+EVENT_STREAM...;%3E+OPTIMIZING+DEVELOPER+EXPERIENCE...;%3E+SYSTEM_READY." alt="Typing SVG" />
     </a>
-    <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Snake Animation" />
 </div>
 
 ---"""
@@ -220,6 +219,9 @@ graph TD
     <br/>
     <sub><i>"The ghost in the machine."</i></sub>
 </div>"""
+
+    # Snake Animation (Special placement)
+    snake_html = '<div align="center">\n    <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Snake Animation" />\n</div>\n'
 
     # Terminal status (Special injection)
     terminal_lines = [
@@ -245,6 +247,18 @@ graph TD
         header_part = header_part.rstrip('-')
         header_part = header_part.rstrip()
     
+    # Move Snake to Top (below banner)
+    import re
+    # Remove any existing snake animation from header to prevent duplicates
+    header_part = re.sub(r'<div align="center">\s*<img src="[^"]*snake-dark\.svg"[^>]*>\s*</div>', '', header_part, flags=re.DOTALL)
+    
+    # Find the end of the banner (first </div>) and insert snake
+    banner_end = header_part.find("</div>") + 6
+    if banner_end > 5:
+        header_part = header_part[:banner_end] + "\n" + snake_html + header_part[banner_end:]
+    else:
+        header_part = snake_html + header_part
+
     new_readme = header_part + "\n\n---\n\n"
     
     # Ordered Assembly
@@ -261,7 +275,7 @@ graph TD
     with open('README.md', 'w', encoding='utf-8') as f:
         f.write(new_readme)
     
-    print("✅ README.md restructured and synchronized (V4.3 Final).")
+    print("✅ README.md restructured and synchronized with Snake at top.")
 
 if __name__ == "__main__":
     generate_readme()
