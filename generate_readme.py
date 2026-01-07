@@ -248,7 +248,7 @@ graph TD
     new_readme = header_part + "\n\n---\n\n"
     
     # Ordered Assembly
-    ordered_keys = ["CONCEPT", "MANIFEST", "DOSSIERS", "RESEARCH", "ENGINE", "JOURNEY", "SOUL", "ACTIVITY", "ENVIRONMENT", "ALLIANCE"]
+    ordered_keys = ["SOUL", "ACTIVITY", "CONCEPT", "MANIFEST", "DOSSIERS", "RESEARCH", "ENGINE", "JOURNEY", "ENVIRONMENT", "ALLIANCE"]
     
     for key in ordered_keys:
         title = sections[key]
