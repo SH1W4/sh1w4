@@ -18,6 +18,8 @@
 </div>
 
 
+
+
 <br/>
 <div align="center">
     <img src="./directive.svg" width="100%" alt="Strategic Directive"/>
@@ -135,7 +137,7 @@
 </div>
 
 ```mermaid
-%% Cache-Bust: 2026-01-06T23:37:26.995923
+%% Cache-Bust: 2026-01-06T23:42:21.468415
 graph LR
     %% Themes & Styles (Pure Cyberpunk Architecture)
     classDef core fill:#000,stroke:#00ff41,stroke-width:2px,color:#fff,font-weight:bold;
@@ -283,4 +285,16 @@ graph TD
 </div>
 
 ---
+
+<div align="center">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=16&duration=4000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=500&height=180&lines=root@symbeon:~$+./status_check.sh;>+UPTIME:+99.9%+[STABLE];>+NEURAL_SYNC:+OPTIMAL;>+NEXT_GOAL:+AGI_INFRASTRUCTURE;[█▒▒▒▒▒▒▒▒▒]+12%+EVOLUTION_COMPLETE" alt="Terminal Status" />
+</div>
+
+### 🎨 D I G I T A L _ S O U L
+
+<div align="center">
+    <img src="./art_core_anonymous.png" width="100%" style="border-radius: 8px; border: 1px solid #30363d;" alt="Bio-Digital Soul"/>
+    <br/>
+    <sub><i>"The ghost in the machine."</i></sub>
+</div>
 

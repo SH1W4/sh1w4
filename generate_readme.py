@@ -259,23 +259,25 @@ graph TD
     else:
         header_part = snake_html + header_part
 
+    # Ensure sections that are now fixed in header/footer are NOT in the dynamic loop
+    # SOUL and ACTIVITY are now handled manually
     new_readme = header_part + "\n\n---\n\n"
     
     # Ordered Assembly
-    ordered_keys = ["SOUL", "ACTIVITY", "CONCEPT", "MANIFEST", "DOSSIERS", "RESEARCH", "ENGINE", "JOURNEY", "ENVIRONMENT", "ALLIANCE"]
+    ordered_keys = ["CONCEPT", "MANIFEST", "DOSSIERS", "RESEARCH", "ENGINE", "JOURNEY", "ENVIRONMENT", "ALLIANCE"]
     
     for key in ordered_keys:
         title = sections[key]
-        if key == "ACTIVITY":
-            # Inject Terminal Status before Network Activity
-            new_readme += terminal_md
-        
         new_readme += f"{title}\n\n{segments[key].strip()}\n\n"
+
+    # Add Terminal and Soul at the bottom as the signature
+    new_readme += terminal_md
+    new_readme += sections["SOUL"] + "\n\n" + segments["SOUL"].strip() + "\n\n"
 
     with open('README.md', 'w', encoding='utf-8') as f:
         f.write(new_readme)
     
-    print("✅ README.md restructured and synchronized with Snake at top.")
+    print("✅ README.md cleaned, duplicates removed, and Snake at top.")
 
 if __name__ == "__main__":
     generate_readme()
