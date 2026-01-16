@@ -75,7 +75,7 @@
             
             <g transform="translate(0, 40)">
                 <text class="text label">CONNECTIONS</text>
-                <text y="16" class="text value">10</text>
+                <text y="16" class="text value">9</text>
             </g>
 
             <!-- Column 2 -->
@@ -98,7 +98,7 @@
 
         <!-- FOOTER -->
         <rect y="175" width="400" height="25" fill="#161b22" opacity="0.6" />
-        <text x="20" y="191" class="text label" font-size="7">LAST_SCAN: 2026-01-16 01:16:21 UTC</text>
+        <text x="20" y="191" class="text label" font-size="7">LAST_SCAN: 2026-01-16 06:26:40 UTC</text>
         <text x="380" y="191" class="text label" font-size="7" text-anchor="end">KERNEL_VER: 2.2.1-FIX</text>
 
     </svg>
