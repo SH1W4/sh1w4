@@ -113,16 +113,19 @@ graph LR
         Core --> TRINITY["🧠 COGNITIVE_PROCESSOR <br/> [ACCESS: L1]"]:::agent
         Core --> AIDEN["📡 TACTICAL_INTERFACER <br/> [ACCESS: L1]"]:::agent
     end
+    subgraph SYMBEON_ECOSYSTEMS
+        Core --> T_CORE["🏛️ th3m1s-core (Innovation OS)"]:::ethics
+        Core --> G_FUND["👻 ghostfund-protocol (DeSci)"]:::ethics
+    end
     subgraph DOMAIN_LAYER
-        VIREON --> LEGAL["⚖️ LEGAL_INTEL_CORE <br/> [ACCESS: L1]"]:::agent
+        T_CORE --> LEGAL["⚖️ LEGAL_INTEL_CORE <br/> [ACCESS: L1]"]:::agent
         LEGAL --> SHIELD["🛡️ IP_GUARD_PROTOCOL <br/> [ACCESS: L1]"]:::tool
-        VIREON -.-> RD_DOMAIN["⚖️ LEGAL_TECH_R&D <br/> [ACCESS: RESTRICTED]"]:::restricted
     end
     subgraph TOOL_LAYER
         direction TB
+        G_FUND --> GF_WIDGET["📦 GHOSTFUND_WIDGET <br/> [ACCESS: L1]"]:::tool
         VIREON --> DX_KIT["👁️ DEV_EXP_MODULE <br/> [ACCESS: L1]"]:::tool
         VIREON --> ARKITECH["🏗️ STRAT_INFRA_TOOL <br/> [ACCESS: L1]"]:::tool
-        AIDEN -.-> RD_TOOLS["📡 R&D_EXTENSIONS <br/> [ACCESS: RESTRICTED]"]:::restricted
     end
     %% Strategic Relationship Links
     SEVE -.->|Guards| TRINITY
