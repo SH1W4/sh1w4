@@ -70,12 +70,12 @@
             <!-- Column 1 -->
             <g>
                 <text class="text label">MUTATIONS</text>
-                <text y="16" class="text value" fill="#00ff41">1161</text>
+                <text y="16" class="text value" fill="#00ff41">1171</text>
             </g>
             
             <g transform="translate(0, 40)">
                 <text class="text label">CONNECTIONS</text>
-                <text y="16" class="text value">8</text>
+                <text y="16" class="text value">9</text>
             </g>
 
             <!-- Column 2 -->
@@ -93,12 +93,12 @@
         <!-- ACTIVITY SPARKLINE (Dedicated Bottom Right) -->
         <g transform="translate(260, 130)">
              <text y="-5" class="text label" opacity="0.4">ACTIVITY_TREND</text>
-             <path d="M 0,78.75 L 295,90.0 L 310,70.0 L 325,100.0 L 340,91.25 L 355,96.25 L 370,96.25" class="sparkline" transform="translate(0, -10) scale(0.9)"/>
+             <path d="M 0,78.75 L 295,90.0 L 310,70.0 L 325,100.0 L 340,88.75 L 355,96.25 L 370,85.0" class="sparkline" transform="translate(0, -10) scale(0.9)"/>
         </g>
 
         <!-- FOOTER -->
         <rect y="175" width="400" height="25" fill="#161b22" opacity="0.6" />
-        <text x="20" y="191" class="text label" font-size="7">LAST_SCAN: 2026-01-23 12:35:20 UTC</text>
+        <text x="20" y="191" class="text label" font-size="7">LAST_SCAN: 2026-01-23 17:13:46 UTC</text>
         <text x="380" y="191" class="text label" font-size="7" text-anchor="end">KERNEL_VER: 2.2.1-FIX</text>
 
     </svg>
