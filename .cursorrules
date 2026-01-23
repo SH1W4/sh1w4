@@ -33,6 +33,13 @@ python generate_biostats.py
 3. Verify output
 4. Commit all changes together
 
+## IP Protection Rules (ECO-PROT-01)
+1. **Public vs Private**: Interfaces and UI are PUBLIC. Scoring logic and proprietary algorithms are PRIVATE.
+2. **Document Abstraction**: Describe *what* the system does, not *how* it calculates it (avoid revealing weights or specific LLM hyper-params).
+3. **Black-Box Architecture**: In diagrams, represent core logic as a sealed module.
+4. **Data Privacy**: Never include real user data or production logs in public repositories.
+5. **Specification Privacy**: Keep master thesis and deep technical blueprints in private repositories/folders.
+
 ## Context
 User is JX (SH1W4), AI Systems Architect.
 Goal: Impress recruiters from US/EU tech companies.
