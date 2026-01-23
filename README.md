@@ -174,23 +174,24 @@ flowchart LR
 ### ⚙️ THE SYMBEON ENGINE (Methodology)
 
 ```mermaid
-stateDiagram-v2
+flowchart TD
+    %% Themes & Styles
     classDef space fill:#0d1117,stroke:#30363d,stroke-width:1px,color:#8b949e;
     classDef active fill:#0d1117,stroke:#00ff41,stroke-width:2px,color:#fff;
     classDef check fill:#0d1117,stroke:#f1c40f,stroke-width:2px,color:#fff;
     
-    [*] --> 🔭_OBSERVATION:::space : Pattern_Recognition
-    🔭_OBSERVATION --> 💡_HYPOTHESIS:::space : Signal_Synthesis
-    💡_HYPOTHESIS --> 🧬_PROTOTYPING:::active : Rapid_Cycle
+    START(( )) --> OBS["🔭 OBSERVATION"]:::space
+    OBS --> HYP["💡 HYPOTHESIS"]:::space
+    HYP --> PROTO["🧬 PROTOTYPING"]:::active
     
-    state "SEVE ALIGNMENT" as GOV {
+    subgraph GOV ["SEVE ALIGNMENT"]
         direction LR
-        ⚠️_RISK_ANALYSIS --> ⚖️_ETHICAL_CHECK
-    }
+        RISK["⚠️ RISK ANALYSIS"] --> ETHIC["⚖️ ETHICAL CHECK"]
+    end
     
-    🧬_PROTOTYPING --> GOV:::check : Validation
-    GOV --> 🚀_MATERIALIZATION:::active : Deployment
-    🚀_MATERIALIZATION --> [*] : Impact_Loop
+    PROTO --> GOV:::check
+    GOV --> MAT["🚀 MATERIALIZATION"]:::active
+    MAT --> END(( ))
 ```
 
 > "We do not guess. We **observe** patterns, **synthesize** solutions, and **align** them with human values before writing a single line of production code."
@@ -200,18 +201,15 @@ stateDiagram-v2
 ### 🚀 E V O L U T I O N _ J O U R N E Y
 
 ```mermaid
-graph TD
-    V1[v1.0: THE KERNEL] -->|Agentic Infusion| V2[v2.0: THE ARCHITECT]
-    V2 -->|Neural Scaling| V3[v3.0: THE SINGULARITY]
-    V3 -->|Global Orchestration| V4((v?.0: THE OVERMIND))
-    
+flowchart TD
+    %% Themes & Styles
     classDef past fill:#111,stroke:#333,color:#666;
     classDef current fill:#000,stroke:#00ff41,stroke-width:2px,color:#fff;
     classDef future fill:#000,stroke:#bd93f9,stroke-width:2px,color:#fff,stroke-dasharray: 5 5;
-    
-    class V1,V2 past
-    class V3 current
-    class V4 future
+
+    V1["v1.0: THE KERNEL"]:::past -->|Agentic Infusion| V2["v2.0: THE ARCHITECT"]:::past
+    V2 -->|Neural Scaling| V3["v3.0: THE SINGULARITY"]:::current
+    V3 -->|Global Orchestration| V4(("v?.0: THE OVERMIND")):::future
 ```
 
 ---
