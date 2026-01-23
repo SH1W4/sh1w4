@@ -89,17 +89,17 @@
 </div>
 
 ```mermaid
-%% Cache-Bust: 2026-01-06T23:49:20.744785
-graph LR
-    %% Themes & Styles (Pure Cyberpunk Architecture)
+flowchart LR
+    %% Themes & Styles
     classDef core fill:#000,stroke:#00ff41,stroke-width:2px,color:#fff,font-weight:bold;
     classDef agent fill:#111,stroke:#bd93f9,stroke-width:1.5px,color:#ddd;
     classDef tool fill:#111,stroke:#00d9ff,stroke-width:1px,color:#ddd;
     classDef ethics fill:#111,stroke:#f1c40f,stroke-width:1.5px,color:#fff;
     classDef research fill:#111,stroke:#ff5555,stroke-width:1px,color:#ddd;
-    classDef restricted fill:#0d1117,stroke:#333,color:#666,stroke-dasharray: 5 5;
 
-    User((USER)):::core -->|Directives| Core[SH1W4 / CORE]:::core
+    %% Nodes
+    User((USER)):::core
+    Core[SH1W4 / CORE]:::core
     
     subgraph ETHICS_GOVERNANCE
         SEVE["SEVE ALIGNMENT FWK"]:::ethics
@@ -135,6 +135,7 @@ graph LR
     end
 
     %% Connections
+    User -->|Directives| Core
     Core --> VIREON
     Core --> TRINITY
     Core --> AIDEN
@@ -149,16 +150,15 @@ graph LR
     VIREON --> ARKITECH
 
     %% Strategic Relationship Links
-    SEVE -.->|Guards| TRINITY
-    SEVE -.->|Aligns| VIREON
-    BIO -.->|Data| TRINITY
-    PROTO -.->|Specs| VIREON
-    DX_KIT -.->|Telemetry| Core
+    SEVE -.-> TRINITY
+    SEVE -.-> VIREON
+    BIO -.-> TRINITY
+    PROTO -.-> VIREON
+    DX_KIT -.-> Core
     
-    %% Implicit Vertical Order
+    %% Order
     User ~~~ SEVE
     User ~~~ BIO
-
 ```
 
 ---
