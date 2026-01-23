@@ -100,33 +100,54 @@ graph LR
     classDef restricted fill:#0d1117,stroke:#333,color:#666,stroke-dasharray: 5 5;
 
     User((USER)):::core -->|Directives| Core[SH1W4 / CORE]:::core
+    
     subgraph ETHICS_GOVERNANCE
         SEVE["⚖️ SEVE_ALIGNMENT_FWK <br/> [ACCESS: L1]"]:::ethics
     end
+    
     subgraph RESEARCH_LABS
         direction TB
         BIO["🔬 BIO_COMPUTATION_R&D <br/> [ACCESS: L2]"]:::research
         PROTO["📐 SEMANTIC_STANDARDS <br/> [ACCESS: L2]"]:::research
     end
+    
     subgraph INTELLIGENCE_LAYER
-        Core --> VIREON["🧬 AGENTIC_ORCHESTRATOR <br/> [ACCESS: L1]"]:::agent
-        Core --> TRINITY["🧠 COGNITIVE_PROCESSOR <br/> [ACCESS: L1]"]:::agent
-        Core --> AIDEN["📡 TACTICAL_INTERFACER <br/> [ACCESS: L1]"]:::agent
+        VIREON["🧬 AGENTIC_ORCHESTRATOR <br/> [ACCESS: L1]"]:::agent
+        TRINITY["🧠 COGNITIVE_PROCESSOR <br/> [ACCESS: L1]"]:::agent
+        AIDEN["📡 TACTICAL_INTERFACER <br/> [ACCESS: L1]"]:::agent
     end
+
     subgraph SYMBEON_ECOSYSTEMS
-        Core --> T_CORE["🏛️ th3m1s-core (Innovation OS)"]:::ethics
-        Core --> G_FUND["👻 ghostfund-protocol (DeSci)"]:::ethics
+        T_CORE["🏛️ th3m1s-core (Innovation OS)"]:::ethics
+        G_FUND["👻 ghostfund-protocol (DeSci)"]:::ethics
     end
+
     subgraph DOMAIN_LAYER
-        T_CORE --> LEGAL["⚖️ LEGAL_INTEL_CORE <br/> [ACCESS: L1]"]:::agent
-        LEGAL --> SHIELD["🛡️ IP_GUARD_PROTOCOL <br/> [ACCESS: L1]"]:::tool
+        LEGAL["⚖️ LEGAL_INTEL_CORE <br/> [ACCESS: L1]"]:::agent
+        SHIELD["🛡️ IP_GUARD_PROTOCOL <br/> [ACCESS: L1]"]:::tool
     end
+
     subgraph TOOL_LAYER
         direction TB
-        G_FUND --> GF_WIDGET["📦 GHOSTFUND_WIDGET <br/> [ACCESS: L1]"]:::tool
-        VIREON --> DX_KIT["👁️ DEV_EXP_MODULE <br/> [ACCESS: L1]"]:::tool
-        VIREON --> ARKITECH["🏗️ STRAT_INFRA_TOOL <br/> [ACCESS: L1]"]:::tool
+        GF_WIDGET["📦 GHOSTFUND_WIDGET <br/> [ACCESS: L1]"]:::tool
+        DX_KIT["👁️ DEV_EXP_MODULE <br/> [ACCESS: L1]"]:::tool
+        ARKITECH["🏗️ STRAT_INFRA_TOOL <br/> [ACCESS: L1]"]:::tool
     end
+
+    %% Connections
+    Core --> VIREON
+    Core --> TRINITY
+    Core --> AIDEN
+    Core --> T_CORE
+    Core --> G_FUND
+
+    T_CORE --> LEGAL
+    LEGAL --> SHIELD
+    
+    G_FUND --> GF_WIDGET
+    VIREON --> DX_KIT
+    VIREON --> ARKITECH
+
     %% Strategic Relationship Links
     SEVE -.->|Guards| TRINITY
     SEVE -.->|Aligns| VIREON
