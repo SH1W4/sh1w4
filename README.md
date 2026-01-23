@@ -102,36 +102,36 @@ graph LR
     User((USER)):::core -->|Directives| Core[SH1W4 / CORE]:::core
     
     subgraph ETHICS_GOVERNANCE
-        SEVE["⚖️ SEVE_ALIGNMENT_FWK <br/> [ACCESS: L1]"]:::ethics
+        SEVE["SEVE ALIGNMENT FWK"]:::ethics
     end
     
     subgraph RESEARCH_LABS
         direction TB
-        BIO["🔬 BIO_COMPUTATION_R&D <br/> [ACCESS: L2]"]:::research
-        PROTO["📐 SEMANTIC_STANDARDS <br/> [ACCESS: L2]"]:::research
+        BIO["BIO COMPUTATION R&D"]:::research
+        PROTO["SEMANTIC STANDARDS"]:::research
     end
     
     subgraph INTELLIGENCE_LAYER
-        VIREON["🧬 AGENTIC_ORCHESTRATOR <br/> [ACCESS: L1]"]:::agent
-        TRINITY["🧠 COGNITIVE_PROCESSOR <br/> [ACCESS: L1]"]:::agent
-        AIDEN["📡 TACTICAL_INTERFACER <br/> [ACCESS: L1]"]:::agent
+        VIREON["AGENTIC ORCHESTRATOR"]:::agent
+        TRINITY["COGNITIVE PROCESSOR"]:::agent
+        AIDEN["TACTICAL INTERFACER"]:::agent
     end
 
     subgraph SYMBEON_ECOSYSTEMS
-        T_CORE["🏛️ th3m1s-core (Innovation OS)"]:::ethics
-        G_FUND["👻 ghostfund-protocol (DeSci)"]:::ethics
+        T_CORE["th3m1s-core - Innovation OS"]:::ethics
+        G_FUND["ghostfund-protocol - DeSci"]:::ethics
     end
 
     subgraph DOMAIN_LAYER
-        LEGAL["⚖️ LEGAL_INTEL_CORE <br/> [ACCESS: L1]"]:::agent
-        SHIELD["🛡️ IP_GUARD_PROTOCOL <br/> [ACCESS: L1]"]:::tool
+        LEGAL["LEGAL INTEL CORE"]:::agent
+        SHIELD["IP GUARD PROTOCOL"]:::tool
     end
 
     subgraph TOOL_LAYER
         direction TB
-        GF_WIDGET["📦 GHOSTFUND_WIDGET <br/> [ACCESS: L1]"]:::tool
-        DX_KIT["👁️ DEV_EXP_MODULE <br/> [ACCESS: L1]"]:::tool
-        ARKITECH["🏗️ STRAT_INFRA_TOOL <br/> [ACCESS: L1]"]:::tool
+        GF_WIDGET["GHOSTFUND WIDGET"]:::tool
+        DX_KIT["DEV EXP MODULE"]:::tool
+        ARKITECH["STRAT INFRA TOOL"]:::tool
     end
 
     %% Connections
@@ -155,7 +155,7 @@ graph LR
     PROTO -.->|Specs| VIREON
     DX_KIT -.->|Telemetry| Core
     
-    %% Implicit Vertical Order (Invisibly pinning Labs to bottom)
+    %% Implicit Vertical Order
     User ~~~ SEVE
     User ~~~ BIO
 
