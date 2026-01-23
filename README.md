@@ -90,52 +90,42 @@
 
 ```mermaid
 flowchart LR
-    %% Themes & Styles
-    classDef core fill:#000,stroke:#00ff41,stroke-width:2px,color:#fff,font-weight:bold;
-    classDef agent fill:#111,stroke:#bd93f9,stroke-width:1.5px,color:#ddd;
-    classDef tool fill:#111,stroke:#00d9ff,stroke-width:1px,color:#ddd;
-    classDef ethics fill:#111,stroke:#f1c40f,stroke-width:1.5px,color:#fff;
-    classDef research fill:#111,stroke:#ff5555,stroke-width:1px,color:#ddd;
-
-    %% Nodes
-    User((USER)):::core
-    Core[SH1W4 / CORE]:::core
+    User -->|Directives| Core
     
     subgraph ETHICS_GOVERNANCE
-        SEVE["SEVE ALIGNMENT FWK"]:::ethics
+        SEVE
     end
     
     subgraph RESEARCH_LABS
         direction TB
-        BIO["BIO COMPUTATION R&D"]:::research
-        PROTO["SEMANTIC STANDARDS"]:::research
+        BIO
+        PROTO
     end
     
     subgraph INTELLIGENCE_LAYER
-        VIREON["AGENTIC ORCHESTRATOR"]:::agent
-        TRINITY["COGNITIVE PROCESSOR"]:::agent
-        AIDEN["TACTICAL INTERFACER"]:::agent
+        VIREON
+        TRINITY
+        AIDEN
     end
 
     subgraph SYMBEON_ECOSYSTEMS
-        T_CORE["th3m1s-core - Innovation OS"]:::ethics
-        G_FUND["ghostfund-protocol - DeSci"]:::ethics
+        T_CORE["th3m1s-core"]
+        G_FUND["ghostfund-protocol"]
     end
 
     subgraph DOMAIN_LAYER
-        LEGAL["LEGAL INTEL CORE"]:::agent
-        SHIELD["IP GUARD PROTOCOL"]:::tool
+        LEGAL
+        SHIELD
     end
 
     subgraph TOOL_LAYER
         direction TB
-        GF_WIDGET["GHOSTFUND WIDGET"]:::tool
-        DX_KIT["DEV EXP MODULE"]:::tool
-        ARKITECH["STRAT INFRA TOOL"]:::tool
+        GF_WIDGET
+        DX_KIT
+        ARKITECH
     end
 
     %% Connections
-    User -->|Directives| Core
     Core --> VIREON
     Core --> TRINITY
     Core --> AIDEN
@@ -149,16 +139,12 @@ flowchart LR
     VIREON --> DX_KIT
     VIREON --> ARKITECH
 
-    %% Strategic Relationship Links
+    %% Relationship Links
     SEVE -.-> TRINITY
     SEVE -.-> VIREON
     BIO -.-> TRINITY
     PROTO -.-> VIREON
     DX_KIT -.-> Core
-    
-    %% Order
-    User ~~~ SEVE
-    User ~~~ BIO
 ```
 
 ---
