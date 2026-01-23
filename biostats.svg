@@ -70,7 +70,7 @@
             <!-- Column 1 -->
             <g>
                 <text class="text label">MUTATIONS</text>
-                <text y="16" class="text value" fill="#00ff41">1171</text>
+                <text y="16" class="text value" fill="#00ff41">1173</text>
             </g>
             
             <g transform="translate(0, 40)">
@@ -98,7 +98,7 @@
 
         <!-- FOOTER -->
         <rect y="175" width="400" height="25" fill="#161b22" opacity="0.6" />
-        <text x="20" y="191" class="text label" font-size="7">LAST_SCAN: 2026-01-23 17:13:46 UTC</text>
+        <text x="20" y="191" class="text label" font-size="7">LAST_SCAN: 2026-01-23 17:17:44 UTC</text>
         <text x="380" y="191" class="text label" font-size="7" text-anchor="end">KERNEL_VER: 2.2.1-FIX</text>
 
     </svg>
