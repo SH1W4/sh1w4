@@ -93,12 +93,12 @@
         <!-- ACTIVITY SPARKLINE (Dedicated Bottom Right) -->
         <g transform="translate(260, 130)">
              <text y="-5" class="text label" opacity="0.4">ACTIVITY_TREND</text>
-             <path d="M 0,100.0 L 295,100.0 L 310,93.42465753424658 L 325,100.0 L 340,70.0 L 355,99.17808219178082 L 370,96.3013698630137" class="sparkline" transform="translate(0, -10) scale(0.9)"/>
+             <path d="M 0,100.0 L 295,100.0 L 310,93.57142857142857 L 325,98.71428571428571 L 340,70.0 L 355,99.14285714285714 L 370,95.71428571428571" class="sparkline" transform="translate(0, -10) scale(0.9)"/>
         </g>
 
         <!-- FOOTER -->
         <rect y="175" width="400" height="25" fill="#161b22" opacity="0.6" />
-        <text x="20" y="191" class="text label" font-size="7">LAST_SCAN: 2026-02-01 06:41:40 UTC</text>
+        <text x="20" y="191" class="text label" font-size="7">LAST_SCAN: 2026-02-01 12:36:30 UTC</text>
         <text x="380" y="191" class="text label" font-size="7" text-anchor="end">KERNEL_VER: 2.2.1-FIX</text>
 
     </svg>
