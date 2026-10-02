@@ -281,10 +281,3 @@ Open to high-impact collaboration around:
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=16&duration=4000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=500&height=150&lines=root%40symbeon%3A~%24+./research;>+OBSERVE;>+HYPOTHESIZE;>+BUILD;>+MEASURE;>+EVALUATE;>+ITERATE" alt="Research terminal"/>
 </div>
 
-### 🎨 D I G I T A L _ S O U L
-
-<div align="center">
-  <img src="./art_core_anonymous.png" width="100%" style="border-radius:8px;border:1px solid #30363d;" alt="Bio-Digital Soul"/>
-  <br/>
-  <sub><i>The ghost in the machine.</i></sub>
-</div>
