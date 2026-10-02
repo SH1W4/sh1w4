@@ -128,24 +128,24 @@ Current research series:
 
 The current research methodology emerged from the same operational philosophy that defines SH1W4:
 
-```text
-OBSERVATION
-     ↓
-HYPOTHESIS
-     ↓
-PROTOTYPING
-     ↓
-RISK ANALYSIS
-     ↓
-ETHICAL CHECK
-     ↓
-MATERIALIZATION
-     ↓
-EVIDENCE
-     ↓
-EVALUATION
-     ↓
-NEXT HYPOTHESIS
+```mermaid
+stateDiagram-v2
+    classDef space fill:#0d1117,stroke:#30363d,stroke-width:1px,color:#8b949e;
+    classDef active fill:#0d1117,stroke:#00ff41,stroke-width:2px,color:#fff;
+    classDef check fill:#0d1117,stroke:#f1c40f,stroke-width:2px,color:#fff;
+    
+    [*] --> 🔭_OBSERVATION:::space : Pattern_Recognition
+    🔭_OBSERVATION --> 💡_HYPOTHESIS:::space : Signal_Synthesis
+    💡_HYPOTHESIS --> 🧬_PROTOTYPING:::active : Rapid_Cycle
+    
+    state "SEVE ALIGNMENT" as GOV {
+        direction LR
+        ⚠️_RISK_ANALYSIS --> ⚖️_ETHICAL_CHECK
+    }
+    
+    🧬_PROTOTYPING --> GOV:::check : Validation
+    GOV --> 🚀_MATERIALIZATION:::active : Deployment
+    🚀_MATERIALIZATION --> [*] : Impact_Loop
 ```
 
 > **We do not guess. We observe patterns, synthesize solutions, and align them with human values before materializing them.**
