@@ -1,269 +1,240 @@
-<!-- 
-    THEME: ORGANIC_INTELLIGENCE (PREMIUM_DASHBOARD)
-    COLOR_PALETTE: #00ff41 (Bio-Green), #bd93f9 (Synth-Purple), #ffffff (Clean White)
-    STYLE: Advanced Biocybernetic Interface
-
-    SYSTEM_BOOT_SEQUENCE:
-    > LOADER: v2.2.0 ... OK
-    > NEURAL_LINK: ESTABLISHED
-    > TARGET: RECRUITER_RETINA ... LOCKED
-    > MESSAGE: "Não procure empregados. Procure co-pilotos."
+<!--
+    SH1W4 — PROFILE V2
+    Identity: Symbiotic Human-AI Workflow Architect
+    Principle: Human Vision + Agentic Execution → Symbiotic Result
+    Method: Observation → Hypothesis → Prototyping → Risk Analysis → Ethical Check → Materialization
 -->
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/header_final.png" width="100%" height="auto" style="object-fit: cover; border-radius: 12px; border: 1px solid #30363d; box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);" alt="Neural Interface"/>
+  <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/main/header_final.png" width="100%" height="auto" alt="SH1W4 Neural Interface"/>
 </div>
+
 <div align="center">
-    <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Snake Animation" />
+  <img src="https://raw.githubusercontent.com/SH1W4/sh1w4/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Contribution activity"/>
 </div>
 
 <br/>
+
 <div align="center">
-    <img src="./directive.svg" width="100%" alt="Strategic Directive"/>
+  <img src="./directive.svg" width="100%" alt="Strategic Directive"/>
 </div>
+
 <br/>
 
-<!-- DASHBOARD CONTROLS (2-Column Layout) -->
-<table width="100%" style="border: 0; background-color: transparent;">
+<table width="100%" style="border:0;background-color:transparent;">
 <tr>
-<!-- LEFT MODULE: VITAL SIGNS -->
-<td width="50%" align="center" valign="middle" style="border: 0;">
-<div align="center">
-<h3><code>🧬 ORGANISM_STATUS</code></h3>
-<a href="https://github.com/SH1W4">
-<img src="./biostats.svg" width="90%" alt="Live BioStats"/>
-<br/>
-<h3><code>🧠 COGNITIVE_PULSE</code></h3>
-<img src="./telemetry.svg" width="90%" alt="Cognitive Telemetry"/>
-</a>
+<td width="50%" align="center" valign="middle" style="border:0;">
+
+<h3><code>🧬 OPERATOR_STATUS</code></h3>
+
+<img src="./biostats.svg" width="90%" alt="Profile telemetry"/>
+
 <br/><br/>
-<!-- Network Links as "Buttons" -->
+
+<h3><code>🧠 COGNITIVE_PULSE</code></h3>
+
+<img src="./telemetry.svg" width="90%" alt="Cognitive telemetry"/>
+
+<br/><br/>
+
 <a href="https://linkedin.com/in/joaomartins-ai"><img src="https://img.shields.io/badge/LINKEDIN-NETWORK-0a66c2?style=for-the-badge&logo=linkedin"/></a>
-<a href="mailto:contact@symbeon.com"><img src="https://img.shields.io/badge/PROTON-SECURE_MAIL-6d4aff?style=for-the-badge&logo=protonmail"/></a>
-</div>
+<a href="mailto:contact@symbeon.com"><img src="https://img.shields.io/badge/SECURE_MAIL-6d4aff?style=for-the-badge&logo=protonmail"/></a>
+
 </td>
-<!-- RIGHT MODULE: OPERATOR IDENTITY -->
-<td width="50%" align="left" valign="top" style="border: 0;">
-<div align="left">
-<h1>&nbsp;&nbsp;SH1W4</h1>
+
+<td width="50%" align="left" valign="top" style="border:0;">
+
+<h1>&nbsp;&nbsp;JX-SH1W4</h1>
+
 <blockquote>
+<b><code>// INDEPENDENT RESEARCHER</code></b><br/>
 <b><code>// AI SYSTEMS ARCHITECT</code></b><br/>
-<b><code>// AUGMENTED DEVELOPER</code></b>
+<b><code>// SYMBIOTIC HUMAN-AI WORKFLOW ARCHITECT</code></b>
 </blockquote>
+
 <br/>
+
 <p>
 &nbsp; <b>[ HUMAN_VISION ]</b><br/>
+&nbsp; <b>+</b><br/>
 &nbsp; <b>[ AGENTIC_EXECUTION ]</b><br/>
+&nbsp; <b>↓</b><br/>
 &nbsp; <b>[ SYMBIOTIC_RESULT ]</b>
 </p>
+
 <br/>
+
 <b>&nbsp; TECHNOLOGICAL GENOME:</b><br/>
 &nbsp; <img src="https://skillicons.dev/icons?i=python,rust,go,cpp" valign="middle" height="25"/> <code>CORE_LANGS</code><br/>
-&nbsp; <img src="https://skillicons.dev/icons?i=docker,kubernetes,linux,aws" valign="middle" height="25"/> <code>INFRA_SHELL</code><br/>
-&nbsp; <img src="https://skillicons.dev/icons?i=postgres,redis,graphql,tensorflow" valign="middle" height="25"/> <code>SYNAPSES</code><br/>
-</div>
+&nbsp; <img src="https://skillicons.dev/icons?i=docker,kubernetes,linux,aws" valign="middle" height="25"/> <code>INFRASTRUCTURE</code><br/>
+&nbsp; <img src="https://skillicons.dev/icons?i=postgres,redis,graphql,tensorflow" valign="middle" height="25"/> <code>DATA_AND_INTELLIGENCE</code>
+
 </td>
 </tr>
 </table>
 
 ---
 
-### 🧩 C O N C E P T _ C O R E (The SH1W4 Entity)
+## 🧩 SH1W4 — CONCEPT CORE
 
 | IDENTIFIER | ATTRIBUTE | DESCRIPTION |
 | :--- | :--- | :--- |
 | **NAME** | **SH1W4** | Symbiotic Human-AI Workflow Architect |
-| **ROLE** | **OPERATIONAL HUB** | The bridge where Human Vision meets AI Velocity |
-| **NATURE** | **SYMBION ENTITY** | Human (Directives/Ethics) + AI (Materialization/Results) |
+| **ROLE** | **OPERATIONAL HUB** | The bridge between human direction and computational execution |
+| **PRINCIPLE** | **SYMBIOTIC RESULT** | Human directives and ethics + AI execution and materialization |
 
-> **"SH1W4 is not a developer; it is an Operational Hub."**
-> 
-> It represents the bridge where human strategic vision meets high-velocity agentic execution. In this ecosystem, the human provides the **Directives** and the **Ethics**, while the AI enshrine (Vireon/Trinity/Aiden) materializes the **Results**.
+> **SH1W4 is not a developer; it is an Operational Hub.**
+
+SH1W4 represents a way of working in which the human remains responsible for **direction, judgment and ethics**, while computational systems provide the ability to **explore, synthesize, execute and materialize**.
+
+The objective is not to replace human judgment with automation.
+
+It is to design systems in which both can operate as complementary components.
 
 ---
 
-### 📂 S Y S T E M _ M A N I F E S T (Symbeon Ecosystem)
+## 🔬 RESEARCH POSITION
+
+The work is increasingly organized around a simple question:
+
+> **How can the structure of a problem inform the structure of the intelligence system used to solve it?**
+
+The current research program investigates:
+
+- intelligence architectures;
+- computational problem representation;
+- capability and transformation models;
+- evidence and provenance;
+- uncertainty and resolution;
+- authority and governance;
+- evaluation and reproducibility;
+- adaptive architecture.
+
+### SYMBEON — Intelligence Systems Research
+
+A public, versioned research program is maintained at:
+
+**https://github.com/symbeon-labs/research**
+
+Current research series:
+
+`ART-001 → ART-002 → ART-003 → ...`
+
+[View the research roadmap](https://github.com/symbeon-labs/research/blob/main/ROADMAP.md)
+
+---
+
+## 🧠 RESEARCH DNA
+
+The current research methodology emerged from the same operational philosophy that defines SH1W4:
+
+```text
+OBSERVATION
+     ↓
+HYPOTHESIS
+     ↓
+PROTOTYPING
+     ↓
+RISK ANALYSIS
+     ↓
+ETHICAL CHECK
+     ↓
+MATERIALIZATION
+     ↓
+EVIDENCE
+     ↓
+EVALUATION
+     ↓
+NEXT HYPOTHESIS
+```
+
+> **We do not guess. We observe patterns, synthesize solutions, and align them with human values before materializing them.**
+
+Research claims remain open to evidence, failure and revision.
+
+---
+
+## ⚙️ SYSTEMS THINKING
+
+The central distinction is between **what a system observes**, **what it infers**, **what it is allowed to resolve**, and **what it is authorized to do**.
+
+That leads to a recurring design discipline:
+
+```text
+OBSERVATION
+    ↓
+EVIDENCE
+    ↓
+INTERPRETATION
+    ↓
+RESOLUTION
+    ↓
+STATE
+    ↓
+ACTION
+```
+
+Each transition can carry different requirements for evidence, uncertainty, authority and verification.
+
+This is where research, architecture and engineering meet.
+
+---
+
+## 📐 ENGINEERING PRINCIPLES
+
+- **Problem before architecture.**
+- **Evidence before certainty.**
+- **Observation is not inference.**
+- **Inference is not automatically state.**
+- **State is not automatically truth.**
+- **Uncertainty is a valid state.**
+- **Governance is part of architecture.**
+- **Automation should preserve human authority where judgment matters.**
+- **Experiments should be reproducible and falsifiable.**
+- **Negative results are still results.**
+
+---
+
+## 📡 NETWORK ACTIVITY
 
 <div align="center">
-    <img src="./neural_network.svg" width="80%" alt="Symbeon Neural Fabric"/>
-</div>
-
-```mermaid
-flowchart LR
-    User -->|Directives| Core
-    
-    subgraph ETHICS_GOVERNANCE
-        SEVE
-    end
-    
-    subgraph RESEARCH_LABS
-        direction TB
-        BIO
-        PROTO
-    end
-    
-    subgraph INTELLIGENCE_LAYER
-        VIREON
-        TRINITY
-        AIDEN
-    end
-
-    subgraph SYMBEON_ECOSYSTEMS
-        T_CORE["th3m1s-core"]
-        G_FUND["ghostfund-protocol"]
-    end
-
-    subgraph DOMAIN_LAYER
-        LEGAL
-        SHIELD
-    end
-
-    subgraph TOOL_LAYER
-        direction TB
-        GF_WIDGET
-        DX_KIT
-        ARKITECH
-    end
-
-    %% Connections
-    Core --> VIREON
-    Core --> TRINITY
-    Core --> AIDEN
-    Core --> T_CORE
-    Core --> G_FUND
-
-    T_CORE --> LEGAL
-    LEGAL --> SHIELD
-    
-    G_FUND --> GF_WIDGET
-    VIREON --> DX_KIT
-    VIREON --> ARKITECH
-
-    %% Relationship Links
-    SEVE -.-> TRINITY
-    SEVE -.-> VIREON
-    BIO -.-> TRINITY
-    PROTO -.-> VIREON
-    DX_KIT -.-> Core
-```
-
----
-
-### 👥 A G E N T _ D O S S I E R S (Identity Core)
-
-| IDENTITY | ROLE | COGNITIVE_PROFILE | PRIMARY_DIRECTIVE |
-| :--- | :--- | :--- | :--- |
-| **🧬 VIREON** | Orchestrator | Aggressive / Precise | Universal Scaling |
-| **🧠 TRINITY** | Analytics | Reflective / Recursive | Pattern Synthesis |
-| **📡 AIDEN** | Interface | Tactical / Adaptive | User Synchronization |
-
----
-
-### 🔬 R E S E A R C H _ D N A (Knowledge Vectors)
-
-| VECTOR | SPECIALIZATION | STATUS |
-| :--- | :--- | :--- |
-| **[V_01]** | **Agentic Orchestration** (Swarm Logic & MCP) | `STABLE` |
-| **[V_02]** | **Deep Tech Compliance** (Semantic Prior Art) | `ACTIVE` |
-| **[V_03]** | **Bio-Computational Sim** (Organic Logic) | `R&D` |
-
-> "Information is not knowledge. The only source of knowledge is **experience** and **pattern synthesis**."
-
----
-
-### ⚙️ THE SYMBEON ENGINE (Methodology)
-
-```mermaid
-flowchart TD
-    %% Themes & Styles
-    classDef space fill:#0d1117,stroke:#30363d,stroke-width:1px,color:#8b949e;
-    classDef active fill:#0d1117,stroke:#00ff41,stroke-width:2px,color:#fff;
-    classDef check fill:#0d1117,stroke:#f1c40f,stroke-width:2px,color:#fff;
-    
-    START(( )) --> OBS["🔭 OBSERVATION"]:::space
-    OBS --> HYP["💡 HYPOTHESIS"]:::space
-    HYP --> PROTO["🧬 PROTOTYPING"]:::active
-    
-    subgraph GOV ["SEVE ALIGNMENT"]
-        direction LR
-        RISK["⚠️ RISK ANALYSIS"] --> ETHIC["⚖️ ETHICAL CHECK"]
-    end
-    
-    PROTO --> GOV:::check
-    GOV --> MAT["🚀 MATERIALIZATION"]:::active
-    MAT --> END(( ))
-```
-
-> "We do not guess. We **observe** patterns, **synthesize** solutions, and **align** them with human values before writing a single line of production code."
-
----
-
-### 🚀 E V O L U T I O N _ J O U R N E Y
-
-```mermaid
-flowchart TD
-    %% Themes & Styles
-    classDef past fill:#111,stroke:#333,color:#666;
-    classDef current fill:#000,stroke:#00ff41,stroke-width:2px,color:#fff;
-    classDef future fill:#000,stroke:#bd93f9,stroke-width:2px,color:#fff,stroke-dasharray: 5 5;
-
-    V1["v1.0: THE KERNEL"]:::past -->|Agentic Infusion| V2["v2.0: THE ARCHITECT"]:::past
-    V2 -->|Neural Scaling| V3["v3.0: THE SINGULARITY"]:::current
-    V3 -->|Global Orchestration| V4(("v?.0: THE OVERMIND")):::future
-```
-
----
-
-### 📡 N E T W O R K _ A C T I V I T Y
-
-<div align="center">
-    <a href="https://git.io/typing-svg">
-      <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=14&duration=3000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=600&height=100&lines=Subject%3A+SH1W4+%7C+STATUS%3A+HYPER-EVOLUTION;%3E+ANALYZING+GITHUB+EVENT_STREAM...;%3E+OPTIMIZING+DEVELOPER+EXPERIENCE...;%3E+SYSTEM_READY." alt="Typing SVG" />
-    </a>
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=14&duration=3000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=600&height=100&lines=Subject%3A+JX-SH1W4+%7C+STATUS%3A+RESEARCH+%2B+BUILD;%3E+OBSERVING+SYSTEMS...;%3E+FORMULATING+HYPOTHESES...;%3E+MATERIALIZING+ARCHITECTURES...;%3E+SYSTEM_READY." alt="Typing status"/>
+  </a>
 </div>
 
 ---
 
-### 🖥️ E N V I R O N M E N T A L _ M A N I F E S T
+## 🤝 COLLABORATION
 
-| SYSTEM | SPECIFICATION | ROLE |
-| :--- | :--- | :--- |
-| **OS** | **Arch Linux / WSL2** | Primary Cognitive Host |
-| **CORE** | **M3 Max / Ryzen 9** | Neural Processing Unit |
-| **SHELL** | **ZSH / Powerlevel10k** | Tactical Command Link |
+Open to high-impact collaboration around:
 
----
+**AI Systems · Intelligent Infrastructure · Automation · Research · Computational Architecture**
 
-### 🤝 STRATEGIC ALLIANCE
+<a href="https://linkedin.com/in/joaomartins-ai">
+  <img src="https://img.shields.io/badge/INITIATE_UPLINK-LINKEDIN-0a66c2?style=for-the-badge&logo=linkedin&labelColor=1a1a1a" height="35">
+</a>
+&nbsp;&nbsp;
+<a href="mailto:contact@symbeon.com">
+  <img src="https://img.shields.io/badge/SECURE_CHANNEL-MAIL-6d4aff?style=for-the-badge&labelColor=1a1a1a" height="35">
+</a>
 
-<div align="center">
-    <p>Open for high-impact joint ventures in <b>Agencia Artificial</b> and <b>Cognitive Systems</b>.</p>
-    <a href="https://linkedin.com/in/joaomartins-ai">
-        <img src="https://img.shields.io/badge/INITIATE_UPLINK-LINKEDIN-0a66c2?style=for-the-badge&logo=linkedin&labelColor=1a1a1a" height="35">
-    </a>
-    &nbsp;&nbsp;
-    <a href="mailto:contact@symbeon.com">
-        <img src="https://img.shields.io/badge/ENCRYPTED_CHANNEL-PROTONMAIL-6d4aff?style=for-the-badge&logo=protonmail&labelColor=1a1a1a" height="35">
-    </a>
-    <br/><br/>
-    <a href="./MANIFESTO.md">
-        <img src="https://img.shields.io/badge/VIEW-MANIFESTO-00ff41?style=for-the-badge&logo=markdown&labelColor=1a1a1a" height="35">
-    </a>
-    <br/><br/>
-    <code>// PGP_FINGERPRINT: 4A7B 1C92 D3E4 F5G6... [ACTIVE]</code>
-</div>
+<br/><br/>
+
+<a href="https://github.com/symbeon-labs/research">
+  <img src="https://img.shields.io/badge/RESEARCH-SYMBEON-00ff41?style=for-the-badge&logo=github&labelColor=1a1a1a" height="35">
+</a>
 
 ---
 
 <div align="center">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=16&duration=4000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=500&height=180&lines=root@symbeon:~$+./status_check.sh;>+UPTIME:+99.9%+[STABLE];>+NEURAL_SYNC:+OPTIMAL;>+NEXT_GOAL:+AGI_INFRASTRUCTURE;[█▒▒▒▒▒▒▒▒▒]+12%+EVOLUTION_COMPLETE" alt="Terminal Status" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=16&duration=4000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=500&height=150&lines=root%40symbeon%3A~%24+./research;>+OBSERVE;>+HYPOTHESIZE;>+BUILD;>+EVALUATE;>+ITERATE" alt="Research terminal"/>
 </div>
 
 ### 🎨 D I G I T A L _ S O U L
 
 <div align="center">
-    <img src="./art_core_anonymous.png" width="100%" style="border-radius: 8px; border: 1px solid #30363d;" alt="Bio-Digital Soul"/>
-    <br/>
-    <sub><i>"The ghost in the machine."</i></sub>
+  <img src="./art_core_anonymous.png" width="100%" style="border-radius:8px;border:1px solid #30363d;" alt="Bio-Digital Soul"/>
+  <br/>
+  <sub><i>The ghost in the machine.</i></sub>
 </div>
-
