@@ -132,14 +132,13 @@ The current research methodology emerged from the same operational philosophy th
 flowchart TD
     A([OBSERVATION]) -->|Pattern Recognition| B([HYPOTHESIS])
     B -->|Signal Synthesis| C([PROTOTYPING])
-    C -->|Validation| D
+    C -->|Validation| E
 
     subgraph SEVE["SEVE ALIGNMENT"]
         direction LR
         E["RISK ANALYSIS"] --> F["ETHICAL CHECK"]
     end
 
-    D -->|Validation| E
     F -->|Deployment| G([MATERIALIZATION])
     G -->|Impact Loop| H(( ))
     
