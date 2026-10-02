@@ -83,7 +83,7 @@
 | **ROLE** | **OPERATIONAL HUB** | The bridge between human direction and computational execution |
 | **PRINCIPLE** | **SYMBIOTIC RESULT** | Human directives and ethics + AI execution and materialization |
 
-> **SH1W4 is not a developer; it is an Operational Hub.**
+> **SH1W4 is an operational and research identity — not a single stack, language or implementation.**
 
 SH1W4 represents a way of working in which the human remains responsible for **direction, judgment and ethics**, while computational systems provide the ability to **explore, synthesize, execute and materialize**.
 
@@ -124,6 +124,51 @@ Current research series:
 
 ---
 
+## 🧪 PUBLIC EVIDENCE
+
+The research position is supported by public, versioned artifacts rather than credentials or claims of authority.
+
+| ARTIFACT | ROLE | CURRENT STATUS |
+| :--- | :--- | :--- |
+| **ART-001 — Problem-Derived Intelligence** | Foundational research framework | **Final v1.0** |
+| **ART-002 — Evidence-Governed Resolution** | Research evolution / hypothesis | **Draft v0.1** |
+| **Operational Resolution Core** | Semantic validation + reference implementation | **Research / hypothesis validation** |
+| **Learning Competency MVP** | End-to-end evidence → review → state → proof experiment | **52 tests · Devnet attestation** |
+| **3L0 Vision** | Product layer built around ORC | **Phase 1 · Vertical Slice** |
+
+### Evidence loop
+
+Public work follows the same discipline across research and implementation:
+
+```text
+HYPOTHESIS
+    ↓
+REPRESENTATION
+    ↓
+IMPLEMENTATION / EXPERIMENT
+    ↓
+OBSERVED EVIDENCE
+    ↓
+RESULT
+    ↓
+LIMITATION
+    ↓
+NEXT HYPOTHESIS
+```
+
+The distinction matters:
+
+**a repository demonstrates that something was built; an experiment records what happened; a research artifact states what that evidence means — and what it does not prove.**
+
+**Public artifacts:**
+
+- [SYMBEON — Intelligence Systems Research](https://github.com/symbeon-labs/research)
+- [Operational Resolution Core](https://github.com/symbeon-labs/operational-resolution-core)
+- [Learning Competency MVP](https://github.com/SH1W4/learning-competency-mvp)
+- [3L0 Vision](https://github.com/symbeon-labs/3l0-vision)
+
+---
+
 ## 🧠 RESEARCH DNA
 
 The current research methodology emerged from the same operational philosophy that defines SH1W4:
@@ -151,15 +196,17 @@ flowchart TD
     class E,F gate;
 ```
 
-> **We do not guess. We observe patterns, synthesize solutions, and align them with human values before materializing them.**
+> **We do not treat inference as evidence. We observe, formulate, test, and revise.**
 
-Research claims remain open to evidence, failure and revision.
+Research claims remain open to evidence, failure, boundary conditions and revision.
 
 ---
 
 ## ⚙️ SYSTEMS THINKING
 
-The central distinction is between **what a system observes**, **what it infers**, **what it is allowed to resolve**, and **what it is authorized to do**.
+The central distinction is between **what a system observes**, **what it can infer**, **what it is allowed to resolve**, and **what it is authorized to do**.
+
+This creates a boundary between **capability** and **authority**: a system may be technically capable of producing an interpretation without being authorized to turn that interpretation into state or action.
 
 That leads to a recurring design discipline:
 
@@ -202,7 +249,7 @@ This is where research, architecture and engineering meet.
 
 <div align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=14&duration=3000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=600&height=100&lines=Subject%3A+JX-SH1W4+%7C+STATUS%3A+RESEARCH+%2B+BUILD;%3E+OBSERVING+SYSTEMS...;%3E+FORMULATING+HYPOTHESES...;%3E+MATERIALIZING+ARCHITECTURES...;%3E+SYSTEM_READY." alt="Typing status"/>
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=14&duration=3000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=600&height=100&lines=Subject%3A+JX-SH1W4+%7C+STATUS%3A+RESEARCH+%2B+BUILD;%3E+OBSERVING+SYSTEMS...;%3E+FORMULATING+HYPOTHESES...;%3E+BUILDING+INSTRUMENTS...;%3E+EVALUATING+EVIDENCE...;%3E+SYSTEM_READY." alt="Typing status"/>
   </a>
 </div>
 
@@ -231,7 +278,7 @@ Open to high-impact collaboration around:
 ---
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=16&duration=4000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=500&height=150&lines=root%40symbeon%3A~%24+./research;>+OBSERVE;>+HYPOTHESIZE;>+BUILD;>+EVALUATE;>+ITERATE" alt="Research terminal"/>
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=16&duration=4000&pause=1000&color=00FF41&background=0D111700&center=true&vCenter=true&width=500&height=150&lines=root%40symbeon%3A~%24+./research;>+OBSERVE;>+HYPOTHESIZE;>+BUILD;>+MEASURE;>+EVALUATE;>+ITERATE" alt="Research terminal"/>
 </div>
 
 ### 🎨 D I G I T A L _ S O U L
