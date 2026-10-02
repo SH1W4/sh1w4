@@ -217,6 +217,45 @@ The distinction matters:
 
 ---
 
+## 🧭 SYSTEM MAP
+
+The public work can be read as a connected research and engineering program:
+
+```text
+RESEARCH
+  │
+  ├── Problem-Derived Intelligence
+  │
+  ├── Evidence-Governed Resolution
+  │
+  └── Computational Architecture
+          │
+          ▼
+   SEMANTIC / OPERATIONAL CORE
+          │
+      ┌───┴───────────────┐
+      ▼                   ▼
+   PHYSICAL             ORGANIZATIONAL
+   SYSTEMS              SYSTEMS
+      │                   │
+     3L0             MISSION CONTROL
+      │                   │
+      └─────────┬─────────┘
+                ▼
+        EVIDENCE / PROOF
+                │
+       Attestation · Trace
+       Verification · History
+```
+
+The repositories are not intended to represent unrelated projects. They are different experimental surfaces for recurring questions around **representation, evidence, resolution, state, authority and action**.
+
+This map is a research orientation, not a claim that the full architecture has already been empirically validated.
+
+---
+
+---
+
 ## 🧠 RESEARCH DNA
 
 The current research methodology emerged from the same operational philosophy that defines SH1W4:
