@@ -175,7 +175,7 @@ The research position is supported by public, versioned artifacts rather than cr
 
 | ARTIFACT | ROLE | CURRENT STATUS |
 | :--- | :--- | :--- |
-| **Operational Resolution Core** | Semantic validation + reference implementation | **Research / hypothesis validation** |
+| **Operational Resolution Core** | Semantic validation + reference implementation | **Core research implementation** |
 | **Learning Competency MVP** | Evidence → review → state → proof experiment | **52 tests · Devnet attestation** |
 
 ### PRODUCT EXPLORATION
@@ -211,7 +211,6 @@ The distinction matters:
 **Public artifacts:**
 
 - [SYMBEON — Intelligence Systems Research](https://github.com/symbeon-labs/research)
-- [Operational Resolution Core](https://github.com/symbeon-labs/operational-resolution-core)
 - [Learning Competency MVP](https://github.com/SH1W4/learning-competency-mvp)
 - [3L0 Vision](https://github.com/symbeon-labs/3l0-vision)
 
