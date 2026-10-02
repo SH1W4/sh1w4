@@ -91,6 +91,42 @@ The objective is not to replace human judgment with automation.
 
 It is to design systems in which both can operate as complementary components.
 
+> **I design intelligence systems around the structure of the problem, not around a fixed model.**
+
+---
+
+## ⚡ CURRENT WORK
+
+The current work is organized around three connected layers:
+
+```text
+RESEARCH
+    ↓
+EXPERIMENT / IMPLEMENTATION
+    ↓
+PRODUCT EXPLORATION
+```
+
+**Research**
+
+- Problem-Derived Intelligence
+- Evidence-Governed Resolution
+- Computational problem representation
+- Capability and transformation models
+
+**Experiment / Implementation**
+
+- Operational Resolution Core
+- Learning Competency MVP
+- Evidence, resolution and authority experiments
+
+**Product Exploration**
+
+- 3L0 — operational intelligence infrastructure
+- Vertical slices derived from the research line
+
+The purpose of this structure is to keep **research claims, engineering evidence and product exploration distinguishable while allowing them to inform one another**.
+
 ---
 
 ## 🔬 RESEARCH POSITION
@@ -128,12 +164,24 @@ Current research series:
 
 The research position is supported by public, versioned artifacts rather than credentials or claims of authority.
 
+### RESEARCH
+
 | ARTIFACT | ROLE | CURRENT STATUS |
 | :--- | :--- | :--- |
 | **ART-001 — Problem-Derived Intelligence** | Foundational research framework | **Final v1.0** |
 | **ART-002 — Evidence-Governed Resolution** | Research evolution / hypothesis | **Draft v0.1** |
+
+### EXPERIMENT / IMPLEMENTATION
+
+| ARTIFACT | ROLE | CURRENT STATUS |
+| :--- | :--- | :--- |
 | **Operational Resolution Core** | Semantic validation + reference implementation | **Research / hypothesis validation** |
-| **Learning Competency MVP** | End-to-end evidence → review → state → proof experiment | **52 tests · Devnet attestation** |
+| **Learning Competency MVP** | Evidence → review → state → proof experiment | **52 tests · Devnet attestation** |
+
+### PRODUCT EXPLORATION
+
+| ARTIFACT | ROLE | CURRENT STATUS |
+| :--- | :--- | :--- |
 | **3L0 Vision** | Product layer built around ORC | **Phase 1 · Vertical Slice** |
 
 ### Evidence loop
