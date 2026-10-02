@@ -129,23 +129,27 @@ Current research series:
 The current research methodology emerged from the same operational philosophy that defines SH1W4:
 
 ```mermaid
-stateDiagram-v2
-    classDef space fill:#0d1117,stroke:#30363d,stroke-width:1px,color:#8b949e;
-    classDef active fill:#0d1117,stroke:#00ff41,stroke-width:2px,color:#fff;
-    classDef check fill:#0d1117,stroke:#f1c40f,stroke-width:2px,color:#fff;
-    
-    [*] --> 🔭_OBSERVATION:::space : Pattern_Recognition
-    🔭_OBSERVATION --> 💡_HYPOTHESIS:::space : Signal_Synthesis
-    💡_HYPOTHESIS --> 🧬_PROTOTYPING:::active : Rapid_Cycle
-    
-    state "SEVE ALIGNMENT" as GOV {
+flowchart TD
+    A([OBSERVATION]) -->|Pattern Recognition| B([HYPOTHESIS])
+    B -->|Signal Synthesis| C([PROTOTYPING])
+    C -->|Validation| D
+
+    subgraph SEVE["SEVE ALIGNMENT"]
         direction LR
-        ⚠️_RISK_ANALYSIS --> ⚖️_ETHICAL_CHECK
-    }
+        E["RISK ANALYSIS"] --> F["ETHICAL CHECK"]
+    end
+
+    D -->|Validation| E
+    F -->|Deployment| G([MATERIALIZATION])
+    G -->|Impact Loop| H(( ))
     
-    🧬_PROTOTYPING --> GOV:::check : Validation
-    GOV --> 🚀_MATERIALIZATION:::active : Deployment
-    🚀_MATERIALIZATION --> [*] : Impact_Loop
+    classDef base fill:#0d1117,stroke:#30363d,stroke-width:1px,color:#f0f6fc;
+    classDef active fill:#0d1117,stroke:#00ff41,stroke-width:2px,color:#f0f6fc;
+    classDef gate fill:#0d1117,stroke:#f1c40f,stroke-width:2px,color:#f0f6fc;
+    
+    class A,B base;
+    class C,G active;
+    class E,F gate;
 ```
 
 > **We do not guess. We observe patterns, synthesize solutions, and align them with human values before materializing them.**
