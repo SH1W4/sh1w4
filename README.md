@@ -1,6 +1,6 @@
 <!--
-    SH1W4 — PROFILE V2
-    Identity: Symbiotic Human-AI Workflow Architect
+    SH1W4 — RESEARCH & SYSTEMS PROFILE
+    Identity: AI Systems Architect · Independent Researcher
     Principle: Human Vision + Agentic Execution → Symbiotic Result
     Method: Observation → Hypothesis → Prototyping → Risk Analysis → Ethical Check → Materialization
 -->
@@ -79,7 +79,7 @@
 
 | IDENTIFIER | ATTRIBUTE | DESCRIPTION |
 | :--- | :--- | :--- |
-| **NAME** | **SH1W4** | Symbiotic Human-AI Workflow Architect |
+| **NAME** | **SH1W4** | AI Systems Architect · Independent Researcher |
 | **ROLE** | **OPERATIONAL HUB** | The bridge between human direction and computational execution |
 | **PRINCIPLE** | **SYMBIOTIC RESULT** | Human directives and ethics + AI execution and materialization |
 
@@ -122,7 +122,7 @@ PRODUCT EXPLORATION
 
 **Product Exploration**
 
-- 3L0 — operational intelligence infrastructure
+- Applied intelligence systems for physical and operational environments
 - Vertical slices derived from the research line
 
 The purpose of this structure is to keep **research claims, engineering evidence and product exploration distinguishable while allowing them to inform one another**.
@@ -182,7 +182,7 @@ The research position is supported by public, versioned artifacts rather than cr
 
 | ARTIFACT | ROLE | CURRENT STATUS |
 | :--- | :--- | :--- |
-| **3L0 Vision** | Product layer built around ORC | **Phase 1 · Vertical Slice** |
+| [**Applied Computational Vision**](https://github.com/symbeon-labs/3l0-vision) | Product experiment built around the research and resolution core; project: 3L0 Vision | **Phase 1 · Vertical Slice** |
 
 ### Evidence loop
 
@@ -213,7 +213,7 @@ The distinction matters:
 - [SYMBEON — Intelligence Systems Research](https://github.com/symbeon-labs/research)
 - [Operational Resolution Core](https://github.com/symbeon-labs/operational-resolution-core)
 - [Learning Competency MVP](https://github.com/SH1W4/learning-competency-mvp)
-- [3L0 Vision](https://github.com/symbeon-labs/3l0-vision)
+- [Applied Computational Vision — 3L0 Vision experiment](https://github.com/symbeon-labs/3l0-vision)
 
 ---
 
@@ -238,7 +238,8 @@ RESEARCH
    PHYSICAL             ORGANIZATIONAL
    SYSTEMS              SYSTEMS
       │                   │
-     3L0             MISSION CONTROL
+ COMPUTATIONAL       MISSION CONTROL
+   VISION
       │                   │
       └─────────┬─────────┘
                 ▼
