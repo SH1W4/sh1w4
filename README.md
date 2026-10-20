@@ -147,9 +147,7 @@ The current research program investigates:
 
 ### SYMBEON — Intelligence Systems Research
 
-A public, versioned research program is maintained at:
-
-**A versioned research program is maintained separately within SYMBEON.**
+A versioned research program is maintained separately within SYMBEON.
 
 The program studies how problem structure, evidence, uncertainty and governance can inform the design and evaluation of intelligence systems.
 
@@ -172,7 +170,7 @@ The research position is supported by public, versioned artifacts rather than cr
 
 | ARTIFACT | ROLE | CURRENT STATUS |
 | :--- | :--- | :--- |
-| [**Operational Resolution Core**](https://github.com/symbeon-labs/operational-resolution-core) | Semantic validation + reference implementation | **Core research implementation** |
+| **Reference Implementation** | Semantic validation and controlled computational experiments | **Research artifact** |
 | **Controlled Evidence Experiment** | Evidence → review → state → verification | **Synthetic / experimental** |
 
 ### PRODUCT EXPLORATION
@@ -354,9 +352,7 @@ Open to high-impact collaboration around:
 
 <br/><br/>
 
-<a href="https://github.com/symbeon-labs/research">
-  <img src="https://img.shields.io/badge/RESEARCH-SYMBEON-00ff41?style=for-the-badge&logo=github&labelColor=1a1a1a" height="35">
-</a>
+<img src="https://img.shields.io/badge/RESEARCH-AND%20SYSTEMS-00ff41?style=for-the-badge&logo=github&labelColor=1a1a1a" height="35">
 
 ---
 
