@@ -116,14 +116,13 @@ PRODUCT EXPLORATION
 
 **Experiment / Implementation**
 
-- Operational Resolution Core
-- Learning Competency MVP
-- Evidence, resolution and authority experiments
+- Reference implementations and controlled experiments
+- Evidence, uncertainty and governance studies
 
 **Product Exploration**
 
-- Applied intelligence systems for physical and operational environments
-- Vertical slices derived from the research line
+- Applied computational systems derived from the research line
+- Experiments across distinct operational contexts
 
 The purpose of this structure is to keep **research claims, engineering evidence and product exploration distinguishable while allowing them to inform one another**.
 
@@ -150,13 +149,11 @@ The current research program investigates:
 
 A public, versioned research program is maintained at:
 
-**https://github.com/symbeon-labs/research**
+**A versioned research program is maintained separately within SYMBEON.**
 
-Current research series:
+The program studies how problem structure, evidence, uncertainty and governance can inform the design and evaluation of intelligence systems.
 
-`ART-001 → ART-002 → ART-003 → ...`
-
-[View the research roadmap](https://github.com/symbeon-labs/research/blob/main/ROADMAP.md)
+Research publications and selected public artifacts are shared through dedicated research channels.
 
 ---
 
@@ -176,13 +173,13 @@ The research position is supported by public, versioned artifacts rather than cr
 | ARTIFACT | ROLE | CURRENT STATUS |
 | :--- | :--- | :--- |
 | [**Operational Resolution Core**](https://github.com/symbeon-labs/operational-resolution-core) | Semantic validation + reference implementation | **Core research implementation** |
-| **Learning Competency MVP** | Evidence → review → state → proof experiment | **52 tests · Devnet attestation** |
+| **Controlled Evidence Experiment** | Evidence → review → state → verification | **Synthetic / experimental** |
 
 ### PRODUCT EXPLORATION
 
 | ARTIFACT | ROLE | CURRENT STATUS |
 | :--- | :--- | :--- |
-| [**Applied Computational Vision**](https://github.com/symbeon-labs/3l0-vision) | Product experiment built around the research and resolution core; project: 3L0 Vision | **Phase 1 · Vertical Slice** |
+| **Applied Computational Systems** | Product experiments informed by the research and implementation work | **Exploratory** |
 
 ### Evidence loop
 
@@ -210,10 +207,8 @@ The distinction matters:
 
 **Public artifacts:**
 
-- [SYMBEON — Intelligence Systems Research](https://github.com/symbeon-labs/research)
-- [Operational Resolution Core](https://github.com/symbeon-labs/operational-resolution-core)
-- [Learning Competency MVP](https://github.com/SH1W4/learning-competency-mvp)
-- [Applied Computational Vision — 3L0 Vision experiment](https://github.com/symbeon-labs/3l0-vision)
+- Research publications and implementation artifacts are maintained in separate repositories.
+- Public experiments are documented with explicit scope, evidence class and limitations.
 
 ---
 
@@ -231,15 +226,15 @@ RESEARCH
   └── Computational Architecture
           │
           ▼
-   SEMANTIC / OPERATIONAL CORE
+   COMPUTATIONAL CORE
           │
       ┌───┴───────────────┐
       ▼                   ▼
    PHYSICAL             ORGANIZATIONAL
    SYSTEMS              SYSTEMS
       │                   │
- COMPUTATIONAL       MISSION CONTROL
-   VISION
+   APPLIED           ORGANIZATIONAL
+   SYSTEMS            SYSTEMS
       │                   │
       └─────────┬─────────┘
                 ▼
